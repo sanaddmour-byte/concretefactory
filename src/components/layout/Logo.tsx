@@ -18,7 +18,7 @@ export function Logo({ locale, label, tone = "light", large = false }: { locale:
         priority={tone === "light"}
         className={large ? "size-20 sm:size-24" : "size-11 sm:size-14"}
       />
-      <span className={`display whitespace-nowrap text-sm uppercase leading-none tracking-wide sm:text-lg ${tone === "dark" ? "text-n-50" : "text-n-900"}`}>
+      <span className={`display whitespace-nowrap text-xs uppercase leading-none tracking-normal min-[400px]:text-sm min-[400px]:tracking-wide sm:text-lg ${tone === "dark" ? "text-n-50" : "text-n-900"}`}>
         {site.name[locale]}
       </span>
     </Link>

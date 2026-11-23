@@ -8,3 +8,5 @@ next-env.d.ts
 public/img
 src/generated
 assets/held
+out
+.preview-stash

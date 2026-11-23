@@ -17,7 +17,6 @@ function Inner({ className }: { className?: string }) {
       locale={other}
       hrefLang={other}
       lang={other}
-      aria-label={t("switchToLabel")}
       className={className ?? "inline-flex min-h-11 min-w-11 items-center justify-center rounded-control px-2 text-sm sm:px-3 font-medium text-n-800 hover:bg-n-100"}
     >
       {t("switchTo")}

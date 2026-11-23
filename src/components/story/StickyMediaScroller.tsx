@@ -39,7 +39,7 @@ export function StickyMediaScroller({ blocks, label, className }: { blocks: Scro
             <figure className="sms-inline">
               <Image src={b.media.src} alt={b.media.alt} fill sizes="100vw" placeholder="blur" blurDataURL={b.media.blur} style={{ objectPosition: b.media.focal }} className="object-cover" />
             </figure>
-            <h3 className="display text-2xl md:text-3xl">{b.title}</h3>
+            <h2 className="display text-2xl md:text-3xl">{b.title}</h2>
             <p className="mt-3 max-w-[56ch] text-lg text-n-700">{b.text}</p>
           </li>
         ))}

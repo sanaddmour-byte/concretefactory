@@ -36,6 +36,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <p className="mt-4 max-w-[60ch] text-lg text-n-700">{t("intro")}</p>
       </section>
       <section className="container-page grid grid-cols-1 gap-12 pb-20 pt-6 md:grid-cols-[1.4fr_1fr]">
+        <div>
         <dl>
           <div className={row}><dt className={lab}>{t("phone")}</dt><dd className={val}><a href={`tel:${c.phone}`} className="hover:underline"><bdi className="ltr-num">{c.phoneDisplay}</bdi></a></dd></div>
           <div className={row}><dt className={lab}>{t("whatsapp")}</dt><dd className={val}><a href={whatsappUrl()} rel="noopener" className="hover:underline">{t("whatsapp")}</a></dd></div>
@@ -46,12 +47,15 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <Ph value={c.address}>{(x) => <div className={row}><dt className={lab}>{t("address")}</dt><dd className={val}>{x}</dd></div>}</Ph>
           <Ph value={c.hours}>{(x) => <div className={row}><dt className={lab}>{t("hours")}</dt><dd className={val}>{x}</dd></div>}</Ph>
           <Ph value={c.mapsUrl}>{(x) => <div className={row}><dd className={val}><a href={x} rel="noopener" className="text-maroon underline underline-offset-4">{t("map")}</a></dd></div>}</Ph>
-          <div className={row}><p className="text-n-700">{t("serviceArea")}</p></div>
-          <div className="flex flex-wrap gap-3 border-t border-n-300 pt-6">
-            <Link href="/quote" className={buttonClass("primary")}>{t("quote")}</Link>
-            <Link href="/visit" className={buttonClass("secondary")}>{t("visit")}</Link>
-          </div>
         </dl>
+          <div className="max-w-xl">
+            <p className="border-t border-n-300 py-4 text-n-700">{t("serviceArea")}</p>
+            <div className="flex flex-wrap gap-3 border-t border-n-300 pt-6">
+              <Link href="/quote" className={buttonClass("primary")}>{t("quote")}</Link>
+              <Link href="/visit" className={buttonClass("secondary")}>{t("visit")}</Link>
+            </div>
+          </div>
+        </div>
         <figure className="mx-auto w-full max-w-[260px] self-start rounded-card border border-olive-200 bg-olive-100 p-5 text-center">
           <div role="img" aria-label={t("qrAlt")} className="mx-auto w-[220px] overflow-hidden rounded-control [&>svg]:block [&>svg]:size-full" dangerouslySetInnerHTML={{ __html: qr }} />
           <figcaption className="mt-3 text-sm font-medium text-n-800">{t("qrTitle")}</figcaption>
