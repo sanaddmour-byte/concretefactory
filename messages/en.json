@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Concrete Factory | Decorative & architectural concrete in Amman, Jordan",
+    "description": "Stamped concrete, terrazzo, exposed aggregate, industrial floors, countertops and fire-pit seating. Based in Amman, building across Jordan."
+  },
+  "a11y": { "skip": "Skip to content", "menu": "Menu", "close": "Close", "primaryNav": "Primary", "language": "Language", "home": "Concrete Factory, home" },
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "finishes": "Finish Library",
+    "architects": "For Architects",
+    "about": "About",
+    "quote": "Get a quote",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "switchTo": "العربية",
+    "switchToLabel": "Switch to Arabic",
+    "allServices": "All services"
+  },
+  "families": {
+    "floors": "Floors",
+    "walls": "Walls",
+    "built-ins": "Built-ins",
+    "finishes": "Finishes"
+  },
+  "megaFinishes": { "blurb": "Browse samples by colour, texture and use, and build a sample list.", "cta": "Explore the library" },
+  "services": {
+    "industrial-floors": { "name": "Industrial floors", "line": "Flat, durable slabs for warehouses and factories." },
+    "interior-floors": { "name": "Interior concrete floors", "line": "Polished and microtopping finishes for living spaces." },
+    "stamped-concrete": { "name": "Stamped concrete", "line": "Stone, brick and slate patterns, poured in one piece." },
+    "exposed-aggregate": { "name": "Exposed aggregate", "line": "Natural stone revealed at the surface." },
+    "terrazzo": { "name": "Terrazzo", "line": "Cast in-situ and precast, with marble chips." },
+    "walls": { "name": "Architectural concrete walls", "line": "Fair-faced concrete with clean panel joints." },
+    "countertops": { "name": "Concrete countertops & islands", "line": "Made to fit your kitchen, edge to edge." },
+    "sinks": { "name": "Concrete sinks & basins", "line": "Solid, seamless basins for bathrooms and kitchens." },
+    "fire-pits-seating": { "name": "Fire pits & built-in seating", "line": "Recessed lounges for courtyards and gardens." }
+  },
+  "cta": { "quote": "Get my quote", "whatsapp": "Chat on WhatsApp", "call": "Call us" },
+  "footer": {
+    "company": "Company",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "visit": "Book a sample visit",
+    "contactPage": "Contact",
+    "address": "Address",
+    "hours": "Hours",
+    "map": "Open in Maps",
+    "rights": "All rights reserved.",
+    "area": "Serving all of Jordan"
+  },
+  "home": {
+    "kicker": "Decorative · Architectural · Industrial",
+    "title": "Concrete, crafted for how you live and work.",
+    "sub": "Stamped floors, terrazzo, exposed aggregate, countertops, fire-pit seating and industrial slabs, built across Jordan.",
+    "seeWork": "See our work",
+    "foundation": "Foundation build: header, footer, tokens and routing. Home sections arrive in Phase 2."
+  },
+  "dev": { "photoNeeded": "PHOTO NEEDED" }
+}

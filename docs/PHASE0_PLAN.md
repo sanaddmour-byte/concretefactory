@@ -32,8 +32,10 @@ All as CSS variables in `app/globals.css` and mapped into the Tailwind v4 `@them
 | Token group | Values |
 |---|---|
 | Neutral 50→950 | `#F7F6F4 #EFEDE9 #E2DFD9 #CFCBC3 #A9A49B #858077 #67635C #4D4A45 #34322F #22211F #151413` |
-| Accent (light) | `#A3521F` (hover `#8A4318`) |
-| Accent (dark) | `#E08A4F` (hover `#EBA070`) |
+| Neutrals (revised: pure greys) | `#F7F7F7 #EFEFEF #E1E1E1 #CDCDCD #A6A6A6 #808080 #636363 #4A4A4A #333333 #212121 #141414` |
+| Punch: maroon (revised) | light `#8A2433` (hover `#6E1B28`); dark surfaces `#E88C96` |
+| Hint: yellow (revised) | `#E3B53A`: decorative on light (1.8:1), focus ring on dark, logo mark, primary-button underline |
+| Secondary: olive (revised) | text `#5C6330` (6.0:1 on n-50), tint `#F1F2EA`, dark-surface `#A9B26A` |
 | Spacing | 4 px base; sections 96–128 desktop / 64 mobile |
 | Radius | `--radius-control: 6px`, `--radius-card: 12px` |
 | Type scale | 12 / 14 / 16 / 18 / 20 / 24 / 32 / 40 / 56 / 72 |
@@ -48,13 +50,17 @@ All as CSS variables in `app/globals.css` and mapped into the Tailwind v4 `@them
 | Oxide on neutral-100 | 4.75 | AA pass |
 | **Oxide on neutral-200** | **4.17** | **Fails AA for body-size text** |
 | Oxide-dark `#E08A4F` on neutral-900 / 950 | 6.07 / 6.94 | Pass |
-| White on oxide (button) | 5.55 | Pass |
+| White on maroon `#8A2433` (button) | 8.82 | Pass |
+| Maroon on neutral-50 / 200 | 8.23 / 6.75 | Pass (revised palette removes the earlier neutral-200 failure) |
+| Maroon-dark `#E88C96` on neutral-900 | 6.61 | Pass |
+| Yellow on maroon / on neutral-950 | 5.31 / 9.59 | Pass; yellow on light is decorative only |
+| Olive `#5C6330` on neutral-50 | 5.97 | Pass |
 | Neutral-500 on neutral-50 | 3.63 | Fails; decorative or large text only (brief agrees) |
 | Neutral-600 on neutral-50 | 5.53 | Pass; used for secondary text |
 
-Rule I will enforce: oxide text only on neutral-50/100 surfaces; on 200 or darker, use neutral-900 text or a filled oxide button.
+Rule: yellow never carries text on light surfaces; everything else in the revised palette passes AA on the surfaces it is used on.
 
-Fonts: Archivo (display, variable width), IBM Plex Sans (EN body), IBM Plex Sans Arabic (AR display + body, +10% line-height). Loaded with `next/font/google`, which self-hosts at build time (reachable from this environment).
+Fonts: Oswald (display, all weights 200-700; no italic exists), IBM Plex Sans (EN body), Tajawal (AR; ExtraBold for display, regular for body; +10% line-height). Loaded with `next/font/google`, which self-hosts at build time (reachable from this environment).
 
 ## 4. Wireframe descriptions
 

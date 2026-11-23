@@ -1,0 +1,21 @@
+{
+  "name": { "en": "Concrete Factory", "ar": "كونكريت فاكتوري" },
+  "tagline": {
+    "en": "Building better spaces with concrete",
+    "ar": "نبني مساحات أفضل بالخرسانة"
+  },
+  "location": { "city": { "en": "Amman", "ar": "عمّان" }, "country": { "en": "Jordan", "ar": "الأردن" } },
+  "serviceArea": { "en": "All of Jordan", "ar": "جميع أنحاء الأردن" },
+  "contact": {
+    "phone": "+962797179702",
+    "phoneDisplay": "+962 79 717 9702",
+    "whatsapp": "962797179702",
+    "email": "{{PLACEHOLDER: public email}}",
+    "salesEmail": "{{PLACEHOLDER: quote inbox}}",
+    "address": "{{PLACEHOLDER: factory / showroom address}}",
+    "hours": "{{PLACEHOLDER: opening hours}}",
+    "mapsUrl": "{{PLACEHOLDER: Google Maps link}}"
+  },
+  "socials": [],
+  "stats": null
+}

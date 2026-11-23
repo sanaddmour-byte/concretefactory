@@ -1,0 +1,262 @@
+[
+  {
+    "file": "assets/photos/stamped-herringbone-sealed-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/detail",
+    "width": 1512,
+    "height": 2016,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Sealed stamped concrete in a grey herringbone brick pattern",
+      "ar": "خرسانة مطبوعة مختومة بنمط الطوب المتعرج (هيرينغبون) باللون الرمادي"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/stamped-ashlar-sealed-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/detail",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Sealed stamped concrete with a random ashlar slate pattern",
+      "ar": "خرسانة مطبوعة مختومة بنمط حجر الأردواز العشوائي"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/process-stamping-herringbone-01.jpg",
+    "service": "stamped-concrete",
+    "role": "process",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Craftsman pressing herringbone stamp mats into fresh concrete",
+      "ar": "حرفي يضغط قوالب الطباعة بنمط الهيرينغبون على الخرسانة الطازجة"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/process-stamping-mat-lift-01.jpg",
+    "service": "stamped-concrete",
+    "role": "process",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Lifting a stamp mat to reveal a crisp herringbone impression",
+      "ar": "رفع قالب الطباعة لإظهار نقش هيرينغبون واضح"
+    },
+    "notes": "Pairs with stamped-herringbone-sealed-01 for a before/after slider."
+  },
+  {
+    "file": "assets/photos/process-stamping-tamping-01.jpg",
+    "service": "stamped-concrete",
+    "role": "process",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Tamping stamp mats with release powder rising from the slab",
+      "ar": "دكّ قوالب الطباعة مع تصاعد بودرة الفصل من البلاطة"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/industrial-floor-power-trowel-01.jpg",
+    "service": "industrial-floors",
+    "role": "process",
+    "width": 1512,
+    "height": 2016,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Power-trowelling a fresh industrial concrete floor in a basement",
+      "ar": "تنعيم أرضية خرسانية صناعية طازجة بآلة الهليكوبتر في طابق سفلي"
+    },
+    "notes": "In-progress shot. A finished, empty industrial floor photo is still needed for the hero."
+  },
+  {
+    "file": "assets/photos/stamped-cobblestone-fan-driveway-01.jpg",
+    "service": "stamped-concrete",
+    "role": "hero",
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Curved driveway ramp in fan-pattern stamped cobblestone concrete with mountain views",
+      "ar": "منحدر مدخل منحني من الخرسانة المطبوعة بنمط حجارة المروحة مع إطلالة جبلية"
+    },
+    "notes": "Strongest hero candidate. Portrait; art-direct crop for 16:9 desktop (focus lower-centre)."
+  },
+  {
+    "file": "assets/photos/countertop-waterfall-island-01.jpg",
+    "service": "countertops",
+    "role": "project",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Concrete waterfall kitchen island in a white modern kitchen",
+      "ar": "جزيرة مطبخ خرسانية بتصميم الشلال في مطبخ أبيض عصري"
+    },
+    "notes": "Pre-handover: masking tape and debris visible. Crop tight to the island or reshoot."
+  },
+  {
+    "file": "assets/photos/countertop-island-sink-cutout-01.jpg",
+    "service": "countertops",
+    "role": "project",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Concrete island countertop with integrated sink cutout and waterfall sides",
+      "ar": "سطح جزيرة خرساني مع فتحة مغسلة وجوانب شلالية"
+    },
+    "notes": "Pre-handover: debris on floor. Crop or reshoot."
+  },
+  {
+    "file": "assets/photos/materials-steel-fibers-glued-01.jpg",
+    "service": "industrial-floors",
+    "role": "material",
+    "width": 1512,
+    "height": 2016,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Glued bundles of hooked-end steel fibres for reinforced concrete floors",
+      "ar": "حزم ألياف فولاذية ملصوقة بنهايات معقوفة لتسليح الأرضيات الخرسانية"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/specialty-cyan-aggregate-01.jpg",
+    "service": "specialty-aggregates",
+    "role": "texture/detail",
+    "width": 1024,
+    "height": 767,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Concrete surface with exposed cyan aggregate chips",
+      "ar": "سطح خرساني بحبيبات ركام فيروزية مكشوفة"
+    },
+    "notes": "CONFIRM: photoluminescent glow stones or coloured glass? If glow, add a night photo before claiming it."
+  },
+  {
+    "file": "assets/photos/materials-steel-fibers-loose-01.jpg",
+    "service": "industrial-floors",
+    "role": "material",
+    "width": 1115,
+    "height": 1115,
+    "orientation": "square",
+    "alt": {
+      "en": "Loose hooked-end steel fibres",
+      "ar": "ألياف فولاذية مفردة بنهايات معقوفة"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/firepit-recessed-seating-01.jpg",
+    "service": "fire-pits-seating",
+    "role": "project",
+    "width": 780,
+    "height": 1040,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Sunken concrete lounge with built-in benches around a central fire pit",
+      "ar": "جلسة خرسانية غائرة بمقاعد مدمجة حول موقد نار مركزي"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/firepit-recessed-seating-02.jpg",
+    "service": "fire-pits-seating",
+    "role": "project",
+    "width": 780,
+    "height": 1040,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Recessed concrete fire-pit seating beside a modern villa",
+      "ar": "جلسة موقد نار خرسانية غائرة بجانب فيلا عصرية"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/stamped-compass-rose-medallion-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Multi-colour stamped concrete compass-rose medallion at a villa entrance",
+      "ar": "ميدالية بوصلة من الخرسانة المطبوعة متعددة الألوان عند مدخل فيلا"
+    },
+    "notes": "Vehicle licence plate pixelated in this file."
+  },
+  {
+    "file": "assets/photos/process-stamping-fan-cobble-01.jpg",
+    "service": "stamped-concrete",
+    "role": "process",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Crew placing fan-pattern cobblestone stamp mats on a fresh slab",
+      "ar": "فريق يضع قوالب حجارة المروحة على بلاطة طازجة"
+    },
+    "notes": "Third-party mat brand name is visible; avoid as hero."
+  },
+  {
+    "file": "assets/photos/wall-architectural-panels-01.jpg",
+    "service": "walls",
+    "role": "project",
+    "width": 1512,
+    "height": 2016,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Architectural concrete wall with panel joints and tie-hole detailing",
+      "ar": "جدار خرساني معماري بفواصل ألواح وتفاصيل ثقوب الربط"
+    },
+    "notes": "In-progress interior (debris, ceiling services). Crop to the wall plane."
+  },
+  {
+    "file": "assets/photos/terrazzo-cream-black-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 1024,
+    "height": 768,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Cream terrazzo with black and grey marble chips",
+      "ar": "تيرازو كريمي برقائق رخام سوداء ورمادية"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/exposed-aggregate-marble-mix-01.jpg",
+    "service": "exposed-aggregate",
+    "role": "texture/swatch",
+    "width": 1956,
+    "height": 1956,
+    "orientation": "square",
+    "alt": {
+      "en": "Exposed aggregate concrete with mixed red, cream and green marble pebbles",
+      "ar": "خرسانة بركام مكشوف من حصى رخامي مختلط بالأحمر والكريمي والأخضر"
+    },
+    "notes": ""
+  },
+  {
+    "file": "assets/photos/terrazzo-grey-multicolour-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 1280,
+    "height": 1280,
+    "orientation": "square",
+    "alt": {
+      "en": "Grey terrazzo with multicolour marble chips",
+      "ar": "تيرازو رمادي برقائق رخام متعددة الألوان"
+    },
+    "notes": ""
+  }
+]

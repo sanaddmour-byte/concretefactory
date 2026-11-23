@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens (brief §5.1). Components use only these. ---------- */
+:root {
+  --n-50: #f7f7f7;
+  --n-100: #efefef;
+  --n-200: #e1e1e1;
+  --n-300: #cdcdcd;
+  --n-400: #a6a6a6;
+  --n-500: #808080;
+  --n-600: #636363;
+  --n-700: #4a4a4a;
+  --n-800: #333333;
+  --n-900: #212121;
+  --n-950: #141414;
+
+  /* Punch: maroon, with a hint of yellow */
+  --maroon: #8a2433; /* 8.2:1 on n-50, 6.8:1 on n-200 */
+  --maroon-hover: #6e1b28;
+  --maroon-dark: #e88c96; /* on dark surfaces: 6.6:1 on n-900 */
+  --maroon-dark-hover: #f0a6ae;
+  --yellow: #e3b53a; /* decorative only on light (1.8:1); text/rings on dark and on maroon */
+
+  /* Quiet secondary: olive */
+  --olive-50: #f1f2ea;
+  --olive-200: #d6d9bf;
+  --olive-600: #5c6330; /* 6.0:1 on n-50 */
+  --olive-dark: #a9b26a; /* 8.1:1 on n-950 */
+
+  --success: #4d5a1e;
+  --warning: #7a5a00;
+  --danger: #b3261e;
+  --info: #2f5d8a;
+
+  --radius-control: 6px;
+  --radius-card: 12px;
+
+  --dur-ui: 200ms;
+  --dur-page: 380ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+
+  --header-h: 72px;
+
+  --f-display: var(--font-oswald), var(--font-tajawal), system-ui, sans-serif;
+  --f-body: var(--font-plex), var(--font-tajawal), system-ui, sans-serif;
+}
+/* Arabic: Tajawal throughout; ExtraBold for display */
+html[lang="ar"] {
+  --f-display: var(--font-tajawal), system-ui, sans-serif;
+  --f-body: var(--font-tajawal), system-ui, sans-serif;
+}
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] .display { font-weight: 800; }
+
+@theme inline {
+  --color-n-50: var(--n-50);
+  --color-n-100: var(--n-100);
+  --color-n-200: var(--n-200);
+  --color-n-300: var(--n-300);
+  --color-n-400: var(--n-400);
+  --color-n-500: var(--n-500);
+  --color-n-600: var(--n-600);
+  --color-n-700: var(--n-700);
+  --color-n-800: var(--n-800);
+  --color-n-900: var(--n-900);
+  --color-n-950: var(--n-950);
+  --color-maroon: var(--maroon);
+  --color-maroon-hover: var(--maroon-hover);
+  --color-maroon-dark: var(--maroon-dark);
+  --color-maroon-dark-hover: var(--maroon-dark-hover);
+  --color-yellow: var(--yellow);
+  --color-olive-50: var(--olive-50);
+  --color-olive-200: var(--olive-200);
+  --color-olive-600: var(--olive-600);
+  --color-olive-dark: var(--olive-dark);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --radius-control: var(--radius-control);
+  --radius-card: var(--radius-card);
+
+  --font-display: var(--f-display);
+  --font-sans: var(--f-body);
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+  --text-5xl: 56px;
+  --text-6xl: 72px;
+
+  --container-page: 1280px;
+}
+
+html {
+  background: var(--n-50);
+  color: var(--n-800);
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-block-start: calc(var(--header-h) + 16px);
+}
+body {
+  background: var(--n-50);
+  font-family: var(--f-body);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+html[lang="ar"] body {
+  line-height: 1.7; /* about +10% for Arabic */
+}
+
+h1, h2, h3 {
+  font-family: var(--f-display);
+  color: var(--n-900);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { letter-spacing: 0; }
+
+/* Oswald display (variable weight 200-700) */
+.display { font-family: var(--f-display); font-weight: 600; }
+
+/* Focus: 2px maroon ring with offset (brief §6) */
+:focus-visible {
+  outline: 2px solid var(--maroon);
+  outline-offset: 2px;
+  border-radius: var(--radius-control);
+}
+.on-dark :focus-visible { outline-color: var(--yellow); }
+
+/* Dark surfaces (industrial band, footer) flip tokens locally */
+.on-dark {
+  background: var(--n-950);
+  color: var(--n-200);
+}
+.on-dark h1, .on-dark h2, .on-dark h3 { color: var(--n-50); }
+
+/* Phone numbers stay LTR inside RTL text */
+.ltr-num { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+/* ---------- Placeholder badge (dev only; rendered by <Ph>) ---------- */
+.ph-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px dashed #b7791f;
+  background: #fff7e0;
+  color: #6b4500;
+  font: 500 12px/1.5 var(--f-body);
+  border-radius: 4px;
+}
+
+/* Texture placeholder for missing photos (dev only) */
+.tex-placeholder {
+  background-color: var(--n-200);
+  background-image:
+    radial-gradient(circle at 20% 30%, var(--n-300) 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 60%, var(--n-300) 0 2px, transparent 3px),
+    radial-gradient(circle at 45% 80%, var(--n-400) 0 2px, transparent 3px),
+    radial-gradient(circle at 85% 20%, var(--n-400) 0 1.5px, transparent 2.5px);
+  background-size: 48px 48px, 31px 31px, 57px 57px, 41px 41px;
+}
+
+/* ---------- Motion: enhancements only ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: var(--dur-page); }
+
+  .btn { transition: background-color var(--dur-ui) var(--ease-out), transform 120ms var(--ease-out); }
+  .btn:active { transform: translateY(1px) scale(0.99); }
+
+  /* header shrink on scroll: CSS scroll-driven, no JS listener */
+  @supports (animation-timeline: scroll()) {
+    .site-header { animation: header-shrink linear both; animation-timeline: scroll(root); animation-range: 0 120px; }
+    @keyframes header-shrink {
+      to { box-shadow: 0 1px 0 var(--n-200); }
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+.container-page { max-inline-size: var(--container-page); margin-inline: auto; padding-inline: 16px; }
+@media (min-width: 768px) { .container-page { padding-inline: 32px; } }
+
+/* Visually hidden */
+.sr-only-x { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
