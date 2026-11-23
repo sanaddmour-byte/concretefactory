@@ -583,5 +583,18 @@
       "ar": "منظر قريب لأرضية خرسانية مصقولة تظهر فيها حبيبات الركام الدقيقة"
     },
     "notes": "CROPPED to remove a worker. Low resolution (720 px wide): small use only. Reflection of a high-visibility vest is visible."
+  },
+  {
+    "file": "assets/photos/glow-aggregate-dark-01.jpg",
+    "service": "exposed-aggregate",
+    "role": "project",
+    "width": 1526,
+    "height": 1526,
+    "orientation": "square",
+    "alt": {
+      "en": "Cyan glow-in-the-dark aggregate chips glowing against a dark concrete surface",
+      "ar": "حبيبات ركام فيروزية مضيئة في الظلام تتوهّج على سطح خرساني داكن"
+    },
+    "notes": "Night photo of the glowing aggregate (client-supplied). This resolves the earlier 'need a night photo' request."
   }
 ]

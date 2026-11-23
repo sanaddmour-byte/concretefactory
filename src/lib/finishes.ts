@@ -10,6 +10,7 @@ const schema = z.object({
   codeStatus: z.enum(["proposed", "approved"]),
   photo: z.string(),
   photoUse: z.enum(["swatch", "installed-floor"]),
+  photoNight: z.string().optional(),
   family: z.enum(["stamped-concrete", "terrazzo", "exposed-aggregate"]),
   pattern: name,
   colour: name.nullable(),

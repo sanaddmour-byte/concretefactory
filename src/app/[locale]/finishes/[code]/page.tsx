@@ -84,6 +84,20 @@ export default async function FinishPage({ params }: Props) {
         </div>
       </section>
 
+      {f.photoNight && (
+        <section className="on-dark py-12" aria-labelledby="dark-h">
+          <div className="container-page grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+            <div>
+              <h2 id="dark-h" className="display text-3xl md:text-4xl">{t("dark")}</h2>
+              <p className="mt-3 text-n-300">{t("darkCaption")}</p>
+            </div>
+            <div className="relative aspect-square w-full max-w-[480px] overflow-hidden rounded-card bg-n-800">
+              <Photo id={f.photoNight as PhotoId} locale={l} fill sizes="(min-width: 768px) 480px, 100vw" />
+            </div>
+          </div>
+        </section>
+      )}
+
       {more.length > 0 && (
         <section className="bg-olive-50 py-16" aria-labelledby="more-h">
           <div className="container-page">

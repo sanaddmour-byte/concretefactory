@@ -360,7 +360,9 @@
     "back": "All finishes",
     "quote": "Get a quote with this sample",
     "visit": "Book a sample visit",
-    "zoom": "Zoom"
+    "zoom": "Zoom",
+    "dark": "In the dark",
+    "darkCaption": "The same kind of aggregate, photographed in the dark."
   },
   "samples": {
     "count": "{n} of 6 samples",

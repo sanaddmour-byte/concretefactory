@@ -17,6 +17,7 @@ import { SpecTable } from "@/components/service/SpecTable";
 import { Steps } from "@/components/service/Steps";
 import { Diptych } from "@/components/service/Diptych";
 import { Callouts } from "@/components/service/Callouts";
+import { Feature } from "@/components/service/Feature";
 
 // Photos excluded from public galleries (third-party brand visible, etc.)
 const EXCLUDE = new Set(["process-stamping-fan-cobble-01"]);
@@ -76,6 +77,7 @@ export default async function ServicePage({ params }: Props) {
         <Steps steps={c.processSteps} locale={l} />
       )}
       {slug === "stamped-concrete" && <Diptych locale={l} />}
+      {c.feature && <Feature feature={c.feature} locale={l} />}
       {gallery.length > 0 && (
         <section className="container-page py-16 md:py-24" aria-labelledby="gal-h">
           <h2 id="gal-h" className="display reveal text-3xl md:text-5xl">{t("galleryTitle")}</h2>

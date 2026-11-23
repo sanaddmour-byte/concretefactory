@@ -19,6 +19,7 @@ const schema = z.object({
   options: z.array(z.string()),
   specs: z.array(z.object({ key: z.string(), value: z.string() })),
   specSheet: z.string().nullable(),
+  feature: z.object({ title: z.string(), text: z.string(), photo: z.string(), caption: z.string() }).optional(),
   callouts: z.array(z.object({ title: z.string(), text: z.string(), items: z.array(z.string()) })).default([]),
   processSteps: z.array(z.object({ title: z.string(), text: z.string() })),
   story: z.array(stage).default([]),
@@ -37,7 +38,7 @@ export function getService(slug: string, locale: Locale): ServiceContent {
   const parsed = schema.parse(data);
   if (parsed.slug !== slug) throw new Error(`${file}: slug mismatch`);
   // Build-time integrity: every referenced photo must exist in the manifest
-  for (const id of [parsed.heroImage, ...parsed.story.map((s) => s.photo)]) {
+  for (const id of [parsed.heroImage, parsed.feature?.photo, ...parsed.story.map((s) => s.photo)]) {
     if (id && !photoIds.includes(id)) throw new Error(`${file}: unknown photo ${id}`);
   }
   return { ...parsed, body: content.trim() };
