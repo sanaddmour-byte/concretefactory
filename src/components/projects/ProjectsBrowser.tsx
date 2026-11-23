@@ -18,7 +18,7 @@ function Chips({ label, value, options, onChange }: { label: string; value: stri
       <span className="me-1 text-sm font-medium text-n-700">{label}</span>
       {options.map((o) => (
         <button key={o.value} type="button" aria-pressed={value === o.value} onClick={() => onChange(o.value)}
-          className={cn("min-h-11 rounded-control border px-4 text-sm font-medium motion-safe:transition-colors",
+          className={cn("label-caps min-h-11 rounded-control border px-4 text-sm motion-safe:transition-colors",
             value === o.value ? "border-maroon bg-maroon text-n-50" : "border-olive-200 bg-olive-50 text-olive-700 hover:bg-olive-100")}>
           {o.label}
         </button>

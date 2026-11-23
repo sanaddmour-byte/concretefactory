@@ -32,7 +32,7 @@ export function MegaMenu({ label, children }: { label: string; children: React.R
         aria-expanded={open}
         aria-controls={id}
         onClick={() => setOpen((o) => !o)}
-        className="inline-flex min-h-11 items-center gap-1 rounded-control px-3 text-base font-medium text-n-800 hover:bg-n-100"
+        className="label-caps inline-flex min-h-11 items-center gap-1 rounded-control px-3 text-n-800 hover:bg-n-100"
       >
         {label}
         <ChevronDown size={16} strokeWidth={1.5} aria-hidden className={open ? "rotate-180" : ""} />

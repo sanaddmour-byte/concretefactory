@@ -133,6 +133,14 @@ Done when every chapter works in desktop-animated, mobile-animated and reduced-m
 3. **Milestones** for the story chapter (3+: year, title, one line, EN and AR).
 4. **Footage wanted to switch chapters 0, 2 and 6 to video-scrub or frame-sequence later:**
    - Ch 0: slow macro push-in or pull-back on exposed aggregate, 5–8 s, landscape 4K.
-   - Ch 2: one continuous locked-off take of a stamping sequence (mat placing → tamping → lifting → sealed), 15–20 s.
+   - Ch 2: one continuous locked-off take of a stamping sequence (mat placing → stamping → lifting → sealed), 15–20 s.
    - Ch 6: steel fibres being mixed into concrete, then a power-trowel pass, 10–15 s.
    - All: horizontal, tripod, no people's faces unless they agree, no visible third-party brands.
+
+---
+## Progress log
+**Phase 1 done (engine + type system), pushed.** Type system applied (Oswald UPPERCASE display, Tajawal 800 with zero tracking; locale-aware `--font-display`/`--font-body`; only the active locale's font file is fetched). Engine in `src/components/story/`: `PinnedStage` (crossfade or wipe, counter), `StageMedia` (image, video-scrub, frame-sequence, webgl stub), `Chapter`, `ChapterRail`, `ChapterLink`, `LineReveal` (no SplitText on Arabic), `StickyMediaScroller`. GSAP loads dynamically after LCP via `useStoryMotion` (`gsap.matchMedia`: desktop, mobile, reduced). Demo at `/en/story-demo` (dev, or `STORY_DEMO=1`).
+
+**Measured:** home JS is already **182 KB gz before GSAP** (it was 167 KB; sample list, analytics and the new rail/engine code added to it). GSAP + ScrollTrigger + SplitText = 49 KB, so story routes land at **~233 KB, about 3 KB over the 230 KB limit**. Plan: trim before Phase 2 (lazy-load the sample tray, split the engine per chapter, drop SplitText for English via CSS if needed).
+
+**Copy change (client):** "Tamp / Tamped" is now "Stamp / Stamped" (Arabic: الطبع / نطبع / يُطبع).

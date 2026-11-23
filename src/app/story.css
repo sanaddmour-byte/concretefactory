@@ -1,0 +1,76 @@
+/* =====================================================================
+   Story engine. Everything here is the static, stacked layout by default;
+   GSAP adds `.is-pinned` (desktop/mobile with motion allowed) to switch a
+   stage to its pinned layout. Reduced motion never gets `.is-pinned`.
+   ===================================================================== */
+.pstage { position: relative; }
+.pstep { margin: 0; padding-block: 16px; }
+.pstep .stage-media { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border-radius: var(--radius-card); background: var(--n-200); }
+.stage-media > * { position: absolute; inset: 0; }
+.stage-zoom { position: absolute; inset: 0; will-change: auto; }
+.stage-media[data-media="frame-sequence"] canvas { opacity: 0; }
+.stage-media[data-media="frame-sequence"][data-ready="true"] canvas { opacity: 1; }
+.stage-media[data-media="frame-sequence"][data-ready="true"] .stage-poster { opacity: 0; }
+.pcap { margin-block-start: 12px; }
+.pcap .container-page { padding-inline: 0; }
+.pcap-title { display: block; font-family: var(--font-display); font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n-900); }
+html[lang="ar"] .pcap-title { text-transform: none; letter-spacing: 0; font-weight: 700; }
+.pcap-text { display: block; max-inline-size: 60ch; color: var(--n-700); font-size: 18px; }
+.pcap-num { display: block; font-family: var(--font-display); color: var(--maroon); font-size: 24px; }
+.pcount { display: none; }
+.on-dark .pcap-title { color: var(--n-50); }
+.on-dark .pcap-text { color: var(--n-300); }
+.on-dark .pstep .stage-media { background: var(--n-800); }
+
+/* Pinned layout */
+.pstage.is-pinned { height: 100svh; overflow: hidden; background: var(--n-900); }
+.pstage.is-pinned .pstep { position: absolute; inset: 0; padding: 0; }
+.pstage.is-pinned .stage-media { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.pstage.is-pinned .pcap { position: absolute; inset-inline: 0; inset-block-end: 0; margin: 0; padding-block: 96px calc(40px + 76px); background: linear-gradient(to top, rgb(38 38 38 / 0.88), rgb(38 38 38 / 0)); }
+.pstage.is-pinned .pcap .container-page { padding-inline: 16px; }
+@media (min-width: 768px) { .pstage.is-pinned .pcap .container-page { padding-inline: 32px; } .pstage.is-pinned .pcap { padding-block: 96px 40px; } }
+.pstage.is-pinned .pcap-title, .pstage.is-pinned .pcap-text, .pstage.is-pinned .pcap-num { color: var(--n-50); }
+.pstage.is-pinned .pcap-num { display: none; }
+.pstage.is-pinned .pcap-title { font-size: clamp(28px, 4vw, 56px); line-height: 1.05; }
+.pstage.is-pinned .pcap-text { font-size: clamp(17px, 1.6vw, 22px); color: var(--n-200); }
+.pstage.is-pinned .pcount { display: flex; position: absolute; z-index: 50; inset-block-start: calc(var(--header-h) + 20px); inset-inline-end: 24px; align-items: baseline; gap: 2px; font-family: var(--font-display); font-size: clamp(40px, 6vw, 88px); line-height: 1; color: var(--n-50); text-shadow: 0 2px 12px rgb(0 0 0 / 0.35); }
+.pcount-total { font-size: 0.35em; opacity: 0.8; }
+
+/* Sticky media scroller (Cula-style) */
+.sms { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+.sms-media { display: none; }
+.sms-block { padding-block: 28px; }
+.sms-inline { position: relative; display: block; aspect-ratio: 4 / 3; margin: 0 0 20px; overflow: hidden; border-radius: var(--radius-card); background: var(--n-200); }
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .sms { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+  .sms-media { display: block; position: sticky; inset-block-start: calc(var(--header-h) + 16px); block-size: calc(100svh - var(--header-h) - 32px); overflow: hidden; border-radius: var(--radius-card); background: var(--n-200); }
+  .sms-inline { display: none; }
+  .sms-block { min-block-size: 80svh; display: flex; flex-direction: column; justify-content: center; }
+  .sms-img { position: absolute; inset: 0; opacity: 0; transition: opacity 450ms var(--ease-out); }
+  .sms-img.is-active { opacity: 1; }
+}
+
+/* Chapter rail: inline-end side (mirrors in RTL); hidden on mobile where a thin progress bar is used */
+.chapter-rail { position: fixed; inset-inline-end: 12px; inset-block-start: 50%; transform: translateY(-50%); z-index: 35; display: none; }
+.chapter-rail ol { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.chapter-rail-link { background: rgb(236 236 236 / 0.82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-block-size: 28px; padding-inline: 8px; border-radius: 6px; color: var(--n-700); text-decoration: none; font-family: var(--font-display); }
+.chapter-rail-title { max-inline-size: 0; overflow: hidden; white-space: nowrap; opacity: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; transition: max-inline-size 250ms var(--ease-out), opacity 200ms; }
+html[lang="ar"] .chapter-rail-title { text-transform: none; letter-spacing: 0; }
+.chapter-rail-num { font-size: 13px; opacity: 0.55; }
+.chapter-rail-link:hover .chapter-rail-title, .chapter-rail-link:focus-visible .chapter-rail-title, .chapter-rail-link.is-active .chapter-rail-title { max-inline-size: 240px; opacity: 1; }
+.chapter-rail-link.is-active .chapter-rail-num { opacity: 1; color: var(--maroon); font-weight: 600; }
+.chapter-rail-link.on-dark-rail { color: var(--n-200); background: rgb(38 38 38 / 0.78); }
+.chapter-rail-link.on-dark-rail.is-active .chapter-rail-num { color: var(--yellow); }
+@media (min-width: 768px) { .chapter-rail { display: block; } }
+
+.story-top-progress { position: fixed; inset-inline: 0; inset-block-start: 0; z-index: 60; block-size: 3px; background: var(--maroon); transform-origin: left center; transform: scaleX(0); }
+[dir="rtl"] .story-top-progress { transform-origin: right center; }
+@media (min-width: 768px) { .story-top-progress { display: none; } }
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .story-top-progress { animation: grow linear both; animation-timeline: scroll(root); }
+  }
+}
+
+/* Headline reveal: hidden only while JS is about to prepare it, never for reduced motion */
+@media (prefers-reduced-motion: no-preference) { html.js [data-lr="pending"] { opacity: 0; } }

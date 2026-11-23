@@ -12,7 +12,7 @@ import { LangSwitcher } from "./LangSwitcher";
 import { MegaMenu } from "./MegaMenu";
 import { MobileMenu } from "./MobileMenu";
 
-const linkCls = "inline-flex min-h-11 items-center rounded-control px-3 text-base font-medium text-n-800 hover:bg-n-100";
+const linkCls = "label-caps inline-flex min-h-11 items-center rounded-control px-3 text-n-800 hover:bg-n-100";
 
 export async function Header({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale });

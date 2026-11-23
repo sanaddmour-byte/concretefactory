@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, dirOf } from "@/i18n/routing";
-import { oswald, tajawal } from "../fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SamplesProvider } from "@/components/samples/SamplesProvider";
@@ -11,6 +10,7 @@ import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { MobileBar } from "@/components/layout/MobileBar";
 import { whatsappUrl, site } from "@/lib/site";
 import "../globals.css";
+import "../story.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,12 +34,15 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
+  // Load only the active locale's font module, so only its font is preloaded
+  const fontVar = locale === "ar" ? (await import("../font-ar")).tajawal.variable : (await import("../font-en")).oswald.variable;
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir={dirOf(locale)} className={`${oswald.variable} ${tajawal.variable}`}>
+    <html lang={locale} dir={dirOf(locale)} className={fontVar} suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} /></head>
       <body>
-        <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied }, samples: messages.samples, projects: messages.projects, finishes: messages.finishes, quote: messages.quote, visit: messages.visit, architects: messages.architects }}>
+        <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied }, samples: messages.samples, projects: messages.projects, finishes: messages.finishes, quote: messages.quote, visit: messages.visit, architects: messages.architects, story: messages.story }}>
           <a href="#main" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">
             {t("a11y.skip")}
           </a>

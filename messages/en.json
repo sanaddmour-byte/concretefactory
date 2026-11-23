@@ -129,9 +129,9 @@
           "body": "Stamp mats are laid on the fresh slab and pressed in, so the surface takes on stone, brick or slate texture."
         },
         {
-          "eyebrow": "Tamp",
-          "title": "Tamp to an even depth",
-          "body": "Release powder keeps the mats from sticking while the pattern is tamped in evenly across the surface."
+          "eyebrow": "Stamp",
+          "title": "Stamp to an even depth",
+          "body": "Release powder keeps the mats from sticking while the pattern is stamped in evenly across the surface."
         },
         {
           "eyebrow": "Reveal",
@@ -684,5 +684,9 @@
         "p": "You can ask us what we hold about you, ask us to correct it or ask us to delete it by emailing {email}."
       }
     ]
+  },
+  "story": {
+    "rail": "Story chapters",
+    "skip": "Skip story"
   }
 }

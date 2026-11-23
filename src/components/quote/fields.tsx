@@ -26,7 +26,7 @@ export function Choice({ name, options, value, onChange, error, id }: { name: st
   return (
     <div role="radiogroup" aria-labelledby={`${id}-l`} aria-describedby={error ? `${id}-err` : undefined} id={id} className="flex flex-wrap gap-2">
       {options.map((o) => (
-        <label key={o.value} className={cn("inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-control border px-4 text-base font-medium has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-maroon",
+        <label key={o.value} className={cn("label-caps inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-control border px-4 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-maroon",
           value === o.value ? "border-maroon bg-maroon text-n-50" : "border-olive-200 bg-olive-50 text-olive-700 hover:bg-olive-100")}>
           <input type="radio" name={name} value={o.value} checked={value === o.value} onChange={() => onChange(o.value)} className="sr-only-x" />
           {value === o.value && <Check size={16} strokeWidth={2} aria-hidden />}
