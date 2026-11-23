@@ -9,6 +9,8 @@ import { SamplesProvider } from "@/components/samples/SamplesProvider";
 import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { MobileBar } from "@/components/layout/MobileBar";
 import { whatsappUrl, site } from "@/lib/site";
+import { indexable, siteUrl } from "@/lib/seo";
+import { JsonLd, businessLd } from "@/components/JsonLd";
 import "../globals.css";
 import "../story.css";
 
@@ -26,6 +28,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://theconcretefactoryjo.com"),
     title: { default: t("title"), template: `%s | ${site.name[locale]}` },
     description: t("description"),
+    // The GitHub Pages preview and any non-production host must never be indexed
+    ...(indexable ? {} : { robots: { index: false, follow: false } }),
+    openGraph: { type: "website", siteName: site.name[locale], locale: locale === "ar" ? "ar_JO" : "en_US", alternateLocale: locale === "ar" ? "en_US" : "ar_JO", title: t("title"), description: t("description"), images: [{ url: `${siteUrl}/og/${locale}.jpg`, width: 1200, height: 630, alt: `${site.name[locale]}: ${site.tagline[locale]}` }] },
+    twitter: { card: "summary_large_image", title: t("title"), description: t("description"), images: [`${siteUrl}/og/${locale}.jpg`] },
   };
 }
 
@@ -42,6 +48,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     <html lang={locale} dir={dirOf(locale)} className={fontVar} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} /></head>
       <body>
+        <JsonLd data={businessLd(locale)} />
         <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied }, samples: messages.samples, projects: messages.projects, finishes: messages.finishes, quote: messages.quote, visit: messages.visit, architects: messages.architects, story: messages.story }}>
           <a href="#main" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">
             {t("a11y.skip")}

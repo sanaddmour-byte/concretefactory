@@ -1,0 +1,55 @@
+name: PR checks
+
+# Runs on every pull request: frozen install, typecheck, unit tests, production build with the e2e mail stub,
+# Playwright (server build), then the static GitHub Pages export served under /concretefactory/ with its own Playwright suite.
+# No real email is ever sent: the app is pointed at a local mail stub (tests/support/mail-stub.mjs).
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Chromium for Playwright
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Unit tests
+        run: pnpm test:unit
+      - name: Production build
+        run: pnpm build:e2e
+      - name: Playwright (server build, mail stub)
+        run: pnpm test:e2e --trace off
+      - name: Static preview build (GitHub Pages export)
+        run: pnpm build:preview
+      - name: Playwright (static preview under /concretefactory/)
+        run: pnpm test:preview
+      - name: Upload Playwright reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-reports
+          path: |
+            playwright-report
+            playwright-report-preview
+            test-results
+          retention-days: 7

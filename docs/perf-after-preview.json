@@ -1,0 +1,29 @@
+{
+  "label": "AFTER (static preview)",
+  "res": {
+    "/en": {
+      "jsKB": 223.7,
+      "imageKBLoaded": 1246,
+      "lcpImage": "/concretefactory/img/w/terrazzo-grey-pink-portrait-01-1080.webp",
+      "heroKB": 468.5
+    },
+    "/en/services/stamped-concrete": {
+      "jsKB": 227.1,
+      "imageKBLoaded": 867,
+      "lcpImage": "/concretefactory/img/w/stamped-courtyard-cobble-fan-cream-border-01-1080.webp",
+      "heroKB": 194.1
+    },
+    "/en/quote": {
+      "jsKB": 174.9,
+      "imageKBLoaded": 479,
+      "lcpImage": "/concretefactory/img/w/industrial-polished-hall-02-480.webp",
+      "heroKB": 39.9
+    },
+    "/en/finishes": {
+      "jsKB": 177.9,
+      "imageKBLoaded": 1649,
+      "lcpImage": "(inline placeholder)",
+      "heroKB": null
+    }
+  }
+}

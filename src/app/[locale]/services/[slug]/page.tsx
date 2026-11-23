@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd, serviceLd, breadcrumbLd } from "@/components/JsonLd";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -70,6 +71,8 @@ export default async function ServicePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={serviceLd(l, slug, name, c.seo.description)} />
+      <JsonLd data={breadcrumbLd(l, [{ name: (await getTranslations({ locale: l, namespace: "nav" }))("services"), path: "/services" }, { name, path: `/services/${slug}` }])} />
       {dark ? <div className="on-dark pb-4 pt-2">{hero}</div> : hero}
       <Callouts items={c.callouts} label={t("calloutsLabel")} />
       <Options codes={c.options} locale={l} />

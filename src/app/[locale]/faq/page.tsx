@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { services } from "@/lib/services";
 import { getService } from "@/lib/content";
+import { JsonLd, faqLd } from "@/components/JsonLd";
 import { FaqList, type FaqItem } from "@/components/ui/FaqList";
 import { FinalCta } from "@/components/home/FinalCta";
 
@@ -23,8 +24,10 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
   const t = await getTranslations({ locale: l, namespace: "faqPage" });
   const th = await getTranslations({ locale: l, namespace: "home.faq" });
   const ts = await getTranslations({ locale: l, namespace: "services" });
+  const general = th.raw("items") as FaqItem[];
   return (
     <>
+      <JsonLd data={faqLd([...general, ...services.flatMap((s) => getService(s.slug, l).faqs)])} />
       <section id="hero" className="container-page pb-4 pt-12 md:pt-20">
         <h1 className="display text-4xl md:text-6xl">{t("title")}</h1>
         <p className="mt-4 max-w-[60ch] text-lg text-n-700">{t("intro")}</p>
