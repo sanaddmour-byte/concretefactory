@@ -78,7 +78,7 @@ export async function Header({ locale }: { locale: Locale }) {
   );
 
   return (
-    <header className="site-header sticky top-0 z-30 border-b border-n-200 bg-n-50/95 backdrop-blur">
+    <header className="site-header sticky top-0 z-30 border-b-2 border-olive-600 bg-n-50/95 backdrop-blur">
       <div className="container-page relative flex h-[var(--header-h)] items-center justify-between gap-4">
         <Logo locale={locale} label={t("a11y.home")} />
 

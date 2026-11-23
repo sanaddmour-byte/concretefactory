@@ -10,14 +10,14 @@ export async function FeaturedProject({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "home.featured" });
   const ts = await getTranslations({ locale, namespace: "services" });
   return (
-    <section className="bg-n-100 py-16 md:py-24" aria-labelledby="featured-h">
+    <section className="bg-olive-50 py-16 md:py-24" aria-labelledby="featured-h">
       <div className="container-page grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         {/* Layered parallax: large background image drifts slowly, the medallion inset drifts faster */}
         <div className="relative mx-auto w-full max-w-[520px] pb-16 lg:max-w-none">
           <div className="relative aspect-[4/5] overflow-hidden rounded-card bg-n-200 lg:w-[78%]">
             <Photo id="stamped-cobblestone-fan-driveway-01" locale={locale} fill sizes="(min-width: 1024px) 420px, 90vw" className="layer-slow" focal="50% 70%" />
           </div>
-          <div className="layer-fast absolute bottom-0 end-0 w-[58%] overflow-hidden rounded-card border-4 border-n-100 bg-n-200 shadow-[0_16px_32px_-16px_rgb(0_0_0/0.35)] lg:w-[52%]">
+          <div className="layer-fast absolute bottom-0 end-0 w-[58%] overflow-hidden rounded-card border-4 border-olive-50 bg-n-200 shadow-[0_16px_32px_-16px_rgb(0_0_0/0.35)] lg:w-[52%]">
             <Photo id="stamped-compass-rose-medallion-01" locale={locale} sizes="(min-width: 1024px) 300px, 50vw" />
           </div>
         </div>

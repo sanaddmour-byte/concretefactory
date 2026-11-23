@@ -199,6 +199,9 @@ No WebGL, no scroll-jacking (sticky pinning is allowed, hijacked scroll speed is
 
 ---
 
+### 5.1b Palette revision (client request)
+No pure white or pure black anywhere. "White" is very light grey (`#ECECEC`), "black" is dark grey (`#2E2E2E`; dark sections use it as their background). Neutrals are grey tones from `#ECECEC` to `#262626`. Olive green is a visible secondary: tinted bands and cards (`#E5E9D2` / `#D8DDBA`), the header and footer rules, chips, step rules and labels (text `#566029`/`#434B20`). Maroon `#8A2433` is the punch; yellow `#E3B53A` stays a small hint. The logo is recoloured to dark/light grey.
+
 ## 6. COMPONENT STATES (every component, no exceptions)
 - **Default, hover, focus-visible** (2 px oxide ring with an offset), **active, disabled.**
 - **Loading:** skeletons for content, spinners only inside buttons.

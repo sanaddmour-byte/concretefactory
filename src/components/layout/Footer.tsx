@@ -14,7 +14,7 @@ export async function Footer({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale });
   const c = site.contact;
   return (
-    <footer className="on-dark mt-24 pb-24 pt-16 lg:pb-16">
+    <footer className="on-dark mt-24 border-t-4 border-olive-600 pb-24 pt-16 lg:pb-16">
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_2fr_1.2fr]">
         <div>
           <Logo locale={locale} label={t("a11y.home")} tone="dark" large />

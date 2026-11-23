@@ -48,3 +48,13 @@ export function finishLabel(f: Finish, l: Locale, familyName: string): string {
 
 /** Codes are shown publicly only once the client approves the proposed scheme. */
 export const showCode = (f: Finish) => f.codeStatus === "approved";
+
+export type ColourFamily = "grey" | "warm" | "multicolour";
+/** Derived from the client's own colour words; terrazzo/aggregate (no colour named) are stone-chip mixes. */
+export function colourFamily(f: Finish): ColourFamily {
+  const c = f.colour?.en.toLowerCase();
+  if (!c) return "multicolour";
+  return /grey|gray|silver/.test(c) ? "grey" : "warm";
+}
+export const finishSlug = (f: Finish) => f.code.toLowerCase();
+export const getFinishBySlug = (slug: string) => finishes.find((f) => finishSlug(f) === slug);

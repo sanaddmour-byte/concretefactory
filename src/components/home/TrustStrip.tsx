@@ -10,12 +10,12 @@ export async function TrustStrip({ locale }: { locale: string }) {
   const items = (["years", "area", "projects"] as const).filter((k) => hasData(s[k]));
   if (!items.length) return null;
   return (
-    <section aria-label="Company figures" className="border-y border-n-200 bg-n-100">
+    <section aria-label="Company figures" className="border-y border-olive-200 bg-olive-100">
       <dl className="container-page grid grid-cols-1 gap-6 py-8 sm:grid-cols-3">
         {items.map((k) => (
           <div key={k}>
-            <dd className="display text-4xl"><bdi className="ltr-num">{s[k]}</bdi></dd>
-            <dt className="text-n-600">{t(k)}</dt>
+            <dd className="display text-4xl text-olive-700"><bdi className="ltr-num">{s[k]}</bdi></dd>
+            <dt className="text-n-700">{t(k)}</dt>
           </div>
         ))}
       </dl>

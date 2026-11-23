@@ -25,13 +25,13 @@ const out = (n) => path.join(root, "public/brand", n);
 const mixer = { left: 165, top: 210, width: 535, height: 285 }; // mixer + diamonds, no ring/text
 const roundel = { left: 105, top: 110, width: 650, height: 650 };
 
-await rgba([20, 20, 20]).extract(roundel).png().toFile(out("logo-roundel.png"));
-await rgba([247, 247, 247]).extract(roundel).png().toFile(out("logo-roundel-light.png"));
-await rgba([20, 20, 20], 290).extract(mixer).png().toFile(out("logo-mark.png"));
-await rgba([247, 247, 247], 290).extract(mixer).png().toFile(out("logo-mark-light.png"));
+await rgba([46, 46, 46]).extract(roundel).png().toFile(out("logo-roundel.png"));
+await rgba([236, 236, 236]).extract(roundel).png().toFile(out("logo-roundel-light.png"));
+await rgba([46, 46, 46], 290).extract(mixer).png().toFile(out("logo-mark.png"));
+await rgba([236, 236, 236], 290).extract(mixer).png().toFile(out("logo-mark-light.png"));
 
-// Favicon / app icon: original roundel on its grey, square, 512 + 180
-const sq = sharp(src).extract({ left: 60, top: 60, width: 740, height: 740 });
-await sq.clone().resize(512).png().toFile(path.join(root, "src/app/icon.png"));
-await sq.clone().resize(180).png().toFile(path.join(root, "src/app/apple-icon.png"));
+// Favicon / app icon: dark-grey roundel on a light-grey square (no pure black or white), 512 + 180
+const iconBase = await rgba([46, 46, 46]).extract(roundel).flatten({ background: "#d4d4d4" }).extend({ top: 40, bottom: 40, left: 40, right: 40, background: "#d4d4d4" }).png().toBuffer();
+await sharp(iconBase).resize(512).png().toFile(path.join(root, "src/app/icon.png"));
+await sharp(iconBase).resize(180).png().toFile(path.join(root, "src/app/apple-icon.png"));
 console.log("bg grey", bg, "brand assets written");

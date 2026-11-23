@@ -2,17 +2,17 @@
 
 /* ---------- Design tokens (brief §5.1). Components use only these. ---------- */
 :root {
-  --n-50: #f7f7f7;
-  --n-100: #efefef;
-  --n-200: #e1e1e1;
-  --n-300: #cdcdcd;
-  --n-400: #a6a6a6;
-  --n-500: #808080;
-  --n-600: #636363;
-  --n-700: #4a4a4a;
-  --n-800: #333333;
-  --n-900: #212121;
-  --n-950: #141414;
+  --n-50: #ececec;
+  --n-100: #e2e2e2;
+  --n-200: #d4d4d4;
+  --n-300: #bcbcbc;
+  --n-400: #9a9a9a;
+  --n-500: #7b7b7b;
+  --n-600: #5e5e5e;
+  --n-700: #494949;
+  --n-800: #383838;
+  --n-900: #2e2e2e;
+  --n-950: #262626;
 
   /* Punch: maroon, with a hint of yellow */
   --maroon: #8a2433; /* 8.2:1 on n-50, 6.8:1 on n-200 */
@@ -21,11 +21,14 @@
   --maroon-dark-hover: #f0a6ae;
   --yellow: #e3b53a; /* decorative only on light (1.8:1); text/rings on dark and on maroon */
 
-  /* Quiet secondary: olive */
-  --olive-50: #f1f2ea;
-  --olive-200: #d6d9bf;
-  --olive-600: #5c6330; /* 6.0:1 on n-50 */
-  --olive-dark: #a9b26a; /* 8.1:1 on n-950 */
+  /* Olive: a visible secondary (tinted bands, chips, rules, labels). No pure white or black anywhere:
+     "white" is very light grey (n-50) and "black" is dark grey (n-900). */
+  --olive-50: #e5e9d2;
+  --olive-100: #d8ddba;
+  --olive-200: #c3caa0;
+  --olive-600: #566029; /* text: 5.7:1 on n-50 */
+  --olive-700: #434b20; /* text on olive tints: 6.6:1 on olive-100 */
+  --olive-dark: #b4bd78; /* on dark grey: 6.8:1 on n-900 */
 
   --success: #4d5a1e;
   --warning: #7a5a00;
@@ -70,8 +73,10 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] .dis
   --color-maroon-dark-hover: var(--maroon-dark-hover);
   --color-yellow: var(--yellow);
   --color-olive-50: var(--olive-50);
+  --color-olive-100: var(--olive-100);
   --color-olive-200: var(--olive-200);
   --color-olive-600: var(--olive-600);
+  --color-olive-700: var(--olive-700);
   --color-olive-dark: var(--olive-dark);
   --color-success: var(--success);
   --color-warning: var(--warning);
@@ -142,7 +147,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { letter-spacing: 0; 
 
 /* Dark surfaces (industrial band, footer) flip tokens locally */
 .on-dark {
-  background: var(--n-950);
+  background: var(--n-900);
   color: var(--n-200);
 }
 .on-dark h1, .on-dark h2, .on-dark h3 { color: var(--n-50); }
@@ -281,8 +286,8 @@ summary::-webkit-details-marker { display: none; }
 /* Story on dark surfaces (industrial page) */
 .on-dark .story-copy p:last-child { color: var(--n-300); }
 .on-dark .story-eyebrow { color: var(--olive-dark); }
-.on-dark .story-shot { background: var(--n-900); }
-.on-dark .story-progress { background: var(--n-800); }
+.on-dark .story-shot { background: var(--n-800); }
+.on-dark .story-progress { background: var(--n-700); }
 .on-dark .story-progress i { background: var(--yellow); }
 
 /* Diptych: the two figures slide in from opposite sides as they enter (images only) */
@@ -309,5 +314,6 @@ summary::-webkit-details-marker { display: none; }
 .on-dark .text-n-900 { color: var(--n-50); }
 .on-dark .btn.text-n-900 { border-color: var(--n-600); }
 .on-dark .btn.text-n-900:hover { background: var(--n-800); }
-.on-dark li.bg-n-50 { background: var(--n-900); border-color: var(--n-700); }
+.on-dark li.bg-olive-100 { background: var(--n-800); border-color: var(--n-700); }
+.on-dark .text-olive-700 { color: var(--olive-dark); }
 .on-dark a.text-maroon { color: var(--maroon-dark); }

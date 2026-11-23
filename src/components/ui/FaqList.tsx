@@ -13,7 +13,7 @@ export function FaqList({ items, title, id }: { items: FaqItem[]; title: string;
           <details key={it.q} name={id} className="group py-1">
             <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-3 text-lg font-medium text-n-900">
               {it.q}
-              <ChevronDown size={20} strokeWidth={1.5} aria-hidden className="chev shrink-0 motion-safe:transition-transform" />
+              <ChevronDown size={20} strokeWidth={1.5} aria-hidden className="chev shrink-0 text-olive-600 motion-safe:transition-transform" />
             </summary>
             <p className="pb-4 text-n-700">
               {it.a}
