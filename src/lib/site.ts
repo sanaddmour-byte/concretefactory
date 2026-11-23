@@ -18,6 +18,8 @@ const schema = z.object({
     address: z.string(),
     hours: z.string(),
     mapsUrl: z.string(),
+    replySla: z.string(),
+    closedDays: z.array(z.number().int().min(0).max(6)),
   }),
   socials: z.array(z.object({ label: z.string(), url: z.url() })),
   stats: z

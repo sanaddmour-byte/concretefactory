@@ -68,7 +68,7 @@ export default async function ProjectPage({ params }: Props) {
         </nav>
         <ViewTransition name={`proj-${slug}`} share="morph">
           <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-card bg-n-200 md:aspect-[16/8]">
-            <Photo id={p.heroImage as PhotoId} locale={l} fill priority focal={p.heroFocal} sizes="(min-width: 1280px) 1216px, 100vw" />
+            <Photo id={p.heroImage as PhotoId} locale={l} fill priority focal={p.heroFocal} sizes="(min-width: 1280px) 1216px, 100vw" className="hero-drift" />
           </div>
         </ViewTransition>
         <h1 className="display mt-8 text-4xl md:text-6xl">{p.title}</h1>

@@ -7,6 +7,7 @@ import { oswald, tajawal } from "../fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SamplesProvider } from "@/components/samples/SamplesProvider";
+import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { MobileBar } from "@/components/layout/MobileBar";
 import { whatsappUrl, site } from "@/lib/site";
 import "../globals.css";
@@ -38,7 +39,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} dir={dirOf(locale)} className={`${oswald.variable} ${tajawal.variable}`}>
       <body>
-        <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied }, samples: messages.samples, projects: messages.projects, finishes: messages.finishes }}>
+        <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied }, samples: messages.samples, projects: messages.projects, finishes: messages.finishes, quote: messages.quote, visit: messages.visit }}>
           <a href="#main" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">
             {t("a11y.skip")}
           </a>
@@ -47,6 +48,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             <main id="main">{children}</main>
           </SamplesProvider>
           <Footer locale={locale} />
+          <AnalyticsEvents />
           <MobileBar
             quote={t("nav.quote")}
             whatsapp={t("nav.whatsapp")}

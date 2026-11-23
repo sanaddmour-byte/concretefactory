@@ -34,7 +34,7 @@ export async function SpecTable({ specs, name, specSheet, locale }: { specs: Spe
         <div className="mt-8 flex flex-wrap gap-3">
           {real.length > 0 && <CopySpec text={text} />}
           {specSheet && !isPlaceholder(specSheet) ? (
-            <a href={specSheet} className={buttonClass("secondary")} download>
+            <a href={specSheet} className={buttonClass("secondary")} data-track="spec_download" download>
               <Download size={18} strokeWidth={1.5} aria-hidden /> {t("downloadSpec")}
             </a>
           ) : (

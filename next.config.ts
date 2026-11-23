@@ -9,6 +9,8 @@ const config: NextConfig = {
     deviceSizes: [360, 640, 768, 1024, 1280, 1600, 1920],
   },
   poweredByHeader: false,
+  // Quote/visit forms upload up to 4 MB of attachments (Vercel Functions cap request bodies at 4.5 MB)
+  experimental: { serverActions: { bodySizeLimit: "5mb" } },
 };
 
 export default withNextIntl(config);

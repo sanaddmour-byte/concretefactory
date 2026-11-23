@@ -25,11 +25,13 @@
     "phone": "+962797179702",
     "phoneDisplay": "+962 79 717 9702",
     "whatsapp": "962797179702",
-    "email": "{{PLACEHOLDER: public email}}",
-    "salesEmail": "{{PLACEHOLDER: quote inbox}}",
+    "email": "info@theconcretefactoryjo.com",
+    "salesEmail": "info@theconcretefactoryjo.com",
     "address": "{{PLACEHOLDER: factory / showroom address}}",
     "hours": "{{PLACEHOLDER: opening hours}}",
-    "mapsUrl": "{{PLACEHOLDER: Google Maps link}}"
+    "mapsUrl": "{{PLACEHOLDER: Google Maps link}}",
+    "replySla": "{{CONFIRM: reply time, e.g. one working day}}",
+    "closedDays": []
   },
   "socials": [],
   "stats": {

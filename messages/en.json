@@ -374,5 +374,164 @@
     "undo": "Undo",
     "full": "Your sample list is full (6 maximum).",
     "tray": "Sample list"
+  },
+  "quote": {
+    "title": "Get a quote",
+    "intro": "Tell us about your project in a few short steps. It takes about two minutes.",
+    "progress": "Step {n} of {total}",
+    "stepNames": [
+      "What",
+      "Where and how big",
+      "Finish and files",
+      "Timing",
+      "Contact"
+    ],
+    "s1": {
+      "title": "What do you need?",
+      "hint": "Choose one or more services."
+    },
+    "s2": {
+      "title": "Where and how big?"
+    },
+    "s3": {
+      "title": "Finish and files",
+      "hint": "Optional, but it helps us quote accurately."
+    },
+    "s4": {
+      "title": "When would you like to start?",
+      "hint": "Optional."
+    },
+    "s5": {
+      "title": "How can we reach you?"
+    },
+    "projectType": "Project type",
+    "types": {
+      "villa": "Villa or house",
+      "apartment": "Apartment",
+      "commercial": "Commercial",
+      "industrial": "Industrial"
+    },
+    "city": "City",
+    "cityPlaceholder": "Choose a city",
+    "size": "Approximate size",
+    "sizeUnit": "m²",
+    "sizeHint": "Use linear metres for countertops. A rough number is fine.",
+    "setting": "Indoor or outdoor",
+    "settings": {
+      "indoor": "Indoor",
+      "outdoor": "Outdoor",
+      "both": "Both"
+    },
+    "finishes": "Finishes you like",
+    "finishesHint": "Up to 6. Pre-filled from your sample list.",
+    "finishesNone": "No finishes chosen yet",
+    "browseFinishes": "Browse the Finish Library",
+    "files": "Photos or drawings",
+    "filesHint": "Up to 5 files (JPG, PNG or PDF), 4 MB in total. Photos are compressed automatically; for larger files, send them on WhatsApp.",
+    "filesAdd": "Add files",
+    "filesRemove": "Remove {name}",
+    "start": "Start window",
+    "starts": {
+      "asap": "As soon as possible",
+      "1-3": "In 1 to 3 months",
+      "later": "Later",
+      "unsure": "Not sure yet"
+    },
+    "name": "Your name",
+    "phone": "Mobile number",
+    "phoneHint": "Jordan numbers: 79 717 9702. International numbers start with +",
+    "channel": "How should we reply?",
+    "channels": {
+      "whatsapp": "WhatsApp",
+      "call": "Phone call",
+      "email": "Email"
+    },
+    "email": "Email address",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Get my quote",
+    "sending": "Sending…",
+    "valid": "Looks good",
+    "errors": {
+      "services": "Choose at least one service.",
+      "projectType": "Choose a project type.",
+      "city": "Choose a city.",
+      "setting": "Choose indoor, outdoor or both.",
+      "size": "Enter a number, for example 120.",
+      "name": "Enter your name.",
+      "phone": "Enter a valid mobile number.",
+      "email": "Enter a valid email address.",
+      "channel": "Choose how we should reply.",
+      "files": "Some files can't be used. Use JPG, PNG or PDF: up to 5 files and 4 MB in total.",
+      "send": "We couldn't send your request. You can send it on WhatsApp instead.",
+      "rate": "Too many requests. Please try again in a few minutes."
+    },
+    "draft": "We saved your earlier answers.",
+    "restore": "Restore",
+    "fresh": "Start fresh",
+    "success": {
+      "title": "Thank you, we have your request",
+      "ref": "Your reference",
+      "sla": "We'll reply within {sla}.",
+      "slaGeneric": "We'll be in touch soon.",
+      "whatsapp": "Continue on WhatsApp",
+      "again": "Send another request",
+      "noEmail": "Developer note: email is not configured, so nothing was sent."
+    },
+    "fail": {
+      "title": "We couldn't send that just now",
+      "whatsapp": "Send it on WhatsApp"
+    },
+    "wa": {
+      "intro": "Hello, I'd like a quote.",
+      "ref": "Reference",
+      "services": "Services",
+      "project": "Project",
+      "size": "Size",
+      "setting": "Setting",
+      "start": "Start",
+      "name": "Name"
+    },
+    "stepAnnounce": "Step {n} of {total}: {name}"
+  },
+  "visit": {
+    "title": "Book a sample visit",
+    "intro": "Pick a day and time and we'll confirm with you. Bring your plans if you have them.",
+    "address": "Address",
+    "hours": "Hours",
+    "date": "Preferred date",
+    "dateHint": "From tomorrow onwards.",
+    "slot": "Time",
+    "slots": {
+      "morning": "Morning",
+      "afternoon": "Afternoon"
+    },
+    "finishes": "Finishes you'd like to see",
+    "note": "Anything else we should know?",
+    "name": "Your name",
+    "phone": "Mobile number",
+    "submit": "Request a visit",
+    "sending": "Sending…",
+    "errors": {
+      "date": "Choose a date from tomorrow onwards.",
+      "slot": "Choose a time.",
+      "name": "Enter your name.",
+      "phone": "Enter a valid mobile number.",
+      "send": "We couldn't send your request. You can send it on WhatsApp instead.",
+      "rate": "Too many requests. Please try again in a few minutes."
+    },
+    "success": {
+      "title": "Thank you, we'll confirm your visit",
+      "ref": "Your reference",
+      "again": "Request another visit"
+    },
+    "wa": {
+      "intro": "Hello, I'd like to book a sample visit.",
+      "date": "Date",
+      "slot": "Time",
+      "name": "Name",
+      "finishes": "Finishes",
+      "ref": "Reference"
+    }
   }
 }
