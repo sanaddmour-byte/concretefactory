@@ -17,7 +17,7 @@ export async function Footer({ locale }: { locale: Locale }) {
     <footer className="on-dark mt-24 pb-24 pt-16 lg:pb-16">
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_2fr_1.2fr]">
         <div>
-          <Logo locale={locale} label={t("a11y.home")} tone="dark" />
+          <Logo locale={locale} label={t("a11y.home")} tone="dark" large />
           <p className="mt-4 max-w-xs text-n-300">{site.tagline[locale]}</p>
           <p className="mt-2 text-sm text-n-400">{t("footer.area")}</p>
           <div className="mt-4">
