@@ -4,8 +4,9 @@ import type { Locale } from "@/i18n/routing";
 import { Photo } from "@/components/ui/Photo";
 import type { PhotoId } from "@/lib/photos";
 import { buttonClass } from "@/lib/ui";
+import { finishByPhoto, finishLabel } from "@/lib/finishes";
 
-// Real samples only. Names/codes arrive in Phase 4a, so swatches carry the family only (a fact), no invented names.
+// Real samples with client-supplied names (content/finishes). Terrazzo/aggregate show the material until colour names are supplied.
 const swatches: { id: PhotoId; family: "stamped-concrete" | "terrazzo" | "exposed-aggregate" }[] = [
   { id: "stamped-fan-cobble-red-sealed-01", family: "stamped-concrete" },
   { id: "terrazzo-beige-black-red-01", family: "terrazzo" },
@@ -35,7 +36,7 @@ export async function FinishTeaser({ locale }: { locale: Locale }) {
               <span className="relative block aspect-square overflow-hidden rounded-card bg-n-100">
                 <Photo id={s.id} locale={locale} fill sizes="(min-width: 1024px) 16vw, 33vw" className="motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105" />
               </span>
-              <span className="mt-2 block text-sm text-n-600">{ts(`${s.family}.name`)} · {t("sample")}</span>
+              <span dir="auto" className="mt-2 block text-sm text-n-700">{(() => { const f = finishByPhoto(s.id); return f ? finishLabel(f, locale, ts(`${s.family}.name`)) : ts(`${s.family}.name`); })()}</span>
             </Link>
           </li>
         ))}

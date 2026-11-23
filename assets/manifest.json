@@ -7,8 +7,8 @@
     "height": 2016,
     "orientation": "portrait",
     "alt": {
-      "en": "Sealed stamped concrete in a grey herringbone brick pattern",
-      "ar": "خرسانة مطبوعة مختومة بنمط الطوب المتعرج (هيرينغبون) باللون الرمادي"
+      "en": "Sealed stamped concrete in a silver grey brick pattern",
+      "ar": "خرسانة مطبوعة مختومة بنمط الطوب باللون الرمادي الفضي"
     },
     "notes": ""
   },
@@ -20,8 +20,8 @@
     "height": 1512,
     "orientation": "landscape",
     "alt": {
-      "en": "Sealed stamped concrete with a random ashlar slate pattern",
-      "ar": "خرسانة مطبوعة مختومة بنمط حجر الأردواز العشوائي"
+      "en": "Sealed stamped concrete with a silver grey brick slate pattern",
+      "ar": "خرسانة مطبوعة مختومة بنمط الطوب المنقوش باللون الرمادي الفضي"
     },
     "notes": ""
   },
@@ -137,10 +137,10 @@
     "height": 767,
     "orientation": "landscape",
     "alt": {
-      "en": "Concrete surface with exposed cyan aggregate chips",
-      "ar": "سطح خرساني بحبيبات ركام فيروزية مكشوفة"
+      "en": "Concrete surface with exposed glow in the dark cyan aggregate chips",
+      "ar": "سطح خرساني بحبيبات ركام فيروزية مكشوفة مضيئة في الظلام"
     },
-    "notes": "CONFIRM: photoluminescent glow stones or coloured glass? If glow, add a night photo before claiming it."
+    "notes": "Client states the cyan aggregate glows in the dark. Show the claim in text only; add a night photo before using any glow imagery."
   },
   {
     "file": "assets/photos/materials-steel-fibers-loose-01.jpg",
@@ -241,8 +241,8 @@
     "height": 1956,
     "orientation": "square",
     "alt": {
-      "en": "Exposed aggregate concrete with mixed red, cream and green marble pebbles",
-      "ar": "خرسانة بركام مكشوف من حصى رخامي مختلط بالأحمر والكريمي والأخضر"
+      "en": "Exposed aggregate concrete with mixed daba'a marble pebbles",
+      "ar": "خرسانة بركام مكشوف من حصى رخام الدبعة المختلط"
     },
     "notes": ""
   },
@@ -254,8 +254,8 @@
     "height": 1280,
     "orientation": "square",
     "alt": {
-      "en": "Grey terrazzo with multicolour marble chips",
-      "ar": "تيرازو رمادي برقائق رخام متعددة الألوان"
+      "en": "Grey terrazzo with daba'a marble chips",
+      "ar": "تيرازو رمادي برقائق رخام الدبعة"
     },
     "notes": ""
   },
@@ -280,8 +280,8 @@
     "height": 1910,
     "orientation": "square",
     "alt": {
-      "en": "Stamped concrete in a grey slate cobble pattern with a sealed sheen",
-      "ar": "خرسانة مطبوعة بنمط حجارة الأردواز الرمادية مع لمعة الطلاء الواقي"
+      "en": "Stamped concrete in a grey danish fan pattern with a sealed sheen",
+      "ar": "خرسانة مطبوعة بنمط المروحة الدنماركية الرمادية مع لمعة طلاء واقٍ"
     },
     "notes": "Near-square; crop to 1:1 for a swatch. CONFIRM pattern and colour names."
   },
@@ -300,7 +300,7 @@
   },
   {
     "file": "assets/photos/finish-tan-sawcut-01.jpg",
-    "service": "interior-floors",
+    "service": "stamped-concrete",
     "role": "texture/detail",
     "width": 2016,
     "height": 1512,
@@ -309,7 +309,7 @@
       "en": "Tan mottled concrete surface with a fine saw-cut joint",
       "ar": "سطح خرساني بيج مبقّع مع فاصل قصّ دقيق"
     },
-    "notes": "CONFIRM: finish type (microtopping, stained or other) before use. Not placed in stamped/terrazzo sections; tagged interior-floors until confirmed."
+    "notes": "Client named this a stamped 'Blue Skin' pattern in Beige (reclassified from interior-floors). Saw-cut joint visible."
   },
   {
     "file": "assets/photos/terrazzo-beige-black-red-01.jpg",
@@ -319,8 +319,8 @@
     "height": 1986,
     "orientation": "square",
     "alt": {
-      "en": "Beige terrazzo with black, maroon and grey stone chips",
-      "ar": "تيرازو بيج برقائق حجرية سوداء وحمراء داكنة ورمادية"
+      "en": "Beige terrazzo with Aqaba granite stone chips",
+      "ar": "تيرازو بيج برقائق حجرية من جرانيت العقبة"
     },
     "notes": "Square swatch. Maroon chips echo the brand accent."
   },
@@ -345,8 +345,8 @@
     "height": 2350,
     "orientation": "square",
     "alt": {
-      "en": "Grey terrazzo with large black, pink and maroon stone chips",
-      "ar": "تيرازو رمادي برقائق حجرية كبيرة سوداء ووردية وحمراء"
+      "en": "Grey terrazzo with large Aqaba granite stone chips",
+      "ar": "تيرازو رمادي برقائق حجرية كبيرة من جرانيت العقبة"
     },
     "notes": "Square swatch, large-chip mix."
   },
@@ -358,8 +358,8 @@
     "height": 2315,
     "orientation": "square",
     "alt": {
-      "en": "Glossy sealed stamped fan-cobblestone concrete in deep maroon-red",
-      "ar": "خرسانة مطبوعة بنمط حجارة المروحة بلون أحمر داكن لامع مع طلاء واقي"
+      "en": "Glossy sealed stamped european fan in deep maroon-red",
+      "ar": "خرسانة مطبوعة مختومة لامعة بنمط المروحة الأوروبية بلون أحمر داكن"
     },
     "notes": "Strong brand-colour swatch. Glare/reflections visible; keep true colour."
   },
@@ -384,8 +384,8 @@
     "height": 2576,
     "orientation": "portrait",
     "alt": {
-      "en": "Golden stamped fan-cobblestone concrete with overlapping arcs",
-      "ar": "خرسانة مطبوعة بنمط حجارة المروحة الذهبية بأقواس متداخلة"
+      "en": "Golden stamped european fan concrete with overlapping arcs",
+      "ar": "خرسانة مطبوعة بنمط المروحة الأوروبية بلون ذهبي مع أقواس متداخلة"
     },
     "notes": "Portrait; strong pattern shot."
   },
@@ -410,8 +410,8 @@
     "height": 1024,
     "orientation": "portrait",
     "alt": {
-      "en": "Blue stamped concrete in a flagstone pattern with small pebble-shaped joints",
-      "ar": "خرسانة مطبوعة زرقاء بنمط الحجر المسطح مع فواصل على شكل حصى صغيرة"
+      "en": "Blue stamped concrete in a garden stone pattern with small pebble-shaped joints",
+      "ar": "خرسانة مطبوعة زرقاء بنمط حجر الحديقة مع فواصل صغيرة على شكل حصى"
     },
     "notes": "Portrait (768 px wide): use at swatch size only. CONFIRM colour name. Keep true colour; do not tint."
   },
@@ -423,23 +423,10 @@
     "height": 768,
     "orientation": "landscape",
     "alt": {
-      "en": "Terracotta stamped concrete floor in a running-bond brick pattern",
-      "ar": "أرضية من الخرسانة المطبوعة بلون التيراكوتا بنمط الطوب المتداخل"
+      "en": "Terracotta stamped concrete floor in a running-cobble stone pattern",
+      "ar": "أرضية خرسانة مطبوعة بلون التيراكوتا بنمط الكوبلستون المتتابع"
     },
     "notes": "Installed interior/covered floor, 1024 px wide: gallery use at ≤1024 px. Wall edge visible at top."
-  },
-  {
-    "file": "assets/photos/terrazzo-cream-multi-chip-01.jpg",
-    "service": "terrazzo",
-    "role": "texture/swatch",
-    "width": 1024,
-    "height": 768,
-    "orientation": "landscape",
-    "alt": {
-      "en": "Cream terrazzo with small black, grey and ochre stone chips",
-      "ar": "تيرازو كريمي برقائق حجرية صغيرة سوداء ورمادية وأوكر"
-    },
-    "notes": "1024 px wide; swatch size only. Pairs with terrazzo-cream-black-01 (different chip mix)."
   },
   {
     "file": "assets/photos/stamped-rock-rose-terracotta-01.jpg",
@@ -488,7 +475,7 @@
     "height": 2016,
     "orientation": "portrait",
     "alt": {
-      "en": "Courtyard in grey fan-cobblestone stamped concrete with a cream ashlar border",
+      "en": "Courtyard in grey european fan stamped concrete with a cream ashlar border",
       "ar": "فناء بخرسانة مطبوعة رمادية بنمط حجارة المروحة مع إطار كريمي بنمط الحجر المقطّع"
     },
     "notes": "Shows pattern combination (cobble + ashlar border). Outdoor furniture/rack visible; blue wall."
@@ -505,19 +492,6 @@
       "ar": "منظر بزاوية منخفضة لخرسانة مطبوعة رمادية بنمط الحجارة المصقولة تحت ضوء الشمس"
     },
     "notes": "Moody, high-contrast mood shot (dark surroundings). Not for swatches: colour is exaggerated by backlight. 960 px wide."
-  },
-  {
-    "file": "assets/photos/stamped-ashlar-cream-lowangle-01.jpg",
-    "service": "stamped-concrete",
-    "role": "project",
-    "width": 960,
-    "height": 1280,
-    "orientation": "portrait",
-    "alt": {
-      "en": "Cream stamped ashlar slate paving in a courtyard with stairs and trees behind",
-      "ar": "رصف كريمي من الخرسانة المطبوعة بنمط حجر الأردواز في فناء مع درج وأشجار خلفه"
-    },
-    "notes": "960 px wide: display ≤960 px."
   },
   {
     "file": "assets/photos/countertop-waterfall-bar-grey-01.jpg",

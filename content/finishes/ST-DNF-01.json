@@ -1,0 +1,24 @@
+{
+  "code": "ST-DNF-01",
+  "codeStatus": "proposed",
+  "photo": "stamped-slate-grey-01",
+  "photoUse": "swatch",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "Danish Fan",
+    "ar": null,
+    "arProposed": "المروحة الدنماركية"
+  },
+  "colour": {
+    "en": "Silver Grey",
+    "ar": null,
+    "arProposed": "رمادي فضي"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

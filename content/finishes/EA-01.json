@@ -1,0 +1,24 @@
+{
+  "code": "EA-01",
+  "codeStatus": "proposed",
+  "photo": "exposed-aggregate-marble-mix-01",
+  "photoUse": "swatch",
+  "family": "exposed-aggregate",
+  "pattern": {
+    "en": "Exposed",
+    "ar": null,
+    "arProposed": "ركام مكشوف"
+  },
+  "colour": null,
+  "material": {
+    "en": "Daba'a marble pebbles",
+    "ar": null,
+    "arProposed": "حصى رخام الدبعة"
+  },
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

@@ -1,0 +1,21 @@
+﻿Proposed code,Photo id,Family,Use,"Pattern (EN, as you wrote it)",Pattern AR (our proposal),"Colour (EN, as you wrote it)",Colour AR (our proposal),Material (EN),Material AR (our proposal),Approve code? (yes / new code),Approve AR? (yes / your AR text),Question for you
+EA-01,exposed-aggregate-marble-mix-01,exposed-aggregate,swatch,Exposed,ركام مكشوف,,,Daba'a marble pebbles,حصى رخام الدبعة,,,Pattern was typed 'Exposed': full pattern name? Colour name? Arabic spelling of daba'a (الدبعة?)
+ST-ASL-01,stamped-ashlar-ochre-01,stamped-concrete,installed-floor,Ashlar Slate,أشلار سليت,Beige Brown,بيج بني,,,,,
+ST-B10-01,stamped-square-tile-brown-01,stamped-concrete,swatch,10x10 Brick Stone,حجر الطوب 10×10,Red Beige,بيج أحمر,,,,,
+ST-BRK-01,stamped-herringbone-sealed-01,stamped-concrete,swatch,Brick,الطوب,Silver Grey,رمادي فضي,,,,,Same name and colour as ST-BRK-02 but a different look (herringbone vs random). Different pattern names?
+ST-BRK-02,stamped-ashlar-sealed-01,stamped-concrete,swatch,Brick,الطوب,Silver Grey,رمادي فضي,,,,,Same name and colour as ST-BRK-01 but a different look. Different pattern names?
+ST-BSK-01,finish-tan-sawcut-01,stamped-concrete,swatch,Blue Skin,بلو سكن,Beige,بيج,,,,,"Beige surface named 'Blue Skin': confirm this is the pattern name, and that it is stamped concrete."
+ST-CSK-01,stamped-slate-terracotta-01,stamped-concrete,swatch,Ceasar Skin,سيزر سكن,Brown Beige,بيج بني,,,,,Spelling: 'Ceasar' or 'Caesar'?
+ST-DNF-01,stamped-slate-grey-01,stamped-concrete,swatch,Danish Fan,المروحة الدنماركية,Silver Grey,رمادي فضي,,,,,
+ST-EUF-01,stamped-fan-cobble-red-sealed-01,stamped-concrete,swatch,European Fan,المروحة الأوروبية,Brick Red,أحمر طوبي,,,,,
+ST-EUF-02,stamped-fan-cobble-gold-01,stamped-concrete,swatch,European Fan,المروحة الأوروبية,Beige,بيج,,,,,
+ST-EUF-03,stamped-courtyard-cobble-fan-cream-border-01,stamped-concrete,installed-floor,European Fan,المروحة الأوروبية,Silver Grey,رمادي فضي,,,,,
+ST-GRD-01,stamped-flagstone-pebble-blue-01,stamped-concrete,swatch,Garden Stone,حجر الحديقة,Blue Grey,رمادي أزرق,,,,,
+ST-LCB-01,stamped-brick-terracotta-floor-01,stamped-concrete,installed-floor,London Cobble Stone,لندن كوبل ستون,Brown Beige,بيج بني,,,,,
+ST-OBL-01,stamped-concentric-circles-01,stamped-concrete,swatch,Oblivion,أوبليفيون,Green Grey,رمادي مخضر,,,,,Is the green-grey tone the pigment or weathering?
+ST-SKN-01,stamped-rock-rose-terracotta-01,stamped-concrete,swatch,Stone Skin,ستون سكن,Red Pink,أحمر وردي,,,,,
+TZ-01,terrazzo-cream-black-01,terrazzo,swatch,Terrazzo,تيرازو,,,Black and grey marble chips,رقائق رخام سوداء ورمادية,,,Colour name? (you wrote 'Terrazzo')
+TZ-02,terrazzo-grey-multicolour-01,terrazzo,swatch,Terrazzo,تيرازو,,,Daba'a marble chips,رقائق رخام الدبعة,,,Colour name? Arabic spelling of daba'a?
+TZ-03,terrazzo-beige-black-red-01,terrazzo,swatch,Terrazzo,تيرازو,,,Aqaba granite chips,رقائق جرانيت العقبة,,,Colour name?
+TZ-04,terrazzo-grey-pink-large-chip-01,terrazzo,swatch,Terrazzo,تيرازو,,,Large Aqaba granite chips,رقائق جرانيت العقبة الكبيرة,,,Colour name?
+TZ-05,specialty-cyan-aggregate-01,terrazzo,swatch,Terrazzo,تيرازو,,,Glow-in-the-dark cyan aggregate chips,حبيبات ركام فيروزية مضيئة في الظلام,,,Family: terrazzo or exposed aggregate? You wrote pattern 'Terrazzo' (it shows on both pages). Colour name? Please send a night photo to show the glow.

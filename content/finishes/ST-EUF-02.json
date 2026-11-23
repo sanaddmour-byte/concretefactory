@@ -1,0 +1,24 @@
+{
+  "code": "ST-EUF-02",
+  "codeStatus": "proposed",
+  "photo": "stamped-fan-cobble-gold-01",
+  "photoUse": "swatch",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "European Fan",
+    "ar": null,
+    "arProposed": "المروحة الأوروبية"
+  },
+  "colour": {
+    "en": "Beige",
+    "ar": null,
+    "arProposed": "بيج"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

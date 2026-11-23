@@ -1,0 +1,24 @@
+{
+  "code": "TZ-05",
+  "codeStatus": "proposed",
+  "photo": "specialty-cyan-aggregate-01",
+  "photoUse": "swatch",
+  "family": "terrazzo",
+  "pattern": {
+    "en": "Terrazzo",
+    "ar": null,
+    "arProposed": "تيرازو"
+  },
+  "colour": null,
+  "material": {
+    "en": "Glow-in-the-dark cyan aggregate chips",
+    "ar": null,
+    "arProposed": "حبيبات ركام فيروزية مضيئة في الظلام"
+  },
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

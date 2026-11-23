@@ -244,5 +244,54 @@
   },
   "dev": {
     "photoNeeded": "الصورة مطلوبة"
+  },
+  "service": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "breadcrumb": "مسار التنقل",
+    "ctaQuote": "اطلب عرض سعر لـ{name}",
+    "whatsappText": "مرحباً، أرغب بعرض سعر لـ{name}.",
+    "whatsappCta": "اسأل عبر واتساب",
+    "whereTitle": "أين تُستخدم",
+    "optionsTitle": "الخيارات",
+    "optionsSub": "أنماط وألوان من مكتبة التشطيبات.",
+    "optionsAll": "استكشف جميع التشطيبات",
+    "galleryTitle": "معرض الصور",
+    "gallerySub": "أعمال وعيّنات حقيقية.",
+    "specsTitle": "المواصفات",
+    "specsSub": "للمعماريين والمقاولين.",
+    "copySpec": "انسخ نص المواصفات",
+    "copied": "تم النسخ",
+    "downloadSpec": "حمّل ورقة المواصفات (PDF)",
+    "specHeading": "مواصفات {name}",
+    "processTitle": "مراحل العمل",
+    "faqTitle": "أسئلة عن {name}",
+    "relatedTitle": "مشاريع ذات صلة",
+    "diptychTitle": "من الطازج إلى المختوم",
+    "diptychFresh": "رفع قالب الطباعة",
+    "diptychSealed": "نتيجة مختومة",
+    "diptychCaption": "مرحلة الطباعة ونتيجة مختومة، وليستا للبلاطة نفسها.",
+    "lightbox": {
+      "open": "افتح الصورة {n} من {total}",
+      "close": "إغلاق المعرض",
+      "prev": "الصورة السابقة",
+      "next": "الصورة التالية",
+      "counter": "{n} من {total}"
+    },
+    "spec": {
+      "thickness": "السماكة",
+      "reinforcement": "التسليح",
+      "method": "طريقة التشطيب",
+      "sealer": "نوع الختم",
+      "slip": "مقاومة الانزلاق",
+      "suitability": "الملاءمة للداخل والخارج",
+      "maintenance": "فترة الصيانة",
+      "leadTime": "مدة التنفيذ"
+    },
+    "overview": {
+      "title": "الخدمات",
+      "intro": "أرضيات وجدران وعناصر مدمجة بالخرسانة الزخرفية والمعمارية والصناعية."
+    },
+    "photoNeeded": "الصور قريباً"
   }
 }

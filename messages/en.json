@@ -244,5 +244,54 @@
   },
   "dev": {
     "photoNeeded": "PHOTO NEEDED"
+  },
+  "service": {
+    "home": "Home",
+    "services": "Services",
+    "breadcrumb": "Breadcrumb",
+    "ctaQuote": "Get a quote for {name}",
+    "whatsappText": "Hello, I'd like a quote for {name}.",
+    "whatsappCta": "Ask on WhatsApp",
+    "whereTitle": "Where it works",
+    "optionsTitle": "Options",
+    "optionsSub": "Patterns and colours from our Finish Library.",
+    "optionsAll": "Explore all finishes",
+    "galleryTitle": "Gallery",
+    "gallerySub": "Real work and samples.",
+    "specsTitle": "Specification",
+    "specsSub": "For architects and contractors.",
+    "copySpec": "Copy spec text",
+    "copied": "Copied",
+    "downloadSpec": "Download spec sheet (PDF)",
+    "specHeading": "{name} specification",
+    "processTitle": "Process",
+    "faqTitle": "Questions about {name}",
+    "relatedTitle": "Related projects",
+    "diptychTitle": "Fresh to sealed",
+    "diptychFresh": "Lifting the stamp mat",
+    "diptychSealed": "A sealed result",
+    "diptychCaption": "The stamping stage and a sealed result. They are not the same slab.",
+    "lightbox": {
+      "open": "Open image {n} of {total}",
+      "close": "Close gallery",
+      "prev": "Previous image",
+      "next": "Next image",
+      "counter": "{n} of {total}"
+    },
+    "spec": {
+      "thickness": "Thickness",
+      "reinforcement": "Reinforcement",
+      "method": "Finish method",
+      "sealer": "Sealer type",
+      "slip": "Slip resistance",
+      "suitability": "Indoor / outdoor suitability",
+      "maintenance": "Maintenance interval",
+      "leadTime": "Lead time"
+    },
+    "overview": {
+      "title": "Services",
+      "intro": "Floors, walls and built-ins in decorative, architectural and industrial concrete."
+    },
+    "photoNeeded": "Photos coming soon"
   }
 }

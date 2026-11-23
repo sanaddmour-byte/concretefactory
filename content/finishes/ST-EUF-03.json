@@ -1,0 +1,24 @@
+{
+  "code": "ST-EUF-03",
+  "codeStatus": "proposed",
+  "photo": "stamped-courtyard-cobble-fan-cream-border-01",
+  "photoUse": "installed-floor",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "European Fan",
+    "ar": null,
+    "arProposed": "المروحة الأوروبية"
+  },
+  "colour": {
+    "en": "Silver Grey",
+    "ar": null,
+    "arProposed": "رمادي فضي"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

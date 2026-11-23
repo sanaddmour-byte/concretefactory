@@ -1,0 +1,24 @@
+{
+  "code": "ST-LCB-01",
+  "codeStatus": "proposed",
+  "photo": "stamped-brick-terracotta-floor-01",
+  "photoUse": "installed-floor",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "London Cobble Stone",
+    "ar": null,
+    "arProposed": "لندن كوبل ستون"
+  },
+  "colour": {
+    "en": "Brown Beige",
+    "ar": null,
+    "arProposed": "بيج بني"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

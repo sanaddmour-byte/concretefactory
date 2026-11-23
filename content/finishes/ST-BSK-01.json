@@ -1,0 +1,24 @@
+{
+  "code": "ST-BSK-01",
+  "codeStatus": "proposed",
+  "photo": "finish-tan-sawcut-01",
+  "photoUse": "swatch",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "Blue Skin",
+    "ar": null,
+    "arProposed": "بلو سكن"
+  },
+  "colour": {
+    "en": "Beige",
+    "ar": null,
+    "arProposed": "بيج"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

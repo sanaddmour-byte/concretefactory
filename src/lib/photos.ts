@@ -20,6 +20,7 @@ export type Photo = z.infer<typeof photoSchema>;
 const photos = z.record(z.string(), photoSchema).parse(raw);
 
 export type PhotoId = keyof typeof raw;
+export const photoIds: string[] = Object.keys(photos);
 
 /** Typed lookup. Throws at build time if an id does not exist in the manifest. */
 export function getPhoto(id: PhotoId): Photo {

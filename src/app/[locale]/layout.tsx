@@ -37,7 +37,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} dir={dirOf(locale)} className={`${oswald.variable} ${tajawal.variable}`}>
       <body>
-        <NextIntlClientProvider messages={{ nav: messages.nav }}>
+        <NextIntlClientProvider messages={{ nav: messages.nav, service: { lightbox: messages.service.lightbox, copySpec: messages.service.copySpec, copied: messages.service.copied } }}>
           <a href="#main" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">
             {t("a11y.skip")}
           </a>

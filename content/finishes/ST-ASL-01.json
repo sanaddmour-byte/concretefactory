@@ -1,0 +1,24 @@
+{
+  "code": "ST-ASL-01",
+  "codeStatus": "proposed",
+  "photo": "stamped-ashlar-ochre-01",
+  "photoUse": "installed-floor",
+  "family": "stamped-concrete",
+  "pattern": {
+    "en": "Ashlar Slate",
+    "ar": null,
+    "arProposed": "أشلار سليت"
+  },
+  "colour": {
+    "en": "Beige Brown",
+    "ar": null,
+    "arProposed": "بيج بني"
+  },
+  "material": null,
+  "indoor": null,
+  "outdoor": null,
+  "method": null,
+  "maintenance": null,
+  "uses": [],
+  "projects": []
+}

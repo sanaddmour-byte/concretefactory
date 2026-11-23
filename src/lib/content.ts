@@ -1,0 +1,43 @@
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
+import { z } from "zod";
+import type { Locale } from "@/i18n/routing";
+import { families } from "@/lib/services";
+import { photoIds } from "@/lib/photos";
+
+const faq = z.object({ q: z.string(), a: z.string(), confirm: z.string().optional() });
+const stage = z.object({ photo: z.string(), eyebrow: z.string(), title: z.string(), body: z.string(), focal: z.string().optional() });
+
+const schema = z.object({
+  slug: z.string(),
+  family: z.enum(families),
+  promise: z.string(),
+  heroImage: z.string().nullable(),
+  heroFocal: z.string().default("50% 50%"),
+  applications: z.array(z.string()).min(3),
+  options: z.array(z.string()),
+  specs: z.array(z.object({ key: z.string(), value: z.string() })),
+  specSheet: z.string().nullable(),
+  processSteps: z.array(z.object({ title: z.string(), text: z.string() })),
+  story: z.array(stage).default([]),
+  storyCaption: z.string().optional(),
+  faqs: z.array(faq).min(3).max(6),
+  relatedProjects: z.array(z.string()).default([]),
+  seo: z.object({ title: z.string().max(70), description: z.string().max(170) }),
+});
+export type ServiceContent = z.infer<typeof schema> & { body: string };
+
+const dir = path.join(process.cwd(), "content/services");
+
+export function getService(slug: string, locale: Locale): ServiceContent {
+  const file = path.join(dir, `${slug}.${locale}.mdx`);
+  const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  const parsed = schema.parse(data);
+  if (parsed.slug !== slug) throw new Error(`${file}: slug mismatch`);
+  // Build-time integrity: every referenced photo must exist in the manifest
+  for (const id of [parsed.heroImage, ...parsed.story.map((s) => s.photo)]) {
+    if (id && !photoIds.includes(id)) throw new Error(`${file}: unknown photo ${id}`);
+  }
+  return { ...parsed, body: content.trim() };
+}
