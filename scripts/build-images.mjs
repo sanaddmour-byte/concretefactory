@@ -13,6 +13,10 @@ await mkdir(path.join(root, "public/img"), { recursive: true });
 await mkdir(path.join(root, "src/generated"), { recursive: true });
 
 const out = {};
+const variants = {};
+const WIDTHS = [480, 768, 1080, 1600]; // distinct files for the static preview (no image optimizer on GitHub Pages)
+const makeVariants = process.env.PREVIEW_EXPORT === "1";
+if (makeVariants) await mkdir(path.join(root, "public/img/w"), { recursive: true });
 const errors = [];
 let held = 0;
 
@@ -39,6 +43,9 @@ for (const entry of manifest) {
     .jpeg({ quality: 82, mozjpeg: true })
     .toFile(path.join(root, "public/img", `${id}.jpg`));
 
+  variants[id] = WIDTHS.filter((w) => w < width * 0.95);
+  if (makeVariants) for (const w of variants[id]) await image.clone().resize({ width: w }).webp({ quality: 74 }).toFile(path.join(root, "public/img/w", `${id}-${w}.webp`));
+
   const blur = await image.clone().resize({ width: 16 }).jpeg({ quality: 40 }).toBuffer();
 
   out[id] = {
@@ -61,4 +68,5 @@ if (errors.length) {
 }
 
 await writeFile(path.join(root, "src/generated/photos.json"), JSON.stringify(out, null, 2));
+await writeFile(path.join(root, "src/generated/variants.json"), JSON.stringify(variants));
 console.log(`images: ${Object.keys(out).length} photos processed${held ? `, ${held} held back (public:false)` : ""}`);

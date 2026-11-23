@@ -8,7 +8,7 @@ const preview = process.env.PREVIEW_EXPORT === "1";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const config: NextConfig = {
-  ...(preview ? { output: "export" as const, trailingSlash: true, basePath: basePath || undefined, turbopack: { resolveAlias: { "@/app/actions": "./src/app/actions.preview.ts" } } } : {}),
+  ...(preview ? { env: { NEXT_PUBLIC_PREVIEW: "1" }, output: "export" as const, trailingSlash: true, basePath: basePath || undefined, turbopack: { resolveAlias: { "@/app/actions": "./src/app/actions.preview.ts" } } } : {}),
   images: {
     ...(preview ? { loader: "custom" as const, loaderFile: "./src/lib/preview-loader.ts" } : {}),
     formats: ["image/avif", "image/webp"],

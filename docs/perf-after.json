@@ -1,0 +1,29 @@
+{
+  "label": "AFTER (server build)",
+  "res": {
+    "/en": {
+      "jsKB": 228.6,
+      "imageKBLoaded": 550,
+      "lcpImage": "/_next/image?url=%2Fimg%2Fterrazzo-grey-pink-portrait-01.jpg&w=1024&q=75",
+      "heroKB": 203.2
+    },
+    "/en/services/stamped-concrete": {
+      "jsKB": 232,
+      "imageKBLoaded": 408,
+      "lcpImage": "(inline placeholder)",
+      "heroKB": null
+    },
+    "/en/quote": {
+      "jsKB": 178.2,
+      "imageKBLoaded": 200,
+      "lcpImage": "/_next/image?url=%2Fimg%2Findustrial-polished-hall-02.jpg&w=384&q=75",
+      "heroKB": 12.7
+    },
+    "/en/finishes": {
+      "jsKB": 182.8,
+      "imageKBLoaded": 608,
+      "lcpImage": "(inline placeholder)",
+      "heroKB": null
+    }
+  }
+}

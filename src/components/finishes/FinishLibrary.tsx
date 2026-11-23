@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { SampleToggle } from "@/components/samples/SampleToggle";
 import { buttonClass, cn } from "@/lib/ui";
+import { assetUrl } from "@/lib/assets";
 
 export type FinishItem = {
   code: string; slug: string; src: string; width: number; height: number; blur: string; alt: string; label: string;
@@ -34,7 +35,7 @@ function Lens({ src }: { src: string }) {
           className="pointer-events-none absolute hidden rounded-full border-2 border-olive-600 shadow-[0_6px_16px_-6px_rgb(0_0_0/0.5)] md:block"
           style={{
             width: R * 2, height: R * 2, left: pos.x - R, top: pos.y - R,
-            backgroundImage: `url(${src})`, backgroundSize: `${pos.w * 2}px ${pos.h * 2}px`,
+            backgroundImage: `url(${assetUrl(src, 1280)})`, backgroundSize: `${pos.w * 2}px ${pos.h * 2}px`,
             backgroundPosition: `${-(pos.x * 2 - R)}px ${-(pos.y * 2 - R)}px`, backgroundRepeat: "no-repeat",
           }}
         />

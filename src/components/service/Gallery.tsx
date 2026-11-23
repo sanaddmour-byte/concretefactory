@@ -14,11 +14,12 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
   const ref = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLElement | null>(null);
   const [i, setI] = useState(0);
+  const [isOpen, setIsOpen] = useState(false); // the full-size image is not created (or fetched) until the lightbox is opened
   const touch = useRef<number | null>(null);
   const n = items.length;
 
   const go = useCallback((d: number) => setI((v) => (v + d + n) % n), [n]);
-  const open = (idx: number, el: HTMLElement) => { opener.current = el; setI(idx); ref.current?.showModal(); };
+  const open = (idx: number, el: HTMLElement) => { opener.current = el; setI(idx); setIsOpen(true); ref.current?.showModal(); };
 
   useEffect(() => {
     const d = ref.current;
@@ -28,7 +29,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
       if (e.key === "ArrowRight") go(rtl ? -1 : 1);
       if (e.key === "ArrowLeft") go(rtl ? 1 : -1);
     };
-    const onClose = () => opener.current?.focus();
+    const onClose = () => { setIsOpen(false); opener.current?.focus(); };
     window.addEventListener("keydown", onKey);
     d.addEventListener("close", onClose);
     return () => { window.removeEventListener("keydown", onKey); d.removeEventListener("close", onClose); };
@@ -58,7 +59,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
         onClick={(e) => e.target === ref.current && ref.current?.close()}
         className="fixed inset-0 m-0 size-full max-h-none max-w-none bg-n-950/95 p-0 text-n-50 backdrop:bg-n-950"
       >
-        {cur && (
+        {isOpen && cur && (
           <div
             className="relative flex size-full items-center justify-center p-4 sm:p-12"
             onPointerDown={(e) => { touch.current = e.clientX; }}
@@ -68,7 +69,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
               if (Math.abs(dx) > 50) go(dx < 0 ? (rtl ? -1 : 1) : (rtl ? 1 : -1));
             }}
           >
-            <Image key={cur.id} src={cur.src} alt={cur.alt} width={cur.width} height={cur.height} sizes="100vw" priority placeholder="blur" blurDataURL={cur.blur} className="max-h-full w-auto max-w-full select-none rounded-control object-contain" draggable={false} />
+            <Image key={cur.id} src={cur.src} alt={cur.alt} width={cur.width} height={cur.height} sizes="100vw" placeholder="blur" blurDataURL={cur.blur} className="max-h-full w-auto max-w-full select-none rounded-control object-contain" draggable={false} />
             <button type="button" onClick={() => ref.current?.close()} aria-label={t("close")} className="absolute end-3 top-3 inline-flex size-11 items-center justify-center rounded-control bg-n-900/70 hover:bg-n-800">
               <X size={24} strokeWidth={1.5} aria-hidden />
             </button>
