@@ -89,8 +89,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   // Chapter 8: our story, told by what we do. 2018 is the only dated entry; no workshop or showroom imagery exists, so none is shown.
   const te = t.raw("c8.entries") as { l: string; t: string; x: string }[];
-  const tlPhotos: (PhotoId | null)[] = [null, "stamped-plaza-palms-curve-01", "industrial-polished-floor-reflection-01", "industrial-polished-floor-reflection-01", "firepit-recessed-seating-02"];
-  tlPhotos[3] = "industrial-polished-floor-aggregate-01";
+  const tlPhotos: (PhotoId | null)[] = [null, "stamped-plaza-palms-curve-01", "industrial-floor-power-trowel-01", "industrial-polished-hall-02", "firepit-recessed-seating-02"];
+  tlPhotos[3] = "industrial-polished-hall-02";
   const entries: TimelineEntry[] = te.map((e, i) => ({ id: `t${i}`, label: e.l, title: e.t, text: e.x, media: tlPhotos[i] ? image(tlPhotos[i]!, l, { focal: i === 4 ? "50% 70%" : "50% 50%" }) : null }));
 
   return (

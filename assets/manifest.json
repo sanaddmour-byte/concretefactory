@@ -609,5 +609,57 @@
       "ar": "جدار خرساني معماري بفواصل ألواح رأسية وثقوب ربط متباعدة بانتظام"
     },
     "notes": "Tight crop of wall-architectural-panels-01 to the wall plane only (ceiling pipes, sockets and floor debris removed). Callout positions in WallStage are fractions of THIS crop."
+  },
+  {
+    "file": "assets/photos/industrial-polished-hall-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Large industrial hall with a polished concrete floor, saw-cut joints and mirror-like reflections",
+      "ar": "صالة صناعية كبيرة بأرضية خرسانية مصقولة وفواصل قصّ وانعكاسات تشبه المرآة"
+    },
+    "notes": "Portrait 1200x1600. Phone photo. Cartons and safety barriers visible in the background."
+  },
+  {
+    "file": "assets/photos/industrial-polished-hall-02.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Polished concrete floor in a steel-framed industrial hall with a joint pattern across it",
+      "ar": "أرضية خرسانية مصقولة في صالة صناعية بهيكل فولاذي مع شبكة فواصل"
+    },
+    "notes": "Portrait 1200x1600. Cleanest of the set (no people). Best for hero/story use."
+  },
+  {
+    "file": "assets/photos/industrial-polished-hall-03.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 1200,
+    "height": 960,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Close view of a ground and polished concrete floor with a joint crossing it",
+      "ar": "منظر قريب لأرضية خرسانية مجلخة ومصقولة يعبرها فاصل"
+    },
+    "notes": "CROPPED from the original to remove two workers (masked faces) and a machine. Floor only."
+  },
+  {
+    "file": "assets/photos/interior-polished-hall-04.jpg",
+    "service": "interior-floors",
+    "role": "project",
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Polished concrete floor with a sheen, shown in a large hall",
+      "ar": "أرضية خرسانية مصقولة بلمعة واضحة، تظهر في صالة كبيرة"
+    },
+    "notes": "Used for interior floors to show the polished finish (the setting is an industrial hall, not a home). Replace with a living-space photo when one exists."
   }
 ]
