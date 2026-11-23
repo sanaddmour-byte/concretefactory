@@ -3,8 +3,10 @@
 import { z } from "zod";
 import { headers } from "next/headers";
 import { mailConfigured, makeRef, sendMail, summarise, type Attachment } from "@/lib/notify";
-import { ALLOWED_FILE, CHANNELS, CITIES, MAX_FILES, MAX_TOTAL_BYTES, PROJECT_TYPES, SERVICE_SLUGS, SETTINGS, SLOTS, STARTS, isEmail, isSize, normalizePhone } from "@/lib/validate";
+import { ALLOWED_FILE, CHANNELS, CITIES, MAX_FILES, MAX_TOTAL_BYTES, PROJECT_TYPES, SERVICE_SLUGS, SETTINGS, SLOTS, STARTS, isEmail, isSize, normalizePhone, parseSize } from "@/lib/validate";
+import { checkVisitDate } from "@/lib/dates";
 import { site } from "@/lib/site";
+import { isPlaceholder } from "@/lib/placeholder";
 
 export type ActionResult =
   | { ok: true; ref: string; emailed: boolean }
@@ -19,7 +21,7 @@ async function limited() {
   const list = (hits.get(ip) ?? []).filter((t) => now - t < 10 * 60_000);
   list.push(now);
   hits.set(ip, list);
-  return list.length > 8;
+  return list.length > (Number(process.env.RATE_LIMIT_MAX) || 8);
 }
 
 const phone = z.string().refine((v) => normalizePhone(v) !== null);
@@ -90,7 +92,7 @@ export async function submitQuote(fd: FormData): Promise<ActionResult> {
   const ref = makeRef("CF");
   return deliver(ref, "Quote request", [
     ["Reference", ref], ["Language", d.locale], ["Services", d.services.join(", ")], ["Project type", d.projectType], ["City", cityName(d.city)],
-    ["Approx. size", d.size ? `${d.size} (m² or linear m for countertops)` : ""], ["Setting", d.setting], ["Finishes (sample list)", d.finishes.join(", ")],
+    ["Approx. size", d.size ? `${parseSize(d.size)} (m² or linear m for countertops)` : ""], ["Setting", d.setting], ["Finishes (sample list)", d.finishes.join(", ")],
     ["Start", d.start], ["Name", d.name], ["Mobile", normalizePhone(d.phone) ?? d.phone], ["Prefers", d.channel], ["Email", d.email],
     ["Attachments", files.map((f) => f.filename).join(", ")],
   ], d.email, files);
@@ -103,13 +105,15 @@ export async function submitVisit(fd: FormData): Promise<ActionResult> {
   const parsed = visitSchema.safeParse(raw);
   if (!parsed.success) return { ok: false, error: "invalid", fields: [...new Set(parsed.error.issues.map((i) => String(i.path[0])))] };
   const d = parsed.data;
-  const date = new Date(`${d.date}T00:00:00Z`);
-  const tomorrow = new Date(); tomorrow.setUTCHours(0, 0, 0, 0); tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-  if (isNaN(date.getTime()) || date < tomorrow || site.contact.closedDays.includes(date.getUTCDay())) return { ok: false, error: "invalid", fields: ["date"] };
+  // Same calendar rule as the visit picker: Asia/Amman today + 1, real dates only, configured closed days rejected
+  const check = checkVisitDate(d.date, site.contact.closedDays);
+  if (check !== "ok") return { ok: false, error: "invalid", fields: ["date"] };
   const ref = makeRef("VS");
   return deliver(ref, "Technical visit request", [
     ["Reference", ref], ["Language", d.locale], ["Date", d.date], ["Time", d.slot], ["Name", d.name], ["Mobile", normalizePhone(d.phone) ?? d.phone],
     ["Finishes to see", d.finishes.join(", ")], ["Note", d.note],
+    ...(site.contact.closedDays === null ? ([["Owner check", "Closed days are not configured yet: this date was not checked against business closures."]] as [string, string][]) : []),
+    ...(isPlaceholder(site.contact.hours) ? ([["Owner check", "Business hours are not configured yet: confirm the visit time with the customer."]] as [string, string][]) : []),
   ], "", []);
 }
 

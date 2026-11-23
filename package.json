@@ -10,7 +10,10 @@
     "build": "next build",
     "start": "next start",
     "images": "node scripts/build-images.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:unit": "node --experimental-strip-types --test tests/unit/*.test.ts",
+    "test:e2e": "playwright test",
+    "build:e2e": "VISIT_CLOSED_DAYS=5,6 NEXT_PUBLIC_SITE_URL=http://localhost:3111 next build"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -28,6 +31,7 @@
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@tailwindcss/postcss": "4.3.5",
     "@types/node": "^24.19.2",
     "@types/qrcode": "^1.5.6",

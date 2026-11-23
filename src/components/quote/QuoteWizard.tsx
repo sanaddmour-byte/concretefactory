@@ -8,7 +8,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/navigation";
 import { submitQuote } from "@/app/actions";
 import { track } from "@/lib/analytics";
-import { ALLOWED_FILE, CHANNELS, MAX_FILES, MAX_TOTAL_BYTES, PROJECT_TYPES, SETTINGS, STARTS, isEmail, isSize, normalizePhone } from "@/lib/validate";
+import { ALLOWED_FILE, CHANNELS, MAX_FILES, MAX_TOTAL_BYTES, PROJECT_TYPES, SETTINGS, STARTS, isEmail, isSize, normalizePhone, parseSize } from "@/lib/validate";
+import { addReceipt, applyUrlDefaults, clearDrafts, emptyQuote, findReceipt, loadActive, loadSaved, saveDraft, type Draft, type QuoteValues, type Receipt } from "@/lib/quoteDraft";
 import { buttonClass, cn } from "@/lib/ui";
 import { Choice, Field, inputCls } from "./fields";
 
@@ -20,10 +21,8 @@ export type WizardProps = {
   sla: string | null;
 };
 
-const empty = { services: [] as string[], projectType: "", city: "", size: "", setting: "", finishes: [] as string[], start: "", name: "", phone: "", channel: "", email: "" };
-type Values = typeof empty;
+type Values = QuoteValues;
 const TOTAL = 5;
-const DRAFT = "cf-quote-draft";
 
 /** Shrink photos in the browser so five of them fit the 4 MB request limit; PDFs are sent as they are. */
 async function prepare(f: File): Promise<File | null> {
@@ -66,40 +65,52 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
   const step = Math.min(TOTAL, Math.max(1, parseInt(sp.get("step") ?? "1", 10) || 1));
   const doneRef = sp.get("done");
 
-  const [v, setV] = useState<Values>(empty);
+  const [v, setV] = useState<Values>(emptyQuote);
+  const [ready, setReady] = useState(false);
+  const [receipt, setReceipt] = useState<Receipt | null | undefined>(undefined); // undefined = not checked yet
+  const applied = useRef("");
   const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [fileErr, setFileErr] = useState(false);
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState<"send" | "rate" | null>(null);
-  const [draft, setDraft] = useState<{ values: Values; step: number } | null>(null);
-  const [done, setDone] = useState<{ ref: string; summary: string; emailed: boolean } | null>(null);
+  const [draft, setDraft] = useState<Draft | null>(null);
   const hp = useRef<HTMLInputElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const started = useRef(false);
 
-  // Initial values: ?service=, ?samples= (or the saved sample list), then offer a saved draft
+  // 1) restore this tab's active draft FIRST (so answers survive a language switch or reload),
+  // 2) then merge the URL's prefill (?service=, ?samples= or the saved sample list) on top of it,
+  // 3) only if there is neither, offer an older saved draft; 4) a ?done= reference must match a receipt from this session.
   useEffect(() => {
     const q = new URLSearchParams(window.location.search);
-    const svc = (q.get("service") ?? "").split(",").filter((s) => services.some((x) => x.slug === s));
+    const svc = (q.get("service") ?? "").split(",").filter((x) => services.some((y) => y.slug === x));
     let fin = (q.get("samples") ?? "").split(",").filter(Boolean);
     if (!fin.length) { try { const raw = JSON.parse(localStorage.getItem("cf-samples") ?? "[]"); if (Array.isArray(raw)) fin = raw; } catch { /* ignore */ } }
     fin = fin.filter((c) => finishes.some((f) => f.code === c)).slice(0, 6);
-    setV((s) => ({ ...s, services: svc, finishes: fin }));
-    if (!svc.length && !q.get("samples") && !q.get("done")) {
-      try { const d = JSON.parse(localStorage.getItem(DRAFT) ?? "null"); if (d?.values) setDraft(d); } catch { /* ignore */ }
-    }
-    if (q.get("done")) { try { const s = JSON.parse(sessionStorage.getItem("cf-quote-done") ?? "null"); if (s?.ref === q.get("done")) setDone(s); } catch { /* ignore */ } }
+    const active = loadActive(sessionStorage);
+    const d = applyUrlDefaults(active, svc, fin);
+    applied.current = d.applied;
+    setV(d.values);
+    if (active && !q.has("step") && d.step > 1 && !q.get("done")) { q.set("step", String(d.step)); router.replace(`/quote?${q}`, { scroll: false }); }
+    if (!active && !svc.length && !q.get("samples") && !q.get("done")) { const saved = loadSaved(localStorage); if (saved) setDraft(saved); }
+    const ref = q.get("done");
+    if (ref) {
+      const r = findReceipt(ref, sessionStorage);
+      setReceipt(r);
+      if (!r) { const n = new URLSearchParams(window.location.search); n.delete("done"); n.delete("step"); router.replace(`/quote${n.size ? `?${n}` : ""}`, { scroll: false }); }
+    } else setReceipt(null);
+    setReady(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Autosave draft (answers only; files cannot be stored)
+  // Autosave (answers only; files cannot be stored): the session copy keeps answers across EN/AR switches, the saved copy offers a restore on a later visit
   useEffect(() => {
-    if (doneRef || (!v.services.length && !v.name && !v.city)) return;
-    const id = setTimeout(() => { try { localStorage.setItem(DRAFT, JSON.stringify({ values: v, step })); } catch { /* ignore */ } }, 400);
+    if (!ready || doneRef) return;
+    const id = setTimeout(() => saveDraft({ values: v, step, applied: applied.current }, sessionStorage, localStorage), 300);
     return () => clearTimeout(id);
-  }, [v, step, doneRef]);
+  }, [v, step, doneRef, ready]);
 
   // Move focus to the step heading when the step changes (and announce via aria-live)
   useEffect(() => { if (started.current) heading.current?.focus(); }, [step]);
@@ -137,12 +148,12 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
     if (!bad) setFiles(merged);
   };
 
-  const summaryText = (ref: string) => {
+  const summaryText = (ref: string, v: Values) => {
     const svc = v.services.map((s) => services.find((x) => x.slug === s)?.name).filter(Boolean).join(", ");
     const city = cities.find((c) => c.value === v.city)?.label ?? "";
     const lines = [t("wa.intro"), `${t("wa.ref")}: ${ref}`, `${t("wa.services")}: ${svc}`,
       `${t("wa.project")}: ${v.projectType ? t(`types.${v.projectType}`) : ""}${city ? `, ${city}` : ""}`,
-      v.size ? `${t("wa.size")}: ${v.size} ${t("sizeUnit")}` : "", v.setting ? `${t("wa.setting")}: ${t(`settings.${v.setting}`)}` : "",
+      v.size ? `${t("wa.size")}: ${parseSize(v.size) ?? v.size} ${t("sizeUnit")}` : "", v.setting ? `${t("wa.setting")}: ${t(`settings.${v.setting}`)}` : "",
       v.start ? `${t("wa.start")}: ${t(`starts.${v.start}`)}` : "", `${t("wa.name")}: ${v.name}`].filter(Boolean);
     return lines.join("\n");
   };
@@ -161,9 +172,9 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
       const r = await submitQuote(fd);
       if (r.ok) {
         track("quote_submit", { services: v.services.join(",") });
-        const d = { ref: r.ref, summary: summaryText(r.ref), emailed: r.emailed };
-        try { sessionStorage.setItem("cf-quote-done", JSON.stringify(d)); localStorage.removeItem(DRAFT); } catch { /* ignore */ }
-        setDone(d);
+        const rec: Receipt = { ref: r.ref, emailed: r.emailed, values: v, at: Date.now() };
+        addReceipt(rec, sessionStorage); clearDrafts(sessionStorage, localStorage);
+        setReceipt(rec);
         router.replace(`/quote?done=${r.ref}`, { scroll: true });
       } else if (r.error === "files") { setFileErr(true); go(3); }
       else if (r.error === "invalid") { const f: Record<string, string> = {}; (r.fields ?? []).forEach((k) => (f[k] = k)); setErrors(f); }
@@ -172,16 +183,17 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
     setSending(false);
   };
 
-  /* ---------------- Success ---------------- */
-  if (doneRef) {
+  /* ---------------- Success: only for a reference this session actually produced ---------------- */
+  if (doneRef && receipt === undefined) return <div className="mx-auto min-h-[24rem] max-w-2xl animate-pulse rounded-card bg-n-100" aria-hidden />;
+  if (doneRef && receipt) {
     return (
       <div className="mx-auto max-w-2xl rounded-card border border-olive-200 bg-olive-100 p-8 md:p-12" role="status">
         <h2 className="display text-3xl md:text-4xl">{t("success.title")}</h2>
-        <p className="mt-4 text-lg text-n-800">{t("success.ref")}: <bdi className="ltr-num font-semibold">{doneRef}</bdi></p>
+        <p className="mt-4 text-lg text-n-800">{t("success.ref")}: <bdi className="ltr-num font-semibold">{receipt.ref}</bdi></p>
         <p className="mt-2 text-n-700">{sla ? t("success.sla", { sla }) : t("success.slaGeneric")}</p>
-        {done && !done.emailed && process.env.NODE_ENV !== "production" && <p className="ph-badge mt-3">{t("success.noEmail")}</p>}
+        {!receipt.emailed && process.env.NODE_ENV !== "production" && <p className="ph-badge mt-3">{t("success.noEmail")}</p>}
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={waLink(done?.summary ?? `${t("wa.intro")}\n${t("wa.ref")}: ${doneRef}`)} rel="noopener" onClick={() => track("quote_whatsapp_handoff")} className={buttonClass("primary")}>
+          <a href={waLink(summaryText(receipt.ref, receipt.values))} rel="noopener" onClick={() => track("quote_whatsapp_handoff")} className={buttonClass("primary")}>
             <MessageCircle size={20} strokeWidth={1.5} aria-hidden /> {t("success.whatsapp")}
           </a>
           <Link href="/quote" className={buttonClass("secondary")}>{t("success.again")}</Link>
@@ -200,8 +212,8 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
         <div role="status" className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-control border border-olive-200 bg-olive-50 p-4">
           <span>{t("draft")}</span>
           <span className="flex gap-2">
-            <button type="button" className={buttonClass("primary", "min-h-11 px-4 text-sm")} onClick={() => { setV(draft.values); setDraft(null); go(draft.step); }}>{t("restore")}</button>
-            <button type="button" className={buttonClass("secondary", "min-h-11 px-4 text-sm")} onClick={() => { try { localStorage.removeItem(DRAFT); } catch { /* ignore */ } setDraft(null); }}>{t("fresh")}</button>
+            <button type="button" className={buttonClass("primary", "min-h-11 px-4 text-sm")} onClick={() => { setV(draft.values); applied.current = draft.applied; setDraft(null); go(draft.step); }}>{t("restore")}</button>
+            <button type="button" className={buttonClass("secondary", "min-h-11 px-4 text-sm")} onClick={() => { try { localStorage.removeItem("cf-quote-draft"); } catch { /* ignore */ } setDraft(null); }}>{t("fresh")}</button>
           </span>
         </div>
       )}
@@ -330,7 +342,7 @@ export function QuoteWizard({ services, finishes, cities, whatsapp, sla }: Wizar
                 <div role="alert" className="rounded-control border border-danger bg-n-50 p-4">
                   <p className="font-medium text-danger">{failed === "rate" ? t("errors.rate") : t("errors.send")}</p>
                   {failed === "send" && (
-                    <a href={waLink(summaryText("-"))} rel="noopener" className={buttonClass("secondary", "mt-3")}><MessageCircle size={18} strokeWidth={1.5} aria-hidden /> {t("fail.whatsapp")}</a>
+                    <a href={waLink(summaryText("-", v))} rel="noopener" className={buttonClass("secondary", "mt-3")}><MessageCircle size={18} strokeWidth={1.5} aria-hidden /> {t("fail.whatsapp")}</a>
                   )}
                 </div>
               )}

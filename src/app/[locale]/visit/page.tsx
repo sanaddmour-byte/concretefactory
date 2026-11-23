@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { finishes, finishLabel } from "@/lib/finishes";
 import { Ph } from "@/components/ui/Ph";
+import { isDev } from "@/lib/placeholder";
 import { site } from "@/lib/site";
 import { SampleGuide } from "@/components/samples/SampleGuide";
 import { VisitForm } from "@/components/quote/VisitForm";
@@ -35,6 +36,7 @@ export default async function VisitPage({ params }: { params: Promise<{ locale: 
             <Ph key={k} value={val}>{(x) => (<div><dt className="text-sm text-n-600">{k}</dt><dd className="font-medium">{x}</dd></div>)}</Ph>
           ))}
         </dl>
+        {isDev && c.closedDays === null && <p className="ph-badge mt-3">CONFIRM: closed days (visit dates are not checked against closures)</p>}
       </section>
       <section className="container-page pb-20 pt-6 md:pb-28">
         <Suspense fallback={<div className="mx-auto min-h-[44rem] max-w-2xl animate-pulse rounded-card bg-n-100" aria-hidden />}>

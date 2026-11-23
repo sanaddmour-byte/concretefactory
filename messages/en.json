@@ -535,7 +535,9 @@
       "name": "Enter your name.",
       "phone": "Enter a valid mobile number.",
       "send": "We couldn't send your request. You can send it on WhatsApp instead.",
-      "rate": "Too many requests. Please try again in a few minutes."
+      "rate": "Too many requests. Please try again in a few minutes.",
+      "closed": "We're closed on that day. Please choose another.",
+      "dateInvalid": "Enter a real calendar date."
     },
     "success": {
       "title": "Thank you, we'll confirm your technical visit",

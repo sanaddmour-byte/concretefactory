@@ -8,11 +8,11 @@ import { useSearchParams } from "next/navigation";
 import { submitVisit } from "@/app/actions";
 import { track } from "@/lib/analytics";
 import { SLOTS, normalizePhone } from "@/lib/validate";
+import { checkVisitDate, earliestVisitDate } from "@/lib/dates";
 import { buttonClass } from "@/lib/ui";
 import { Choice, Field, inputCls } from "./fields";
 
-type Props = { finishes: { code: string; label: string }[]; whatsapp: string; closedDays: number[] };
-const iso = (d: Date) => d.toISOString().slice(0, 10);
+type Props = { finishes: { code: string; label: string }[]; whatsapp: string; closedDays: number[] | null };
 
 export function VisitForm({ finishes, whatsapp, closedDays }: Props) {
   const t = useTranslations("visit");
@@ -26,7 +26,8 @@ export function VisitForm({ finishes, whatsapp, closedDays }: Props) {
   const [done, setDone] = useState<string | null>(null);
   const hp = useRef<HTMLInputElement>(null);
 
-  const tomorrow = (() => { const d = new Date(); d.setDate(d.getDate() + 1); return iso(d); })();
+  // Amman calendar rule shared with the server: tomorrow in Asia/Amman, whatever timezone this browser is in
+  const tomorrow = earliestVisitDate();
 
   useEffect(() => {
     let fin = (sp.get("samples") ?? "").split(",").filter(Boolean);
@@ -40,8 +41,8 @@ export function VisitForm({ finishes, whatsapp, closedDays }: Props) {
 
   const validate = () => {
     const e: Record<string, string> = {};
-    const day = v.date ? new Date(`${v.date}T00:00:00Z`).getUTCDay() : NaN;
-    if (!v.date || v.date < tomorrow || closedDays.includes(day)) e.date = "date";
+    const c = v.date ? checkVisitDate(v.date, closedDays) : "past";
+    if (c === "invalid") e.date = "dateInvalid"; else if (c === "closed") e.date = "closed"; else if (c !== "ok") e.date = "date";
     if (!v.slot) e.slot = "slot";
     if (v.name.trim().length < 2) e.name = "name";
     if (!normalizePhone(v.phone)) e.phone = "phone";

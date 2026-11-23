@@ -10,3 +10,5 @@ src/generated
 assets/held
 out
 .preview-stash
+test-results
+playwright-report

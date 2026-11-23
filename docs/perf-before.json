@@ -1,0 +1,29 @@
+{
+  "label": "BEFORE run 2 (baseline cbd8923, server build)",
+  "res": {
+    "/en": {
+      "jsKB": 226.2,
+      "imageKBLoaded": 479,
+      "lcpImage": "/_next/image?url=%2Fimg%2Fterrazzo-grey-pink-large-chip-01.jpg&w=1024&q=75",
+      "heroKB": 132.6
+    },
+    "/en/services/stamped-concrete": {
+      "jsKB": 229.5,
+      "imageKBLoaded": 283,
+      "lcpImage": "/_next/image?url=%2Fimg%2Fstamped-ashlar-ochre-01.jpg&w=1024&q=75",
+      "heroKB": 56.4
+    },
+    "/en/quote": {
+      "jsKB": 175.9,
+      "imageKBLoaded": 200,
+      "lcpImage": "/_next/image?url=%2Fimg%2Findustrial-floor-power-trowel-01.jpg&w=384&q=75",
+      "heroKB": 15.9
+    },
+    "/en/finishes": {
+      "jsKB": 179.4,
+      "imageKBLoaded": 608,
+      "lcpImage": "/_next/image?url=%2Fimg%2Fexposed-aggregate-marble-mix-01.jpg&w=640&q=75",
+      "heroKB": 65.8
+    }
+  }
+}

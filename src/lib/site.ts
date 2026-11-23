@@ -20,7 +20,8 @@ const schema = z.object({
     hours: z.string(),
     mapsUrl: z.string(),
     replySla: z.string(),
-    closedDays: z.array(z.number().int().min(0).max(6)),
+    /** Weekdays the business is closed (0=Sunday..6=Saturday). null = the owner has not supplied them yet (flagged in dev builds and in visit emails). */
+    closedDays: z.array(z.number().int().min(0).max(6)).nullable(),
   }),
   /** Company timeline (year, title, text). The story chapter appears only with 3 or more real milestones. */
   milestones: z.array(z.object({ year: z.string(), title: bi, text: bi })),
@@ -34,7 +35,11 @@ const schema = z.object({
     .nullable(),
 });
 
-export const site = schema.parse(raw);
+const parsed = schema.parse(raw);
+/** Owner-configurable closed weekdays without editing content: VISIT_CLOSED_DAYS="5,6" (0=Sunday..6=Saturday); "none" = open every day. Overrides content/site.json. */
+const envClosed = process.env.VISIT_CLOSED_DAYS?.trim();
+const closedFromEnv = envClosed === undefined || envClosed === "" ? undefined : envClosed.toLowerCase() === "none" ? [] : envClosed.split(",").map((x) => Number(x)).filter((n) => Number.isInteger(n) && n >= 0 && n <= 6);
+export const site = closedFromEnv ? { ...parsed, contact: { ...parsed.contact, closedDays: closedFromEnv } } : parsed;
 
 export const t = (v: { en: string; ar: string }, locale: Locale) => v[locale];
 

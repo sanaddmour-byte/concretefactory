@@ -31,7 +31,7 @@
     "hours": "{{PLACEHOLDER: opening hours}}",
     "mapsUrl": "{{PLACEHOLDER: Google Maps link}}",
     "replySla": "{{CONFIRM: reply time, e.g. one working day}}",
-    "closedDays": [],
+    "closedDays": null,
     "whatsappQr": "https://wa.me/qr/FQWUDLXDH2LLJ1"
   },
   "socials": [
