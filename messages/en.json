@@ -95,10 +95,10 @@
   "home": {
     "kicker": "Decorative · Architectural · Industrial",
     "title": "Concrete, crafted for how you live and work.",
-    "sub": "From a family courtyard to a factory floor, we've spent more than 10 years getting concrete right. Let's talk about your space.",
+    "sub": "From a family courtyard to a factory floor, our team brings more than 10 years of experience to every project. Let's talk about your space.",
     "seeWork": "See our work",
     "trust": {
-      "years": "Years of experience",
+      "years": "Years of team experience",
       "area": "Built to date",
       "projects": "Projects completed"
     },
@@ -598,10 +598,10 @@
   },
   "about": {
     "title": "About us",
-    "intro": "We're The Concrete Factory, based in Amman and working across Jordan. For more than 10 years we've helped people get concrete right, from a family courtyard to a factory floor.",
+    "intro": "We're The Concrete Factory, based in Amman and working across Jordan since 2018. Our team brings more than 10 years of experience to every kind of project, from decorative concrete to industrial and high-spec floors, and coatings.",
     "storyTitle": "How we see it",
-    "storyP1": "After more than 10 years, we've learned that a good floor is mostly decided before any concrete is poured. The loads, the traffic, the joints, the reinforcement and the finish all work together, so we like to sit down with you early and get them right.",
-    "storyP2": "We work with every type of reinforcement and we help you choose the finish, whether that's stamped, polished, epoxy or polyurethane, and we partner with the best global suppliers for the materials we recommend. In the industrial floor market in Jordan, we're leaders, and we bring that experience to every home too.",
+    "storyP1": "Our team has more than 10 years of experience, and we've learned that a good floor is mostly decided before any concrete is poured. The loads, the traffic, the joints, the reinforcement and the finish all work together, so we like to sit down with you early and get them right.",
+    "storyP2": "We handle every kind of project: decorative concrete, industrial floors, high-spec floors and coatings. We work with every type of reinforcement and we help you choose the finish, whether that's stamped, polished, epoxy or polyurethane. In the industrial floor market in Jordan, we're leaders, and we bring that experience to every home too.",
     "storyP3": "Whether it's a courtyard, a kitchen island or a warehouse slab, you'll get honest advice, a clear plan and people who care how it turns out.",
     "principlesTitle": "What you can expect",
     "principles": [
@@ -615,11 +615,11 @@
       },
       {
         "t": "Experienced hands",
-        "d": "More than 10 years of work across floors, walls and built-ins."
+        "d": "A team with more than 10 years of experience across floors, walls and built-ins."
       },
       {
-        "t": "The right partners",
-        "d": "We work with the best global suppliers for the materials we recommend."
+        "t": "Every kind of project",
+        "d": "From decorative to industrial, high-spec floors and coatings, we've handled it."
       }
     ],
     "milestonesTitle": "Our story over the years",
@@ -688,5 +688,99 @@
   "story": {
     "rail": "Story chapters",
     "skip": "Skip story"
+  },
+  "chapters": {
+    "open": {
+      "title": "Concrete, crafted.",
+      "sub": "Every floor we pour starts as a conversation. Come with us, from the first stone to the finished place.",
+      "quote": "Get my quote",
+      "work": "See our work",
+      "scroll": "Scroll to begin"
+    },
+    "c1": {
+      "nav": "The material",
+      "eyebrow": "01 · The material",
+      "title": "It starts as stone, sand and steel.",
+      "group": "Raw materials",
+      "caps": [
+        "Stone, chosen by eye.",
+        "Chips, ready to be set.",
+        "Steel, to carry the load."
+      ],
+      "bridge": "But material is only the beginning. Craft is what turns it into something you can stand on.",
+      "link": "Exposed aggregate"
+    },
+    "c2": {
+      "nav": "The craft",
+      "eyebrow": "02 · The craft",
+      "title": "Pressed by hand. Read by the eye.",
+      "group": "How a stamped floor is made",
+      "steps": [
+        {
+          "t": "Pour",
+          "c": "First, the slab: placed and levelled with care."
+        },
+        {
+          "t": "Press",
+          "c": "Then the mats go down and are pressed in."
+        },
+        {
+          "t": "Stamp",
+          "c": "Stamped to an even depth, mat by mat."
+        },
+        {
+          "t": "Lift",
+          "c": "The mat lifts, and the pattern appears."
+        },
+        {
+          "t": "Seal",
+          "c": "A sealer finishes it, and protects it."
+        }
+      ],
+      "note": "Photos are from different projects. The last is a sealed result, not the same slab.",
+      "bridge": "Once you can see how it's made, you can choose how it looks.",
+      "link": "Stamped concrete"
+    },
+    "c3": {
+      "nav": "Under your feet",
+      "eyebrow": "03 · The finished place",
+      "title": "Under your feet.",
+      "group": "Stamped concrete patterns",
+      "intro": "One pour, shaped like stone.",
+      "compassChip": "Compass rose",
+      "compass": "A compass rose, set into the entrance.",
+      "bridge": "The same hands that shape your driveway shape the heart of your home.",
+      "link": "All our finishes"
+    },
+    "c4": {
+      "nav": "The heart of the home",
+      "eyebrow": "04 · The home",
+      "title": "The heart of the home.",
+      "group": "Kitchens, sinks and fire pits",
+      "cards": [
+        {
+          "t": "Waterfall islands",
+          "l": "Made to fit your cabinets, edge to edge."
+        },
+        {
+          "t": "Built-in sinks",
+          "l": "Cut to size and sealed for daily use."
+        },
+        {
+          "t": "Fire-pit lounges",
+          "l": "Recessed seating for long evenings."
+        },
+        {
+          "t": "Built-in seating",
+          "l": "Finished to match the paving around it."
+        },
+        {
+          "t": "Concrete sinks",
+          "l": "Seamless basins. Photos coming soon."
+        }
+      ],
+      "cta": "Explore",
+      "bridge": "And sometimes it's the walls themselves that tell the story."
+    }
   }
 }

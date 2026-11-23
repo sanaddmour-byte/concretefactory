@@ -144,3 +144,11 @@ Done when every chapter works in desktop-animated, mobile-animated and reduced-m
 **Measured:** home JS is already **182 KB gz before GSAP** (it was 167 KB; sample list, analytics and the new rail/engine code added to it). GSAP + ScrollTrigger + SplitText = 49 KB, so story routes land at **~233 KB, about 3 KB over the 230 KB limit**. Plan: trim before Phase 2 (lazy-load the sample tray, split the engine per chapter, drop SplitText for English via CSS if needed).
 
 **Copy change (client):** "Tamp / Tamped" is now "Stamp / Stamped" (Arabic: الطبع / نطبع / يُطبع).
+
+**Phase 2 done (home chapters 0-4, narrative pass), pushed.** Opening image: terrazzo-grey-pink-large-chip-01 (client pick). Chapters 0-4 built with the engine; one continuous story: eyebrows name the arc (material, craft, finished place, home), every chapter ends with a hand-off sentence (`Bridge`) into the next, dark-to-light changes use a soft gradient, the opening has a scroll cue. Copy is in the `chapters` namespace (EN/AR). "Pour" uses the cropped night-slab photo (the fan-cobble photo shows a third-party mat brand and workers). Chapter 3 names come from the client's finish data (English names also in Arabic until Arabic names are approved). Chapters 5-9 and the removal of the stand-in blocks follow in Phase 3.
+
+**Client facts applied:** company since 2018; team has 10+ years of experience (not the company); no supplier-partnership claims; expertise across decorative, industrial, high-spec floors and coatings.
+
+**JS (measured, gz):** Home 234 KB (limit 230); other routes about 188 KB (limit 170). Baseline growth since Phase 1 (167 to 182 to 188 KB) comes from features added along the way, not from GSAP. Candidates for the performance pass: stop sending unused client message namespaces per route, lazy-load the sample tray and analytics listener, lazy-load the lightbox and wizard only where used, split ScrollTrigger from SplitText.
+
+**Open for chapter 8 (story/timeline):** only one real milestone (2018). Proposal: the chapter tells the story by offering, with 2018 as the only dated entry: 2018 we start; decorative concrete; industrial floors; high-spec floors and coatings; recessed seating and fire pits (with the client-approved fire-pit photo). No workshop or showroom imagery.
