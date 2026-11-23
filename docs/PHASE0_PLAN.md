@@ -149,3 +149,21 @@ Photo shot list is in `PHOTO_SHOTLIST.md` (7 must-haves, led by a wide landscape
 ## 9. Phase 1 deliverables (next, after "go")
 
 Next.js app scaffold, tokens, fonts, ar/en routing with RTL, layout, header + mega-menu, mobile bottom bar, footer, dev placeholder-badge system, manifest-driven image pipeline and typed loader, zod content validation harness; screenshots at 360/768/1024/1440 in both locales.
+
+## 10. Confirmed facts (from the client)
+
+| Field | Value |
+|---|---|
+| Company (EN) | Concrete Factory |
+| Company (AR) | كونكريت فاكتوري |
+| Tagline / one-liner (EN) | Building better spaces with concrete |
+| Tagline / one-liner (AR) | نبني مساحات أفضل بالخرسانة *(draft translation, confirm)* |
+| Default language | English; Arabic (RTL) available |
+| Base | Amman, Jordan |
+| Service area | All of Jordan |
+| Phone | +962 79 717 9702 |
+| WhatsApp | `{{CONFIRM}}` assumed same as phone |
+| Email | `{{PLACEHOLDER}}` |
+| Currency/digits | Western digits; +962 default for mobile validation |
+
+Still open: address, hours, Maps link, sales/quote email and reply SLA, logo (or approval for a wordmark), social links.
