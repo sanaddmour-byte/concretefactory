@@ -14,7 +14,8 @@ const span: Record<string, string> = {
   "fire-pits-seating": "lg:row-span-2",
   "interior-floors": "lg:col-span-2",
 };
-const focal: Record<string, string> = { "industrial-floors": "50% 60%", "fire-pits-seating": "50% 70%", walls: "50% 40%" };
+// Responsive focal points for the discovery cards (the card crop is landscape on phones, taller on desktop)
+const focal: Record<string, string> = { "industrial-floors": "50% 62%", "interior-floors": "50% 72%", "stamped-concrete": "50% 55%", "fire-pits-seating": "50% 70%", walls: "50% 50%", countertops: "70% 50%" };
 
 export async function ServiceBento({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "home.bento" });

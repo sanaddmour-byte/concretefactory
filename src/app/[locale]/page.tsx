@@ -67,9 +67,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const cards = t.raw("c4.cards") as { t: string; l: string }[];
   const gallery: GalleryCard[] = [
     { id: "g1", title: cards[0].t, line: cards[0].l, href: "/services/countertops", media: image("countertop-waterfall-island-01", l, { focal: "50% 55%" }) },
-    { id: "g2", title: cards[1].t, line: cards[1].l, href: "/services/countertops", media: image("countertop-island-sink-cutout-01", l, { focal: "50% 55%" }) },
-    { id: "g3", title: cards[2].t, line: cards[2].l, href: "/services/fire-pits-seating", media: image("firepit-recessed-seating-01", l, { focal: "50% 70%" }) },
-    { id: "g4", title: cards[3].t, line: cards[3].l, href: "/services/fire-pits-seating", media: image("firepit-recessed-seating-02", l, { focal: "50% 70%" }) },
+    { id: "g2", title: cards[1].t, line: cards[1].l, href: "/services/countertops", media: image("countertop-island-sink-cutout-01", l, { focal: "50% 55%" }) }, // a sink cut-out in a countertop; no basin photo exists yet
+    { id: "g3", title: cards[2].t, line: cards[2].l, href: "/services/fire-pits-seating", media: image("firepit-recessed-seating-02", l, { focal: "50% 70%" }) }, // context
+    { id: "g4", title: cards[3].t, line: cards[3].l, href: "/services/fire-pits-seating", media: image("firepit-recessed-seating-01", l, { focal: "50% 60%" }) }, // detail
     ...(isDev ? [{ id: "g5", title: cards[4].t, line: cards[4].l, href: "/services/sinks", media: null, photoNeeded: true }] : []),
   ];
 
@@ -84,7 +84,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const ic = t.raw("c6.caps") as string[];
   const industrialSteps: StageStep[] = [
     { id: "i1", caption: ic[0], media: image("materials-steel-fibers-glued-01", l, { zoom: { from: 1.2, to: 1 } }) },
-    { id: "i2", caption: ic[1], media: image("industrial-floor-power-trowel-01", l, { focal: "50% 60%", zoom: { from: 1.15, to: 1 } }) },
+    { id: "i2", caption: ic[1], media: image("industrial-polished-hall-02", l, { focal: "50% 60%", focalMobile: "50% 72%", zoom: { from: 1.15, to: 1 } }) },
   ];
 
   // Chapter 8: our story, told by what we do. 2018 is the only dated entry; no workshop or showroom imagery exists, so none is shown.
@@ -99,7 +99,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ChapterRail />
 
       <Chapter id="open" n={0} title={t("open.title")} theme="dark">
-        <OpeningStage media={image("terrazzo-grey-pink-large-chip-01", l, { focal: "50% 50%" })} title={t("open.title")} sub={t("open.sub")} quote={t("open.quote")} work={t("open.work")} workHref="/projects" scroll={t("open.scroll")} />
+        <OpeningStage media={image("terrazzo-grey-pink-large-chip-01", l, { focal: "50% 50%" })} mobileMedia={image("terrazzo-grey-pink-portrait-01", l)} title={t("open.title")} sub={t("open.sub")} quote={t("open.quote")} work={t("open.work")} workHref="/projects" scroll={t("open.scroll")} />
       </Chapter>
 
       <Chapter id="material" n={1} title={t("c1.nav")} theme="dark">

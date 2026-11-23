@@ -14,10 +14,12 @@ await mkdir(path.join(root, "src/generated"), { recursive: true });
 
 const out = {};
 const errors = [];
+let held = 0;
 
 for (const entry of manifest) {
   const id = path.basename(entry.file, path.extname(entry.file));
   const src = path.join(root, entry.file);
+  if (entry.public === false) { held++; continue; } // held photos are never copied to public/ or listed: they cannot be referenced or served
   try {
     await access(src);
   } catch {
@@ -59,4 +61,4 @@ if (errors.length) {
 }
 
 await writeFile(path.join(root, "src/generated/photos.json"), JSON.stringify(out, null, 2));
-console.log(`images: ${Object.keys(out).length} photos processed`);
+console.log(`images: ${Object.keys(out).length} photos processed${held ? `, ${held} held back (public:false)` : ""}`);

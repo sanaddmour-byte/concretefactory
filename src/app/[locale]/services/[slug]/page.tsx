@@ -54,15 +54,16 @@ export default async function ServicePage({ params }: Props) {
   const name = ts(`${slug}.name`);
   const dark = slug === "industrial-floors";
 
-  const gallery: GalleryItem[] = photosByService(slug)
-    .filter((p) => !EXCLUDE.has(p.id))
+  // Curated order from the content file (finished places, patterns, then process); falls back to the service's photos only when no list is given
+  const galleryPhotos = c.gallery ? c.gallery.map((id) => getPhoto(id as PhotoId)) : photosByService(slug).filter((p) => !EXCLUDE.has(p.id));
+  const gallery: GalleryItem[] = galleryPhotos
     .map((p) => ({ id: p.id, src: p.src, width: p.width, height: p.height, alt: p.alt[l], blur: p.blur }));
 
   const stages: StageStep[] = c.story.map((s, i) => ({ id: `s${i}`, title: s.title, caption: s.body, media: image(s.photo as PhotoId, l, { focal: s.focal, zoom: { from: 1.12, to: 1 } }) }));
   const hero = (
     <>
       <ServiceIntro><ServiceHero slug={slug} name={name} c={c} locale={l} /></ServiceIntro>
-      <ServiceScroller slug={slug} c={c} locale={l} label={t("scroller.intro.label")} />
+      <ServiceScroller c={c} locale={l} label={t("scroller.intro.label")} />
       <Applications items={c.applications} locale={l} />
     </>
   );

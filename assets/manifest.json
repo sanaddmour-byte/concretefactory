@@ -543,7 +543,8 @@
       "en": "Crew power-trowelling a fresh industrial concrete slab with a mountain behind",
       "ar": "فريق ينعّم بلاطة خرسانية صناعية طازجة بالهليكوبتر مع جبل في الخلفية"
     },
-    "notes": "Workers' faces are visible: CONFIRM the crew has agreed to appear on the website. Safety gear and equipment visible; no company branding."
+    "notes": "HELD (not published): workers' faces are visible. Publish only after the client confirms the crew has agreed to appear. Workers' faces are visible: CONFIRM the crew has agreed to appear on the website. Safety gear and equipment visible; no company branding.",
+    "public": false
   },
   {
     "file": "assets/photos/industrial-slab-night-trowel-01.jpg",
@@ -687,5 +688,31 @@
       "ar": "مجموعة عيّنات من الركام المكشوف والتيرازو بألوان مختلفة موضوعة تحت الشمس"
     },
     "notes": "Shows the colour range. Outdoor yard setting; building materials in the background."
+  },
+  {
+    "file": "assets/photos/countertop-waterfall-edge-01.jpg",
+    "service": "countertops",
+    "role": "project",
+    "width": 840,
+    "height": 840,
+    "orientation": "square",
+    "alt": {
+      "en": "Concrete bar countertop with a waterfall edge and a polished top",
+      "ar": "كاونتر خرساني بحافة شلالية وسطح مصقول"
+    },
+    "notes": "Cut from countertop-waterfall-bar-grey-01 around the waterfall edge: removes the unfinished cabinetry at the top and left. True colour."
+  },
+  {
+    "file": "assets/photos/terrazzo-grey-pink-portrait-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 1300,
+    "height": 2350,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Grey terrazzo with large Aqaba granite stone chips",
+      "ar": "تيرازو رمادي برقائق حجرية كبيرة من جرانيت العقبة"
+    },
+    "notes": "Portrait cut of terrazzo-grey-pink-large-chip-01 (1300x2350, native resolution) for phones: stays sharp at full height without upscaling."
   }
 ]

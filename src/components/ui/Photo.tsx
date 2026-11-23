@@ -10,12 +10,14 @@ type Props = {
   priority?: boolean;
   /** CSS object-position for art-directed crops, e.g. "50% 80%". */
   focal?: string;
+  /** object-position on phones; defaults to `focal` */
+  focalMobile?: string;
   /** Fill a parent that sets aspect-ratio, instead of using intrinsic size. */
   fill?: boolean;
   className?: string;
 };
 
-export function Photo({ id, locale, sizes, priority, focal, fill, className }: Props) {
+export function Photo({ id, locale, sizes, priority, focal, focalMobile, fill, className }: Props) {
   const p = getPhoto(id);
   const common = {
     src: p.src,
@@ -24,10 +26,10 @@ export function Photo({ id, locale, sizes, priority, focal, fill, className }: P
     priority,
     placeholder: "blur" as const,
     blurDataURL: p.blur,
-    style: focal ? { objectPosition: focal } : undefined,
+    style: focalMobile ? ({ "--fd": focal ?? "50% 50%", "--fm": focalMobile } as React.CSSProperties) : focal ? { objectPosition: focal } : undefined,
   };
   return fill ? (
-    <Image {...common} fill className={cn("object-cover", className)} />
+    <Image {...common} fill className={cn("object-cover", focalMobile && "focal-r", className)} />
   ) : (
     <Image {...common} width={p.width} height={p.height} className={cn("h-auto w-full", className)} />
   );

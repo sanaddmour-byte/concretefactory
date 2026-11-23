@@ -14,7 +14,9 @@ import { LineReveal } from "@/components/story/LineReveal";
 export async function ServiceHero({ slug, name, c, locale }: { slug: string; name: string; c: ServiceContent; locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "service" });
   // Landscape photos get a landscape frame so nothing important is cropped away
-  const landscape = c.heroImage ? getPhoto(c.heroImage as PhotoId).orientation === "landscape" : false;
+  const hp = c.heroImage ? getPhoto(c.heroImage as PhotoId) : null;
+  const wide = !!hp && hp.width / hp.height >= 2; // e.g. the wall strip: shown in a full-width frame so the joints and tie holes read
+  const landscape = hp ? hp.orientation === "landscape" : false;
   return (
     <section id="hero" className="container-page pb-12 pt-6 md:pb-20 md:min-h-[calc(100svh-var(--header-h))]">
       <nav aria-label={t("breadcrumb")} className="text-sm text-n-600">
@@ -26,9 +28,9 @@ export async function ServiceHero({ slug, name, c, locale }: { slug: string; nam
           <li aria-current="page" className="text-n-900">{name}</li>
         </ol>
       </nav>
-      <div className="mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+      <div className={wide ? "mt-8 grid grid-cols-1 gap-10" : "mt-8 grid grid-cols-1 items-center gap-10 md:grid-cols-2"}>
         <div>
-          <LineReveal as="h1" className="headline-xl display">{name}</LineReveal>
+          <LineReveal as="h1" className="headline-svc display">{name}</LineReveal>
           <p className="mt-4 text-xl text-n-800">{c.promise}</p>
           <Mdx source={c.body} />
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -38,9 +40,9 @@ export async function ServiceHero({ slug, name, c, locale }: { slug: string; nam
             </a>
           </div>
         </div>
-        <div className={`hero-frame relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-card bg-n-200 ${landscape ? "max-w-[640px]" : "max-w-[560px] md:aspect-[4/5]"}`}>
+        <div className={`hero-frame relative mx-auto w-full overflow-hidden rounded-card bg-n-200 ${wide ? "hero-wide" : `aspect-[4/3] ${landscape ? "max-w-[640px]" : "max-w-[560px] md:aspect-[4/5]"}`}`}>
           {c.heroImage ? (
-            <Photo id={c.heroImage as PhotoId} locale={locale} fill priority focal={c.heroFocal} sizes="(min-width: 768px) 560px, 100vw" className={c.heroImage ? "" : ""} />
+            <Photo id={c.heroImage as PhotoId} locale={locale} fill priority focal={c.heroFocal} focalMobile={c.heroFocalMobile} sizes={wide ? "(min-width: 1280px) 1216px, 100vw" : "(min-width: 768px) 560px, 100vw"} />
           ) : (
             <div className="tex-placeholder absolute inset-0">{isDev && <span className="ph-badge absolute start-3 top-3">PHOTO NEEDED: {slug} hero</span>}</div>
           )}
