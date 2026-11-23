@@ -43,7 +43,7 @@
   --header-h: 72px;
 
   --f-display: var(--font-oswald), var(--font-tajawal), system-ui, sans-serif;
-  --f-body: var(--font-plex), var(--font-tajawal), system-ui, sans-serif;
+  --f-body: var(--font-oswald), var(--font-tajawal), system-ui, sans-serif;
 }
 /* Arabic: Tajawal throughout; ExtraBold for display */
 html[lang="ar"] {
@@ -108,11 +108,14 @@ body {
   background: var(--n-50);
   font-family: var(--f-body);
   font-size: var(--text-base);
-  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
 html[lang="ar"] body {
-  line-height: 1.7; /* about +10% for Arabic */
+  line-height: 1.75; /* about +10% for Arabic */
+  letter-spacing: 0;
 }
 
 h1, h2, h3 {

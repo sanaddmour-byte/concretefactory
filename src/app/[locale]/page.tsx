@@ -25,8 +25,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <Link href="/projects" className="inline-flex min-h-11 items-center font-medium text-maroon underline-offset-4 hover:underline">{t("seeWork")}</Link>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-[480px] overflow-hidden rounded-card bg-n-100">
-          <Photo id="stamped-cobblestone-fan-driveway-01" locale={locale} priority sizes="(min-width: 768px) 480px, 100vw" />
+        <div className="mx-auto w-full max-w-[520px] overflow-hidden rounded-card bg-n-100">
+          <Photo id="stamped-plaza-palms-curve-01" locale={locale} priority sizes="(min-width: 768px) 520px, 100vw" />
         </div>
       </section>
       <p className="container-page text-sm text-n-600">{t("foundation")}</p>

@@ -60,7 +60,7 @@ All as CSS variables in `app/globals.css` and mapped into the Tailwind v4 `@them
 
 Rule: yellow never carries text on light surfaces; everything else in the revised palette passes AA on the surfaces it is used on.
 
-Fonts: Oswald (display, all weights 200-700; no italic exists), IBM Plex Sans (EN body), Tajawal (AR; ExtraBold for display, regular for body; +10% line-height). Loaded with `next/font/google`, which self-hosts at build time (reachable from this environment).
+Fonts: Oswald (display, all weights 200-700; no italic exists), Oswald (EN body too; client decision), Tajawal (AR; ExtraBold for display, regular for body; +10% line-height). Loaded with `next/font/google`, which self-hosts at build time (reachable from this environment).
 
 ## 4. Wireframe descriptions
 
@@ -190,3 +190,9 @@ Added to `assets/manifest.json` (EXIF/GPS stripped on import). Client approved t
 The red sealed fan-cobble swatch is the strongest on-brand (maroon) image for the home Finish Library teaser.
 
 Four more samples (also approved): `stamped-flagstone-pebble-blue-01`, `stamped-rock-rose-terracotta-01` (Finish Library swatches), `stamped-brick-terracotta-floor-01` (stamped gallery, installed floor, ≤1024 px), `terrazzo-cream-multi-chip-01` (terrazzo swatch). Colour/pattern names still to be confirmed.
+
+## 12. Changes after client feedback
+- **Hero** is now `stamped-plaza-palms-curve-01` (palm-lined plaza, two-tone stamped concrete). Still portrait (1117×1280), so the split layout stays. The old fan-driveway photo is a regular project photo.
+- **Typography:** Oswald for all English text (display and body). Arabic stays Tajawal (Oswald has no Arabic glyphs).
+- **Photo privacy:** `countertop-island-cutout-01` is cropped to remove two people from the original frame.
+- 7 more photos added (42 total): plaza ×2, courtyard, two low-angle stamped shots, two countertops.

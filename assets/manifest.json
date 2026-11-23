@@ -80,7 +80,7 @@
   {
     "file": "assets/photos/stamped-cobblestone-fan-driveway-01.jpg",
     "service": "stamped-concrete",
-    "role": "hero",
+    "role": "project",
     "width": 960,
     "height": 1280,
     "orientation": "portrait",
@@ -88,7 +88,7 @@
       "en": "Curved driveway ramp in fan-pattern stamped cobblestone concrete with mountain views",
       "ar": "منحدر مدخل منحني من الخرسانة المطبوعة بنمط حجارة المروحة مع إطلالة جبلية"
     },
-    "notes": "Strongest hero candidate. Portrait; art-direct crop for 16:9 desktop (focus lower-centre)."
+    "notes": "Former hero candidate (only 960×1280). Still strong for the featured project and stamped gallery."
   },
   {
     "file": "assets/photos/countertop-waterfall-island-01.jpg",
@@ -453,5 +453,96 @@
       "ar": "خرسانة مطبوعة بملمس صخري طبيعي بلون التيراكوتا الوردي"
     },
     "notes": "CONFIRM colour/texture name. Close-up; crop to 1:1 for swatches."
+  },
+  {
+    "file": "assets/photos/stamped-plaza-palms-curve-01.jpg",
+    "service": "stamped-concrete",
+    "role": "hero",
+    "width": 1117,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Two-tone stamped concrete plaza curving past a row of palm trees, with hills behind",
+      "ar": "ساحة من الخرسانة المطبوعة بلونين تنحني بجانب صف من أشجار النخيل مع تلال في الخلفية"
+    },
+    "notes": "HERO. Portrait 1117×1280: use in the split layout, not full-bleed. Palms still wrapped and building unfinished (in-progress). CONFIRM project name/city before captioning."
+  },
+  {
+    "file": "assets/photos/stamped-plaza-curve-building-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Grey and cream stamped concrete curving along a blue building with large glazed doors",
+      "ar": "خرسانة مطبوعة رمادية وكريمية تنحني على امتداد مبنى أزرق بأبواب زجاجية كبيرة"
+    },
+    "notes": "Same plaza as the hero, closer. 960 px wide: display ≤960 px."
+  },
+  {
+    "file": "assets/photos/stamped-courtyard-cobble-fan-cream-border-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 1512,
+    "height": 2016,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Courtyard in grey fan-cobblestone stamped concrete with a cream ashlar border",
+      "ar": "فناء بخرسانة مطبوعة رمادية بنمط حجارة المروحة مع إطار كريمي بنمط الحجر المقطّع"
+    },
+    "notes": "Shows pattern combination (cobble + ashlar border). Outdoor furniture/rack visible; blue wall."
+  },
+  {
+    "file": "assets/photos/stamped-cobble-lowangle-sunlit-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Low-angle sunlit view of sealed grey stamped cobblestone concrete",
+      "ar": "منظر بزاوية منخفضة لخرسانة مطبوعة رمادية بنمط الحجارة المصقولة تحت ضوء الشمس"
+    },
+    "notes": "Moody, high-contrast mood shot (dark surroundings). Not for swatches: colour is exaggerated by backlight. 960 px wide."
+  },
+  {
+    "file": "assets/photos/stamped-ashlar-cream-lowangle-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Cream stamped ashlar slate paving in a courtyard with stairs and trees behind",
+      "ar": "رصف كريمي من الخرسانة المطبوعة بنمط حجر الأردواز في فناء مع درج وأشجار خلفه"
+    },
+    "notes": "960 px wide: display ≤960 px."
+  },
+  {
+    "file": "assets/photos/countertop-waterfall-bar-grey-01.jpg",
+    "service": "countertops",
+    "role": "project",
+    "width": 1600,
+    "height": 900,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Grey concrete kitchen bar with a waterfall side and a polished top",
+      "ar": "كاونتر مطبخ خرساني رمادي بجانب شلالي وسطح مصقول"
+    },
+    "notes": "Kitchen still under construction (cabinet frames visible at top). Crop to the bar. No people."
+  },
+  {
+    "file": "assets/photos/countertop-island-cutout-01.jpg",
+    "service": "countertops",
+    "role": "project",
+    "width": 2000,
+    "height": 1060,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Concrete kitchen island with a hob cut-out on a black steel frame",
+      "ar": "جزيرة مطبخ خرسانية بفتحة للموقد على هيكل فولاذي أسود"
+    },
+    "notes": "CROPPED to remove two people (faces/mask) from the original. Pre-handover: open drawer carcass visible. Reshoot after handover recommended."
   }
 ]
