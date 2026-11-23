@@ -401,5 +401,57 @@
       "ar": "خرسانة مطبوعة بنمط البلاط المربع بلون بني بزاوية منخفضة"
     },
     "notes": "Low resolution (720 px wide) and a person's shadow is visible. Small use only; reshoot recommended."
+  },
+  {
+    "file": "assets/photos/stamped-flagstone-pebble-blue-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/swatch",
+    "width": 768,
+    "height": 1024,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Blue stamped concrete in a flagstone pattern with small pebble-shaped joints",
+      "ar": "خرسانة مطبوعة زرقاء بنمط الحجر المسطح مع فواصل على شكل حصى صغيرة"
+    },
+    "notes": "Portrait (768 px wide): use at swatch size only. CONFIRM colour name. Keep true colour; do not tint."
+  },
+  {
+    "file": "assets/photos/stamped-brick-terracotta-floor-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 1024,
+    "height": 768,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Terracotta stamped concrete floor in a running-bond brick pattern",
+      "ar": "أرضية من الخرسانة المطبوعة بلون التيراكوتا بنمط الطوب المتداخل"
+    },
+    "notes": "Installed interior/covered floor, 1024 px wide: gallery use at ≤1024 px. Wall edge visible at top."
+  },
+  {
+    "file": "assets/photos/terrazzo-cream-multi-chip-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 1024,
+    "height": 768,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Cream terrazzo with small black, grey and ochre stone chips",
+      "ar": "تيرازو كريمي برقائق حجرية صغيرة سوداء ورمادية وأوكر"
+    },
+    "notes": "1024 px wide; swatch size only. Pairs with terrazzo-cream-black-01 (different chip mix)."
+  },
+  {
+    "file": "assets/photos/stamped-rock-rose-terracotta-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/swatch",
+    "width": 2208,
+    "height": 1578,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Stamped concrete with a natural rock texture in rose terracotta",
+      "ar": "خرسانة مطبوعة بملمس صخري طبيعي بلون التيراكوتا الوردي"
+    },
+    "notes": "CONFIRM colour/texture name. Close-up; crop to 1:1 for swatches."
   }
 ]

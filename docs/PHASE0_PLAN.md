@@ -188,3 +188,5 @@ Added to `assets/manifest.json` (EXIF/GPS stripped on import). Client approved t
 | finish-tan-sawcut-01 | Tagged `interior-floors`; **finish type to be confirmed** before any use |
 
 The red sealed fan-cobble swatch is the strongest on-brand (maroon) image for the home Finish Library teaser.
+
+Four more samples (also approved): `stamped-flagstone-pebble-blue-01`, `stamped-rock-rose-terracotta-01` (Finish Library swatches), `stamped-brick-terracotta-floor-01` (stamped gallery, installed floor, ≤1024 px), `terrazzo-cream-multi-chip-01` (terrazzo swatch). Colour/pattern names still to be confirmed.
