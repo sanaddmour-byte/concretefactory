@@ -243,3 +243,10 @@ Client supplied four night photos. `glow-aggregate-dark-01` (1526 px, sharp, met
 - **Analytics** (`track()` to `window.dataLayer`, logs in dev): `quote_start`, `quote_step_2..5`, `quote_submit`, `quote_whatsapp_handoff`, `whatsapp_click`, `phone_click`, `sample_request`, `spec_download`, `visit_submit`.
 - **Config needed to go live:** `RESEND_API_KEY`, `QUOTE_TO_EMAIL=info@theconcretefactoryjo.com`, `QUOTE_FROM_EMAIL` (a sender on a domain verified in Resend) and the network host `api.resend.com`. See `.env.example`.
 - **Tested** against a mock Resend endpoint: payload, recipient, reply-to, attachments, phone normalisation and the unconfigured fallback.
+
+## 19. Contact channels confirmed
+- **WhatsApp number:** same as the phone, +962 79 717 9702 (confirmed by the client).
+- **WhatsApp links:** plain WhatsApp buttons (header, mobile bar, footer, call-to-action bands) use the client's `wa.me/qr/FQWUDLXDH2LLJ1`. That link cannot carry text, so buttons that send a prefilled message (quote handoff, service enquiry, visit request) use `wa.me/962797179702?text=…` for the same number.
+- **Instagram:** instagram.com/theconcretefactoryjo (tracking parameters removed), shown in the footer; also for the Contact page.
+- **Email:** info@theconcretefactoryjo.com.
+- **Contact page idea (Phase 6):** a scannable WhatsApp QR code generated from the QR link (not the supplied screenshot, which shows a personal contact name).

@@ -13,6 +13,7 @@ const schema = z.object({
     phone: z.string().regex(/^\+\d{8,15}$/),
     phoneDisplay: z.string(),
     whatsapp: z.string().regex(/^\d{8,15}$/),
+    whatsappQr: z.url(),
     email: z.string(),
     salesEmail: z.string(),
     address: z.string(),
@@ -35,7 +36,12 @@ export const site = schema.parse(raw);
 
 export const t = (v: { en: string; ar: string }, locale: Locale) => v[locale];
 
+/**
+ * Plain WhatsApp buttons use the client's wa.me/qr link. That link cannot carry text, so any button that
+ * sends a prefilled message (quote handoff, service enquiry, visit request) uses the numeric wa.me link
+ * for the same number.
+ */
 export function whatsappUrl(message?: string) {
-  const q = message ? `?text=${encodeURIComponent(message)}` : "";
-  return `https://wa.me/${site.contact.whatsapp}${q}`;
+  if (!message) return site.contact.whatsappQr;
+  return `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(message)}`;
 }

@@ -57,6 +57,18 @@ export async function Footer({ locale }: { locale: Locale }) {
             <li><Ph value={c.hours}>{(v) => <span className="block py-1">{t("footer.hours")}: {v}</span>}</Ph></li>
             <li><Ph value={c.mapsUrl}>{(v) => <a href={v} rel="noopener" className={link}>{t("footer.map")}</a>}</Ph></li>
           </ul>
+          {site.socials.length > 0 && (
+            <ul className="mt-2 flex flex-wrap gap-x-4" aria-label={t("footer.social")}>
+              {site.socials.map((so) => (
+                <li key={so.url}>
+                  <a href={so.url} rel="noopener" target="_blank" className={link}>
+                    <svg aria-hidden viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" className="me-2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" /></svg>
+                    {so.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
           <Link href="/visit" className={`${link} mt-2 text-maroon-dark hover:text-maroon-dark-hover`}>{t("footer.visit")}</Link>
         </div>
       </div>

@@ -31,9 +31,15 @@
     "hours": "{{PLACEHOLDER: opening hours}}",
     "mapsUrl": "{{PLACEHOLDER: Google Maps link}}",
     "replySla": "{{CONFIRM: reply time, e.g. one working day}}",
-    "closedDays": []
+    "closedDays": [],
+    "whatsappQr": "https://wa.me/qr/FQWUDLXDH2LLJ1"
   },
-  "socials": [],
+  "socials": [
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/theconcretefactoryjo"
+    }
+  ],
   "stats": {
     "years": "10+",
     "area": null,
