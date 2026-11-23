@@ -661,5 +661,31 @@
       "ar": "أرضية خرسانية مصقولة بلمعة واضحة، تظهر في صالة كبيرة"
     },
     "notes": "Used for interior floors to show the polished finish (the setting is an industrial hall, not a home). Replace with a living-space photo when one exists."
+  },
+  {
+    "file": "assets/photos/samples-terrazzo-tiles-01.jpg",
+    "service": "terrazzo",
+    "role": "project",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Three grey terrazzo and aggregate sample tiles side by side on a wooden floor",
+      "ar": "ثلاث عيّنات من التيرازو والركام بدرجات رمادية متجاورة على أرضية خشبية"
+    },
+    "notes": "Portrait phone photo rotated 90deg in the original; auto-rotated on import. Good for the sample-selection section."
+  },
+  {
+    "file": "assets/photos/samples-colour-range-01.jpg",
+    "service": "terrazzo",
+    "role": "project",
+    "width": 1280,
+    "height": 960,
+    "orientation": "landscape",
+    "alt": {
+      "en": "A range of exposed-aggregate and terrazzo sample tiles in different colours laid out in the sun",
+      "ar": "مجموعة عيّنات من الركام المكشوف والتيرازو بألوان مختلفة موضوعة تحت الشمس"
+    },
+    "notes": "Shows the colour range. Outdoor yard setting; building materials in the background."
   }
 ]

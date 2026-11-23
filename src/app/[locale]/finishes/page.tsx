@@ -7,6 +7,7 @@ import { finishes, finishLabel, finishSlug, colourFamily } from "@/lib/finishes"
 import { getPhoto, type PhotoId } from "@/lib/photos";
 import { FinishLibrary, type FinishItem } from "@/components/finishes/FinishLibrary";
 import { FinalCta } from "@/components/home/FinalCta";
+import { SampleGuide } from "@/components/samples/SampleGuide";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -40,6 +41,7 @@ export default async function FinishesPage({ params }: { params: Promise<{ local
       <section className="container-page pb-16 pt-6 md:pb-24">
         <FinishLibrary items={items} types={types} colours={colours} />
       </section>
+      <SampleGuide locale={l} />
       <FinalCta locale={l} />
     </>
   );

@@ -83,7 +83,7 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "faq": "FAQ",
-    "visit": "Book a sample visit",
+    "visit": "Reserve your technical visit",
     "contactPage": "Contact",
     "address": "Address",
     "hours": "Hours",
@@ -360,14 +360,14 @@
     "projectsTitle": "Projects using this finish",
     "back": "All finishes",
     "quote": "Get a quote with this sample",
-    "visit": "Book a sample visit",
+    "visit": "Reserve your technical visit",
     "zoom": "Zoom",
     "dark": "In the dark",
     "darkCaption": "The same kind of aggregate, photographed in the dark."
   },
   "samples": {
     "count": "{n} of 6 samples",
-    "visit": "Request samples",
+    "visit": "Reserve visit",
     "quote": "Get a quote",
     "clear": "Clear list",
     "added": "Added {name}",
@@ -496,8 +496,8 @@
     "stepAnnounce": "Step {n} of {total}: {name}"
   },
   "visit": {
-    "title": "Book a sample visit",
-    "intro": "Pick a day and time and we'll confirm with you. Bring your plans if you have them.",
+    "title": "Reserve your technical visit",
+    "intro": "Pick a day and time and we'll confirm with you. Bring your plans if you have them, and we'll look at your space together.",
     "address": "Address",
     "hours": "Hours",
     "date": "Preferred date",
@@ -511,7 +511,7 @@
     "note": "Anything else we should know?",
     "name": "Your name",
     "phone": "Mobile number",
-    "submit": "Request a visit",
+    "submit": "Reserve your visit",
     "sending": "Sending…",
     "errors": {
       "date": "Choose a date from tomorrow onwards.",
@@ -522,12 +522,12 @@
       "rate": "Too many requests. Please try again in a few minutes."
     },
     "success": {
-      "title": "Thank you, we'll confirm your visit",
+      "title": "Thank you, we'll confirm your technical visit",
       "ref": "Your reference",
-      "again": "Request another visit"
+      "again": "Reserve another visit"
     },
     "wa": {
-      "intro": "Hello, I'd like to book a sample visit.",
+      "intro": "Hello, I'd like to reserve a technical visit.",
       "date": "Date",
       "slot": "Time",
       "name": "Name",
@@ -642,7 +642,7 @@
     "qrAlt": "QR code that opens a WhatsApp chat with The Concrete Factory",
     "serviceArea": "We work across all of Jordan.",
     "quote": "Get a quote",
-    "visit": "Book a sample visit"
+    "visit": "Reserve your technical visit"
   },
   "faqPage": {
     "title": "Frequently asked questions",
@@ -661,7 +661,7 @@
       },
       {
         "h": "What we collect",
-        "p": "When you send a quote request, book a sample visit or request a sample box, we receive what you type: your name, mobile number, email address (if you give it), project details, the finishes you chose and any photos or drawings you attach."
+        "p": "When you send a quote request, reserve a technical visit or request a sample box, we receive what you type: your name, mobile number, email address (if you give it), project details, the finishes you chose and any photos or drawings you attach."
       },
       {
         "h": "How we use it",
@@ -879,5 +879,26 @@
       "whatsapp": "Prefer to talk? Message us on WhatsApp.",
       "startFor": "Start a quote for {name}"
     }
+  },
+  "samplesGuide": {
+    "title": "How choosing samples works",
+    "intro": "Choosing a finish is easier with real samples in your hands. Here's how we do it.",
+    "steps": [
+      {
+        "t": "Browse",
+        "d": "Look through the library and add up to six finishes you like."
+      },
+      {
+        "t": "Compare",
+        "d": "Real sample tiles show you colour and stone size far better than a screen can."
+      },
+      {
+        "t": "Decide",
+        "d": "Tell us about your space, and we'll help you narrow it down."
+      }
+    ],
+    "cta": "Reserve your technical visit",
+    "cap1": "Sample tiles of terrazzo and aggregate, side by side.",
+    "cap2": "The colour range, laid out in the sun."
   }
 }

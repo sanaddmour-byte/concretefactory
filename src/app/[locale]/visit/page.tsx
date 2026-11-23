@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { finishes, finishLabel } from "@/lib/finishes";
 import { Ph } from "@/components/ui/Ph";
 import { site } from "@/lib/site";
+import { SampleGuide } from "@/components/samples/SampleGuide";
 import { VisitForm } from "@/components/quote/VisitForm";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -44,6 +45,7 @@ export default async function VisitPage({ params }: { params: Promise<{ locale: 
           />
         </Suspense>
       </section>
+      <SampleGuide locale={l} cta={false} />
     </>
   );
 }

@@ -25,7 +25,7 @@ You are a senior product designer and senior front-end engineer. Your standard i
 | Location / service area | {{CITY, COUNTRY}}; serves {{list of cities/regions}} |
 | Languages | Arabic + English, full RTL. Default language: {{ar \| en}} |
 | Primary conversion | **Request a quote** (multi-step wizard) |
-| Secondary conversions | WhatsApp chat (prefilled), call, book a showroom/sample visit, download a spec sheet |
+| Secondary conversions | WhatsApp chat (prefilled), call, reserve a technical visit, download a spec sheet |
 | Contact | Phone {{+962…}}, WhatsApp {{+962…}}, email {{…}}, showroom/factory address {{…}}, hours {{…}}, Google Maps link {{…}} |
 | Brand | Logo {{path or "propose a wordmark"}}; tone: **confident, precise, crafted, never salesy** |
 | Stack | Next.js (latest stable, App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui · next-intl · MDX content · react-hook-form + zod · Resend for email · deploy on Vercel |
@@ -72,7 +72,7 @@ Group the services into four families. Each service gets its own page from one s
 /{locale}/architects              For architects & contractors
 /{locale}/about                   About, factory & team
 /{locale}/quote                   Quote wizard
-/{locale}/visit                   Book a showroom / sample visit
+/{locale}/visit                   Reserve a technical visit
 /{locale}/contact                 Contact, map, hours
 /{locale}/faq                     FAQ
 /{locale}/legal/privacy           Privacy
@@ -142,7 +142,7 @@ A multi-step form with a progress bar, at most 4 inputs per step, and Back/Next 
 **Analytics events:** `quote_start`, `quote_step_{n}`, `quote_submit`, `quote_whatsapp_handoff`, `whatsapp_click`, `phone_click`, `sample_request`, `spec_download`.
 
 ### 4.8 Visit booking (`/visit`)
-Showroom or sample visit: date picker (excluding {{closed days}}), time slot, name and mobile, and finishes of interest (pre-filled from the sample list). Use {{Calendly/Cal.com link}} if the company uses one; otherwise an email request.
+Technical visit (no showroom exists): date picker (excluding {{closed days}}), time slot, name and mobile, and finishes of interest (pre-filled from the sample list). Use {{Calendly/Cal.com link}} if the company uses one; otherwise an email request.
 
 ---
 

@@ -107,7 +107,7 @@ export async function submitVisit(fd: FormData): Promise<ActionResult> {
   const tomorrow = new Date(); tomorrow.setUTCHours(0, 0, 0, 0); tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
   if (isNaN(date.getTime()) || date < tomorrow || site.contact.closedDays.includes(date.getUTCDay())) return { ok: false, error: "invalid", fields: ["date"] };
   const ref = makeRef("VS");
-  return deliver(ref, "Sample / showroom visit request", [
+  return deliver(ref, "Technical visit request", [
     ["Reference", ref], ["Language", d.locale], ["Date", d.date], ["Time", d.slot], ["Name", d.name], ["Mobile", normalizePhone(d.phone) ?? d.phone],
     ["Finishes to see", d.finishes.join(", ")], ["Note", d.note],
   ], "", []);
