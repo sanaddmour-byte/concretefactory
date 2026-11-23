@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "quote" });
-  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/quote`, languages: { en: "/en/quote", ar: "/ar/quote" } } };
+  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/quote`, languages: { en: "/en/quote", ar: "/ar/quote", "x-default": "/en/quote" } } };
 }
 
 export default async function QuotePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -34,7 +34,7 @@ export default async function QuotePage({ params }: { params: Promise<{ locale: 
         <p className="mt-4 max-w-[60ch] text-lg text-n-700">{t("intro")}</p>
       </section>
       <section className="container-page pb-20 pt-6 md:pb-28">
-        <Suspense fallback={<div className="mx-auto h-64 max-w-3xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
+        <Suspense fallback={<div className="mx-auto min-h-[46rem] max-w-3xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
           <QuoteWizard
             services={services.map((s) => ({ slug: s.slug, name: ts(`${s.slug}.name`), src: s.photo ? getPhoto(s.photo as PhotoId).src : null }))}
             finishes={finishes.map((f) => ({ code: f.code, label: finishLabel(f, l, ts(`${f.family}.name`)), src: getPhoto(f.photo as PhotoId).src }))}

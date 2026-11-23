@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale) || !projectSlugs.includes(slug)) return {};
   const { seo } = getProject(slug, locale);
-  return { title: seo.title, description: seo.description, alternates: { canonical: `/${locale}/projects/${slug}`, languages: { en: `/en/projects/${slug}`, ar: `/ar/projects/${slug}` } } };
+  return { title: seo.title, description: seo.description, alternates: { canonical: `/${locale}/projects/${slug}`, languages: { en: `/en/projects/${slug}`, ar: `/ar/projects/${slug}`, "x-default": `/en/projects/${slug}` } } };
 }
 
 export default async function ProjectPage({ params }: Props) {

@@ -53,7 +53,7 @@ html[lang="ar"] .pcap-title { text-transform: none; letter-spacing: 0; font-weig
 /* Chapter rail: inline-end side (mirrors in RTL); hidden on mobile where a thin progress bar is used */
 .chapter-rail { position: fixed; inset-inline-end: 6px; inset-block-start: 50%; transform: translateY(-50%); z-index: 35; display: none; }
 .chapter-rail ol { display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 0; list-style: none; }
-.chapter-rail-link { display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-block-size: 28px; padding-inline: 8px; border-radius: 6px; color: var(--n-700); text-decoration: none; font-family: var(--font-display); }
+.chapter-rail-link { color: var(--n-700); display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-block-size: 28px; padding-inline: 8px; border-radius: 6px; color: var(--n-700); text-decoration: none; font-family: var(--font-display); }
 .chapter-rail-title { max-inline-size: 0; overflow: hidden; white-space: nowrap; opacity: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; transition: max-inline-size 250ms var(--ease-out), opacity 200ms; }
 html[lang="ar"] .chapter-rail-title { text-transform: none; letter-spacing: 0; }
 .chapter-rail-num { font-size: 13px; opacity: 0.55; }
@@ -62,7 +62,8 @@ html[lang="ar"] .chapter-rail-title { text-transform: none; letter-spacing: 0; }
 .chapter-rail-link.on-dark-rail { color: var(--n-200); }
 .chapter-rail-link.is-active, .chapter-rail-link:hover, .chapter-rail-link:focus-visible { background: rgb(236 236 236 / 0.9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--n-900); }
 .chapter-rail-link.on-dark-rail.is-active, .chapter-rail-link.on-dark-rail:hover, .chapter-rail-link.on-dark-rail:focus-visible { background: rgb(38 38 38 / 0.85); color: var(--n-50); }
-.chapter-rail-link:not(.is-active) .chapter-rail-num { text-shadow: 0 1px 6px rgb(0 0 0 / 0.45); color: var(--n-50); opacity: 0.85; }
+.chapter-rail-link:not(.is-active) .chapter-rail-num { opacity: 0.9; font-weight: 500; }
+.chapter-rail-link.on-dark-rail:not(.is-active) .chapter-rail-num { text-shadow: 0 1px 6px rgb(0 0 0 / 0.5); }
 .chapter-rail-link.on-dark-rail.is-active .chapter-rail-num { color: var(--yellow); }
 @media (min-width: 768px) { .chapter-rail { display: block; } }
 
@@ -148,3 +149,51 @@ html[lang="ar"] .bridge-text { font-weight: 400; line-height: 1.55; letter-spaci
 .scroll-cue i { display: block; inline-size: 2px; block-size: 36px; background: linear-gradient(to bottom, var(--yellow), transparent); transform-origin: top; }
 @media (prefers-reduced-motion: no-preference) { .scroll-cue i { animation: cue 1.8s var(--ease-out) infinite; } }
 @keyframes cue { 0% { transform: scaleY(0); opacity: 0; } 40% { opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ---------- Chapter 5: wall pan ---------- */
+.wall { padding-block: 32px 8px; }
+.wall-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.wall-frame { position: relative; overflow: hidden; aspect-ratio: 16 / 9; border-radius: var(--radius-card); background: var(--n-800); }
+.wall-layer { position: absolute; inset-block: 0; inset-inline-start: 0; aspect-ratio: 1370 / 560; height: 100%; }
+.wall-mark { position: absolute; width: 0; height: 0; display: none; }
+.wall-mark i { position: absolute; inline-size: 36px; block-size: 36px; margin: -18px; border: 2px solid var(--yellow); border-radius: 50%; box-shadow: 0 0 0 6px rgb(227 181 58 / 0.25); }
+.wall-notes { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+.wall-note { display: grid; gap: 2px; }
+.wall-note strong { font-family: var(--font-display); font-weight: 500; font-size: 20px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n-50); }
+html[lang="ar"] .wall-note strong { text-transform: none; letter-spacing: 0; font-weight: 700; }
+.wall-note span:last-child { color: var(--n-300); }
+.wall-note-num { color: var(--yellow); font-family: var(--font-display); font-size: 14px; }
+.wall.is-pinned { height: 100svh; padding: 0; display: flex; align-items: center; overflow: hidden; background: var(--n-900); }
+.wall.is-pinned .wall-grid { width: 100%; padding-block: calc(var(--header-h) + 8px) 24px; }
+.wall.is-pinned .wall-frame { aspect-ratio: 16 / 9; max-block-size: calc(100svh - var(--header-h) - 190px); margin-inline: auto; width: 100%; }
+.wall.is-pinned .wall-mark { display: block; }
+.wall.is-pinned .wall-notes { display: block; position: relative; min-block-size: 96px; }
+.wall.is-pinned .wall-note { position: absolute; inset-inline: 0; inset-block-start: 0; opacity: 0; transform: translateY(10px); transition: opacity 350ms var(--ease-out), transform 350ms var(--ease-out); }
+.wall.is-pinned .wall-note.is-on { opacity: 1; transform: none; }
+@media (min-width: 768px) { .wall.is-pinned .wall-frame { max-block-size: calc(100svh - var(--header-h) - 170px); } .wall-grid { gap: 28px; } }
+
+/* ---------- Chapter 8: timeline ---------- */
+.tl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 24px 40px; }
+.tl-sticky { display: none; }
+.tl-item { padding-block: 28px; border-block-start: 1px solid var(--n-700); }
+.tl-inline-label { margin: 0 0 8px; font-size: clamp(36px, 10vw, 56px); line-height: 1; color: var(--yellow); }
+.tl-inline-photo { position: relative; aspect-ratio: 4 / 3; margin: 0 0 16px; overflow: hidden; border-radius: var(--radius-card); background: var(--n-800); }
+.tl-item p:last-child { color: var(--n-300); }
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .tl { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 56px; align-items: start; }
+  .tl-sticky { display: block; position: sticky; inset-block-start: calc(var(--header-h) + 32px); }
+  .tl-label { font-size: clamp(44px, 5vw, 80px); line-height: 1; overflow-wrap: anywhere; color: var(--yellow); animation: tl-in 450ms var(--ease-out) both; }
+  .tl-photo { position: relative; margin-block-start: 28px; aspect-ratio: 4 / 3; max-inline-size: 420px; overflow: hidden; border-radius: var(--radius-card); background: var(--n-800); }
+  .tl-photo-img { position: absolute; inset: 0; opacity: 0; transition: opacity 450ms var(--ease-out); }
+  .tl-photo-img.is-active { opacity: 1; }
+  .tl-inline-label, .tl-inline-photo { display: none; }
+  .tl-item { min-block-size: 70svh; display: flex; flex-direction: column; justify-content: center; border: 0; }
+}
+@keyframes tl-in { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+
+/* ---------- Chapter 7: finish wall (staggered rise) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .rise { animation: reveal-up linear both; animation-timeline: view(); animation-range: entry calc(var(--i, 0) * 5%) entry calc(35% + var(--i, 0) * 5%); }
+  }
+}

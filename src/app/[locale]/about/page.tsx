@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "about" });
-  return { title: t("title"), description: t("intro").slice(0, 160), alternates: { canonical: `/${locale}/about`, languages: { en: "/en/about", ar: "/ar/about" } } };
+  return { title: t("title"), description: t("intro").slice(0, 160), alternates: { canonical: `/${locale}/about`, languages: { en: "/en/about", ar: "/ar/about", "x-default": "/en/about" } } };
 }
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {

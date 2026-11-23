@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "faqPage" });
-  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/faq`, languages: { en: "/en/faq", ar: "/ar/faq" } } };
+  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/faq`, languages: { en: "/en/faq", ar: "/ar/faq", "x-default": "/en/faq" } } };
 }
 
 export default async function FaqPage({ params }: { params: Promise<{ locale: string }> }) {

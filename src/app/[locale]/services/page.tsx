@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "service.overview" });
-  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/services`, languages: { en: "/en/services", ar: "/ar/services" } } };
+  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/services`, languages: { en: "/en/services", ar: "/ar/services", "x-default": "/en/services" } } };
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {

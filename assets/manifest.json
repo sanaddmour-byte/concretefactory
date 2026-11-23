@@ -596,5 +596,18 @@
       "ar": "حبيبات ركام فيروزية مضيئة في الظلام تتوهّج على سطح خرساني داكن"
     },
     "notes": "Night photo of the glowing aggregate (client-supplied). This resolves the earlier 'need a night photo' request."
+  },
+  {
+    "file": "assets/photos/wall-architectural-strip-01.jpg",
+    "service": "walls",
+    "role": "project",
+    "width": 1370,
+    "height": 560,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Architectural concrete wall with vertical panel joints and evenly spaced tie holes",
+      "ar": "جدار خرساني معماري بفواصل ألواح رأسية وثقوب ربط متباعدة بانتظام"
+    },
+    "notes": "Tight crop of wall-architectural-panels-01 to the wall plane only (ceiling pipes, sockets and floor debris removed). Callout positions in WallStage are fractions of THIS crop."
   }
 ]

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "architects" });
-  return { title: t("title"), description: t("intro").slice(0, 160), alternates: { canonical: `/${locale}/architects`, languages: { en: "/en/architects", ar: "/ar/architects" } } };
+  return { title: t("title"), description: t("intro").slice(0, 160), alternates: { canonical: `/${locale}/architects`, languages: { en: "/en/architects", ar: "/ar/architects", "x-default": "/en/architects" } } };
 }
 
 export default async function ArchitectsPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -105,7 +105,7 @@ export default async function ArchitectsPage({ params }: { params: Promise<{ loc
       <section className="container-page py-12 md:py-16" aria-labelledby="box-h">
         <h2 id="box-h" className="display text-3xl md:text-4xl">{t("sampleTitle")}</h2>
         <p className="mt-3 mb-8 max-w-[62ch] text-n-700">{t("sampleIntro")}</p>
-        <Suspense fallback={<div className="h-64 max-w-3xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
+        <Suspense fallback={<div className="min-h-[60rem] max-w-3xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
           <SampleBoxForm
             finishes={finishes.map((f) => ({ code: f.code, label: finishLabel(f, l, ts(`${f.family}.name`)), src: getPhoto(f.photo as PhotoId).src }))}
             cities={CITIES.map((x) => ({ value: x.value, label: x[l] }))}

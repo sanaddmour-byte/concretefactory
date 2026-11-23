@@ -781,6 +781,103 @@
       ],
       "cta": "Explore",
       "bridge": "And sometimes it's the walls themselves that tell the story."
+    },
+    "c5": {
+      "nav": "The walls",
+      "eyebrow": "05 · The walls",
+      "title": "Walls that show their making.",
+      "group": "Architectural concrete wall",
+      "callouts": [
+        {
+          "t": "Panel joints",
+          "d": "Joints sit where the formwork panels meet."
+        },
+        {
+          "t": "Tie holes",
+          "d": "Tie holes are laid out as part of the design."
+        },
+        {
+          "t": "Fair-faced finish",
+          "d": "A smooth surface, left exposed and looked after."
+        }
+      ],
+      "link": "Architectural walls",
+      "bridge": "Some surfaces are there to be seen. Others have to carry the weight."
+    },
+    "c6": {
+      "nav": "Industrial",
+      "eyebrow": "06 · The floors that work",
+      "title": "Built to carry weight.",
+      "group": "Industrial floors",
+      "caps": [
+        "Reinforcement, chosen for your loads.",
+        "Finished flat, and ready for work."
+      ],
+      "leadTitle": "Most of a floor is decided before the pour.",
+      "lead": "That's why we sit down with you at the design stage: loads, traffic, joints, reinforcement and finish, decided together. Our team has more than 10 years of experience, and we're leaders in the industrial floor market in Jordan.",
+      "reinforcement": "Reinforcement",
+      "reinforcementList": "Steel fibres, polypropylene macro and micro fibres, traditional steel",
+      "finishes": "Finishes",
+      "finishesList": "Polished concrete, epoxy and polyurethane coatings",
+      "specs": {
+        "flatness": "Flatness class",
+        "load": "Load class",
+        "abrasion": "Abrasion class",
+        "joints": "Joint strategy"
+      },
+      "cta": "Request a floor specification",
+      "link": "Industrial floors",
+      "bridge": "Whatever the floor, the last decision is the one you can touch: the finish."
+    },
+    "c7": {
+      "nav": "Finishes",
+      "eyebrow": "07 · The finish",
+      "title": "Choose your finish.",
+      "sub": "Real samples, with the names we use for them.",
+      "cta": "Explore all finishes",
+      "bridge": "Choosing is easier when you know where we're coming from."
+    },
+    "c8": {
+      "nav": "Our story",
+      "eyebrow": "08 · Our story",
+      "title": "Our story.",
+      "group": "Our story by what we do",
+      "entries": [
+        {
+          "l": "2018",
+          "t": "We started.",
+          "x": "The Concrete Factory began in Amman in 2018, and we've been working across Jordan ever since."
+        },
+        {
+          "l": "Decorative",
+          "t": "Surfaces you can see and touch.",
+          "x": "Stamped concrete, terrazzo, exposed aggregate and finishes with the character of stone, made to suit the place."
+        },
+        {
+          "l": "Industrial",
+          "t": "Floors built to carry weight.",
+          "x": "Warehouses, factories and logistics yards, designed with you from the start and reinforced the right way."
+        },
+        {
+          "l": "High-spec",
+          "t": "Where the specification is strict.",
+          "x": "High-spec floors and coatings, from polished concrete to epoxy and polyurethane, chosen for how the floor will be used."
+        },
+        {
+          "l": "Outdoors",
+          "t": "Places to gather.",
+          "x": "Recessed seating and fire pits, finished to match the paving around them."
+        }
+      ],
+      "bridge": "That's our story so far. The next chapter is yours."
+    },
+    "c9": {
+      "nav": "Your project",
+      "eyebrow": "09 · Your project",
+      "title": "Your project, next.",
+      "sub": "Choose what you have in mind. The first click starts your quote.",
+      "whatsapp": "Prefer to talk? Message us on WhatsApp.",
+      "startFor": "Start a quote for {name}"
     }
   }
 }

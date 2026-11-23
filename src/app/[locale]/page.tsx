@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -16,12 +17,18 @@ import { PinnedStage } from "@/components/story/PinnedStage";
 import { PatternsStage, type PatternItem } from "@/components/story/PatternsStage";
 import { HorizontalGallery, type GalleryCard } from "@/components/story/HorizontalGallery";
 import type { StageStep } from "@/components/story/types";
-import { TrustStrip } from "@/components/home/TrustStrip";
-import { ServiceBento } from "@/components/home/ServiceBento";
-import { FinishTeaser } from "@/components/home/FinishTeaser";
-import { IndustrialBand } from "@/components/home/IndustrialBand";
+import { WallStage } from "@/components/story/WallStage";
+import { StoryTimeline, type TimelineEntry } from "@/components/story/StoryTimeline";
+import { IndustrialClose } from "@/components/home/IndustrialClose";
+import { FinishWall } from "@/components/home/FinishWall";
+import { QuoteStart } from "@/components/home/QuoteStart";
 import { Faq } from "@/components/home/Faq";
-import { FinalCta } from "@/components/home/FinalCta";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) return {};
+  return { alternates: { canonical: `/${locale}`, languages: { en: "/en", ar: "/ar", "x-default": "/en" } } };
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -66,6 +73,26 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     ...(isDev ? [{ id: "g5", title: cards[4].t, line: cards[4].l, href: "/services/sinks", media: null, photoNeeded: true }] : []),
   ];
 
+  // Chapter 5: callouts sit on real features of the cropped wall strip (fractions of that crop)
+  const wc = t.raw("c5.callouts") as { t: string; d: string }[];
+  const wallPos = [{ x: 0.253, y: 0.36 }, { x: 0.405, y: 0.72 }, { x: 0.613, y: 0.41 }];
+  // The photo is never mirrored. In Arabic the pan starts at the right end of the wall, so the callouts run right to left.
+  const callouts = wc.map((c, i) => ({ id: `w${i}`, title: c.t, text: c.d, ...wallPos[i] }));
+  if (l === "ar") { const xs = callouts.map((c) => ({ x: c.x, y: c.y })).sort((a, b) => b.x - a.x); callouts.forEach((c, i) => Object.assign(c, xs[i])); }
+
+  // Chapter 6: reinforcement, then a finished floor
+  const ic = t.raw("c6.caps") as string[];
+  const industrialSteps: StageStep[] = [
+    { id: "i1", caption: ic[0], media: image("materials-steel-fibers-glued-01", l, { zoom: { from: 1.2, to: 1 } }) },
+    { id: "i2", caption: ic[1], media: image("industrial-floor-power-trowel-01", l, { focal: "50% 60%", zoom: { from: 1.15, to: 1 } }) },
+  ];
+
+  // Chapter 8: our story, told by what we do. 2018 is the only dated entry; no workshop or showroom imagery exists, so none is shown.
+  const te = t.raw("c8.entries") as { l: string; t: string; x: string }[];
+  const tlPhotos: (PhotoId | null)[] = [null, "stamped-plaza-palms-curve-01", "industrial-polished-floor-reflection-01", "industrial-polished-floor-reflection-01", "firepit-recessed-seating-02"];
+  tlPhotos[3] = "industrial-polished-floor-aggregate-01";
+  const entries: TimelineEntry[] = te.map((e, i) => ({ id: `t${i}`, label: e.l, title: e.t, text: e.x, media: tlPhotos[i] ? image(tlPhotos[i]!, l, { focal: i === 4 ? "50% 70%" : "50% 50%" }) : null }));
+
   return (
     <>
       <a href="#cta" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-16 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">{tn("skip")}</a>
@@ -109,13 +136,52 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <Bridge>{t("c4.bridge")}</Bridge>
       </Chapter>
 
-      {/* Chapters 5-9 (walls, industrial, finishes, our story, your project) arrive in the next phase; these blocks stand in until then */}
-      <TrustStrip locale={l} />
-      <ServiceBento locale={l} />
-      <FinishTeaser locale={l} />
-      <IndustrialBand locale={l} />
+      <Chapter id="walls" n={5} title={t("c5.nav")} theme="dark">
+        <div className="pt-24 md:pt-32">
+          <Eyebrow>{t("c5.eyebrow")}</Eyebrow>
+          <div className="container-page pb-6"><LineReveal className="headline-xl display">{t("c5.title")}</LineReveal></div>
+        </div>
+        <WallStage media={image("wall-architectural-strip-01", l)} callouts={callouts} label={t("c5.group")} />
+        <ChapterLink href="/services/walls">{t("c5.link")}</ChapterLink>
+        <Bridge>{t("c5.bridge")}</Bridge>
+      </Chapter>
+
+      <Chapter id="industrial" n={6} title={t("c6.nav")} theme="dark">
+        <Eyebrow>{t("c6.eyebrow")}</Eyebrow>
+        <div className="container-page pb-10"><LineReveal className="headline-xl display">{t("c6.title")}</LineReveal></div>
+        <PinnedStage steps={industrialSteps} label={t("c6.group")} pin={{ desktop: 240, mobile: 170 }} />
+        <IndustrialClose locale={l} />
+        <ChapterLink href="/services/industrial-floors">{t("c6.link")}</ChapterLink>
+        <Bridge to="light">{t("c6.bridge")}</Bridge>
+      </Chapter>
+
+      <Chapter id="finishes" n={7} title={t("c7.nav")} theme="light">
+        <div className="pt-8 md:pt-16">
+          <Eyebrow>{t("c7.eyebrow")}</Eyebrow>
+          <div className="container-page pb-6"><LineReveal className="headline-xl display">{t("c7.title")}</LineReveal></div>
+        </div>
+        <FinishWall locale={l} />
+        <Bridge to="dark">{t("c7.bridge")}</Bridge>
+      </Chapter>
+
+      <Chapter id="story" n={8} title={t("c8.nav")} theme="dark">
+        <div className="pt-16 md:pt-24">
+          <Eyebrow>{t("c8.eyebrow")}</Eyebrow>
+          <div className="container-page pb-6"><LineReveal className="headline-xl display">{t("c8.title")}</LineReveal></div>
+        </div>
+        <StoryTimeline entries={entries} label={t("c8.group")} />
+        <Bridge to="light">{t("c8.bridge")}</Bridge>
+      </Chapter>
+
       <Faq locale={l} />
-      <div id="cta"><FinalCta locale={l} /></div>
+
+      <Chapter id="cta" n={9} title={t("c9.nav")} theme="light">
+        <div className="pt-8 md:pt-16">
+          <Eyebrow>{t("c9.eyebrow")}</Eyebrow>
+          <div className="container-page pb-6"><LineReveal className="headline-xl display">{t("c9.title")}</LineReveal></div>
+        </div>
+        <QuoteStart locale={l} />
+      </Chapter>
     </>
   );
 }

@@ -23,9 +23,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://theconcretefactoryjo.com"),
     title: { default: t("title"), template: `%s | ${site.name[locale]}` },
     description: t("description"),
-    alternates: { languages: { en: "/en", ar: "/ar" } },
   };
 }
 

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale) || !f) return {};
   const ts = await getTranslations({ locale, namespace: "services" });
   const label = finishLabel(f, locale, ts(`${f.family}.name`));
-  return { title: label, description: getPhoto(f.photo as PhotoId).alt[locale], alternates: { canonical: `/${locale}/finishes/${code}`, languages: { en: `/en/finishes/${code}`, ar: `/ar/finishes/${code}` } } };
+  return { title: label, description: getPhoto(f.photo as PhotoId).alt[locale], alternates: { canonical: `/${locale}/finishes/${code}`, languages: { en: `/en/finishes/${code}`, ar: `/ar/finishes/${code}`, "x-default": `/en/finishes/${code}` } } };
 }
 
 export default async function FinishPage({ params }: Props) {

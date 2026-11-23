@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "visit" });
-  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/visit`, languages: { en: "/en/visit", ar: "/ar/visit" } } };
+  return { title: t("title"), description: t("intro"), alternates: { canonical: `/${locale}/visit`, languages: { en: "/en/visit", ar: "/ar/visit", "x-default": "/en/visit" } } };
 }
 
 export default async function VisitPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -36,7 +36,7 @@ export default async function VisitPage({ params }: { params: Promise<{ locale: 
         </dl>
       </section>
       <section className="container-page pb-20 pt-6 md:pb-28">
-        <Suspense fallback={<div className="mx-auto h-64 max-w-2xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
+        <Suspense fallback={<div className="mx-auto min-h-[44rem] max-w-2xl animate-pulse rounded-card bg-n-100" aria-hidden />}>
           <VisitForm
             finishes={finishes.map((f) => ({ code: f.code, label: finishLabel(f, l, ts(`${f.family}.name`)) }))}
             whatsapp={c.whatsapp}

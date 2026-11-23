@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "privacy" });
-  return { title: t("title"), alternates: { canonical: `/${locale}/legal/privacy`, languages: { en: "/en/legal/privacy", ar: "/ar/legal/privacy" } } };
+  return { title: t("title"), alternates: { canonical: `/${locale}/legal/privacy`, languages: { en: "/en/legal/privacy", ar: "/ar/legal/privacy", "x-default": "/en/legal/privacy" } } };
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
