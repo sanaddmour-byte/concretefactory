@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, dirOf } from "@/i18n/routing";
 import { oswald, tajawal } from "../fonts";
 import { Header } from "@/components/layout/Header";
@@ -32,11 +32,12 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale });
+  const messages = await getMessages();
 
   return (
     <html lang={locale} dir={dirOf(locale)} className={`${oswald.variable} ${tajawal.variable}`}>
       <body>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={{ nav: messages.nav }}>
           <a href="#main" className="sr-only-x focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:rounded-control focus:bg-n-900 focus:px-4 focus:py-3 focus:text-n-50">
             {t("a11y.skip")}
           </a>

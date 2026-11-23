@@ -1,0 +1,5 @@
+{
+  "city": "{{CONFIRM: project city}}",
+  "area": "{{CONFIRM: area in m²}}",
+  "year": "{{CONFIRM: year}}"
+}

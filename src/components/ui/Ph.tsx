@@ -21,3 +21,16 @@ export function PhotoNeeded({ what, className }: { what: string; className?: str
     </div>
   );
 }
+
+/** Label + value pair that disappears entirely in production while its value is still a placeholder. */
+export function Fact({ label, value }: { label: string; value: string }) {
+  if (isPlaceholder(value) && !isDev) return null;
+  return (
+    <div>
+      <dt className="text-sm text-n-600">{label}</dt>
+      <dd className="mt-1 text-lg font-medium text-n-900">
+        <Ph value={value} />
+      </dd>
+    </div>
+  );
+}

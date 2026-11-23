@@ -192,10 +192,10 @@ The photos carry the colour and texture; the interface is near-monochrome **warm
 ### 5.2 Signature details (where the "wow" lives; keep it to these)
 1. **Finish Library swatch → detail morph** (View Transitions).
 2. **"Fresh → Sealed" diptych** on the stamped-concrete page: `process-stamping-mat-lift-01` beside `stamped-herringbone-sealed-01`, captioned honestly as *the stamping stage and a sealed result*. The two photos are not the same slab, so do not present them as a literal before/after slider. Build a real before/after slider component, but only enable it when a true matched pair is supplied.
-3. **Scroll-driven process timeline** (CSS scroll-driven animations, with a fallback).
+3. **Scroll-driven process story**: pinned, scroll-linked stages (CSS scroll-driven animations, with a fallback). See §7b.
 4. **Micro-interactions:** pressed state on the primary CTA, swatch "added" check animation, inline validation ticks in the wizard.
 
-No WebGL, no scroll-jacking, no autoplay video with sound, no parallax on text, no cursor followers.
+No WebGL, no scroll-jacking (sticky pinning is allowed, hijacked scroll speed is not), no autoplay video with sound, no parallax on text, no cursor followers.
 
 ---
 
@@ -215,6 +215,33 @@ No WebGL, no scroll-jacking, no autoplay video with sound, no parallax on text, 
 - Wrap all non-essential motion in `@media (prefers-reduced-motion: no-preference)`.
 
 ---
+
+## 7b. SCROLLYTELLING (premium scroll-driven storytelling)
+
+Cinematic, Apple/Porsche-style scroll sequences, used where they explain the product (process, finishes, projects), never as decoration. **Prioritise storytelling and usability over quantity.**
+
+**Method (decision):** CSS scroll-driven animations (`animation-timeline: view()/scroll()` / named view timelines) plus `position: sticky` pinning. This satisfies §7 (no JS scroll listeners), keeps the JS budget (§8.1) untouched and needs no cleanup on unmount. GSAP ScrollTrigger is **not** used. Re-evaluate only if a sequence cannot be done in CSS or Firefox support is judged too important; any GSAP use must be lazy-loaded, per-section and approved first.
+
+**Rules**
+1. **Scroll-linked, reversible:** progress is tied to scroll position, plays forward when scrolling down and reverses when scrolling up. Nothing auto-plays when scroll control is intended.
+2. **Pinned stories:** 3-5 stages; the visual stays pinned while copy and image cross-fade. Sticky, never scroll-jacking: the page scrolls at normal speed and keyboard/touch/screen-reader navigation is unchanged.
+3. **Transformations:** slow zoom, subtle scale/position and at most about 1° rotation; layer separation/reassembly only where real layered assets exist (none yet).
+4. **Typography:** headings reveal progressively; supporting text uses small opacity and translate changes (24 px max). No parallax on text.
+5. **Layered parallax:** images only; background slower than foreground; at most about ±40 px.
+6. **Progressive enhancement:** the base markup is the full no-animation layout. Motion applies only inside `@media (prefers-reduced-motion: no-preference)` and `@supports (animation-timeline: view())`. Unsupported browsers, reduced-motion users and no-JS users get stacked, fully readable content.
+7. **Performance:** only `opacity`, `translate`, `scale`, `rotate` and `transform` animate (compositor-friendly). No layout-affecting properties. Pinned heights use `svh`; mobile uses a shorter track (80 svh per stage) and a stacked image-over-text layout.
+8. **Honest content:** stage photos must be real; if photos are not of the same object, the caption says so.
+
+**Where it is used (by phase)**
+| Phase | Scrollytelling work |
+|---|---|
+| 1 Foundation | Shared CSS primitives (`.story`, `.reveal`, drift/parallax layers), `Story` component |
+| 2 Home | Hero image drift/zoom on scroll; pinned **stamped-concrete process story** (4 stages, real photos); section reveals; layered parallax on Featured Project (background slow, medallion fast) and Industrial band |
+| 3 Service pages | Pinned process story per service from the same component (service-specific stages; 6-step project timeline); **"Fresh → Sealed"** diptych on the stamped page as a scroll-linked reveal |
+| 4b Projects + Finish Library | Case-study hero zoom-out; Finish detail swatch zoom; filter reflow stays View Transitions |
+| 5 Quote wizard | No scrollytelling (task flow; motion limited to step transitions) |
+| 6 About, Architects | Light reveals only. The Architects page stays dense and table-led |
+| 7 Hardening | Test across Chrome, Safari, Firefox; verify reduced-motion, no-JS, 360/768/1024/1440, RTL mirroring of pinned layouts and progress bar; Lighthouse |
 
 ## 8. QUALITY BARS
 
@@ -276,8 +303,8 @@ Validate all content with zod at build time. The build fails on a missing image 
 ## 11. BUILD PHASES (stop after each one for my review)
 - **Phase 0, Plan:** sitemap confirmation, the user flow for each audience, the token table, a block-by-block wireframe description of Home, the Service template, Finish Library and Wizard, a photo-to-page placement map from the manifest, the list of placeholders I need to fill, and your assumptions. **Wait for "go".**
 - **Phase 1, Foundation:** project setup, tokens, fonts, i18n routing (ar/en, RTL), layout, header with mega-menu, mobile bottom bar, footer, the dev placeholder badge system, and the image loader from the manifest.
-- **Phase 2, Home** (all 12 blocks).
-- **Phase 3, Service template + all 9 service pages** with MDX content in both languages.
+- **Phase 2, Home** (all 12 blocks), including the scrollytelling set in §7b (hero drift, pinned process story, reveals, layered parallax).
+- **Phase 3, Service template + all 9 service pages** with MDX content in both languages, reusing the §7b pinned story and the scroll-linked Fresh → Sealed diptych.
 - **Phase 4, Projects + Finish Library** (filters, swatch morph, sample list).
 - **Phase 5, Quote wizard + visit booking:** server actions, Resend, WhatsApp handoff, analytics events, draft restore.
 - **Phase 6, Architects, About, Contact, FAQ, legal.**
@@ -295,5 +322,6 @@ Validate all content with zod at build time. The build fails on a missing image 
 - [ ] One primary CTA style per page; the wizard has at most 4 inputs per step
 - [ ] The quote reaches the inbox with attachments; the WhatsApp handoff opens with a correct prefilled summary in both languages
 - [ ] A production build hides every block whose data is still a placeholder; dev builds show the badges
+- [ ] Scrollytelling (§7b): scroll-linked and reversible, reduced-motion and no-JS fallbacks verified, sticky works at 360/768/1024/1440 in LTR and RTL, no scroll hijacking, animations use only compositor properties
 - [ ] No fabricated facts anywhere (grep for numbers in copy and justify each one)
 - [ ] Final report: screenshots (light/dark sections, mobile/desktop, AR/EN), the list of remaining `{{PLACEHOLDER}}`/`{{CONFIRM}}` items, the **photo shot list still needed**, and what to A/B test first.

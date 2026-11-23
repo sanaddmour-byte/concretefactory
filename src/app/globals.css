@@ -98,6 +98,7 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] .dis
   --container-page: 1280px;
 }
 
+@layer base {
 html {
   background: var(--n-50);
   color: var(--n-800);
@@ -126,6 +127,7 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { letter-spacing: 0; }
+}
 
 /* Oswald display (variable weight 200-700) */
 .display { font-family: var(--f-display); font-weight: 600; }
@@ -195,3 +197,83 @@ html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3 { letter-spacing: 0; 
 
 /* Visually hidden */
 .sr-only-x { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* =====================================================================
+   Scrollytelling. CSS scroll-driven animations only (no JS, no scroll
+   hijacking). Base styles below are the complete no-animation layout;
+   motion is layered on only when supported and not reduced.
+   ===================================================================== */
+.story-stage { display: grid; gap: 24px; padding-block: 32px; }
+.story-shot { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-card); background: var(--n-100); }
+.story-eyebrow { display: flex; align-items: center; gap: 12px; font-size: var(--text-sm); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--olive-600); }
+.story-eyebrow > span { inline-size: 32px; block-size: 2px; background: var(--yellow); }
+.story-copy h3 { margin-block-start: 12px; font-size: clamp(28px, 4.2vw, 48px); }
+.story-copy p:last-child { margin-block-start: 16px; max-inline-size: 46ch; font-size: var(--text-lg); color: var(--n-700); }
+.story-progress { display: none; }
+@media (min-width: 768px) { .story-stage { grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* Pinned story: a tall track, a sticky stage, progress mapped to scroll */
+    .story { --step: 80svh; block-size: calc(var(--n) * var(--step)); view-timeline-name: --story; view-timeline-axis: block; view-timeline-inset: var(--header-h) 0; }
+    @media (min-width: 768px) { .story { --step: 100svh; } }
+
+    .story-pin { position: sticky; inset-block-start: var(--header-h); block-size: calc(100svh - var(--header-h)); display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 52%) minmax(0, 1fr); gap: 16px; padding-block: 16px 28px; }
+    .story-stage { display: contents; padding: 0; }
+    .story-copy { grid-area: 2 / 1; align-self: start; }
+    .story-shot { grid-area: 1 / 1; aspect-ratio: auto; block-size: 100%; }
+    @media (min-width: 768px) {
+      .story-pin { grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); gap: 48px; align-items: center; padding-block: 24px 32px; }
+      .story-copy { grid-area: 1 / 1; align-self: center; }
+      .story-shot { grid-area: 1 / 2; block-size: min(100%, 620px); align-self: center; }
+    }
+
+    /* Stage windows, as percentages of the pinned range. Each stage fades in just
+       before its slot and out just after it; first never fades in, last never out. */
+    .story-stage {
+      --in: contain calc((var(--i) - 0.12) / var(--n) * 100%) contain calc((var(--i) + 0.1) / var(--n) * 100%);
+      --out: contain calc((var(--i) + 0.9) / var(--n) * 100%) contain calc((var(--i) + 1.12) / var(--n) * 100%);
+      --span: contain calc(var(--i) / var(--n) * 100%) contain calc((var(--i) + 1) / var(--n) * 100%);
+    }
+    .story-copy, .story-shot { animation-timeline: --story; animation-timing-function: linear; }
+    .story-stage[data-pos="mid"] .story-copy { animation-name: copy-in, copy-out; animation-range: var(--in), var(--out); animation-fill-mode: both, forwards; }
+    .story-stage[data-pos="mid"] .story-shot { animation-name: fade-in, fade-out; animation-range: var(--in), var(--out); animation-fill-mode: both, forwards; }
+    .story-stage[data-pos="first"] .story-copy { animation-name: copy-out; animation-range: var(--out); animation-fill-mode: forwards; }
+    .story-stage[data-pos="first"] .story-shot { animation-name: fade-out; animation-range: var(--out); animation-fill-mode: forwards; }
+    .story-stage[data-pos="last"] .story-copy { animation-name: copy-in; animation-range: var(--in); animation-fill-mode: both; }
+    .story-stage[data-pos="last"] .story-shot { animation-name: fade-in; animation-range: var(--in); animation-fill-mode: both; }
+
+    /* Slow zoom + a hair of rotation across each stage */
+    .story-shot img { animation: story-zoom linear both; animation-timeline: --story; animation-range: var(--span); }
+
+    .story-progress { display: block; position: absolute; inset-inline: 16px; inset-block-end: 8px; block-size: 2px; background: var(--n-200); }
+    @media (min-width: 768px) { .story-progress { inset-inline: 32px; } }
+    .story-progress i { display: block; block-size: 100%; background: var(--maroon); transform-origin: left center; animation: grow linear both; animation-timeline: --story; animation-range: contain 0% contain 100%; }
+    [dir="rtl"] .story-progress i { transform-origin: right center; }
+
+    /* Section reveals */
+    .reveal { animation: reveal-up linear both; animation-timeline: view(); animation-range: entry 0% entry 40%; }
+
+    /* Hero image: scroll-linked drift + zoom as the hero leaves */
+    .hero-drift { animation: hero-drift linear both; animation-timeline: view(); animation-range: exit 0% exit 100%; }
+
+    /* Layered parallax: background slow, foreground faster. Images only, never text. */
+    .layer-slow { scale: 1.12; animation: drift-slow linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+    .layer-fast { animation: drift-fast linear both; animation-timeline: view(); animation-range: cover 0% cover 100%; }
+  }
+}
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes copy-in { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+@keyframes copy-out { from { opacity: 1; translate: 0 0; } to { opacity: 0; translate: 0 -24px; } }
+@keyframes story-zoom { from { scale: 1.12; rotate: 0.8deg; } to { scale: 1; rotate: 0deg; } }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes reveal-up { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: 0 0; } }
+@keyframes hero-drift { from { translate: 0 0; scale: 1; } to { translate: 0 6%; scale: 1.07; } }
+@keyframes drift-slow { from { translate: 0 -4%; } to { translate: 0 4%; } }
+@keyframes drift-fast { from { translate: 0 36px; } to { translate: 0 -36px; } }
+
+/* Accordion chevron */
+details[open] > summary .chev { rotate: 180deg; }
+summary::-webkit-details-marker { display: none; }

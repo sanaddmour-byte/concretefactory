@@ -207,3 +207,11 @@ When we reach it, **stop and ask the client for each photo's pattern name and co
 - **Output of the phase:** `content/finishes/{code}.json` files filled with the supplied EN/AR names, codes assigned (proposed by us, approved by client).
 
 Revised phase order: 0 Plan, 1 Foundation, 2 Home, 3 Service pages, **4a Finish naming**, 4b Projects + Finish Library, 5 Quote wizard + visit, 6 Architects/About/Contact/FAQ/legal, 7 Hardening.
+
+## 14. Phase 2 delivered, with scrollytelling (see docs/BRIEF.md §7b)
+
+**Decision:** CSS scroll-driven animations + `position: sticky` (no GSAP). It matches the brief's rules (no JS scroll listeners, no scroll-jacking), costs 0 KB of JavaScript and has nothing to clean up. Home JS is 167 KB gzipped against the 170 KB budget, almost all React/Next baseline. Falls back to stacked, readable content for reduced motion, unsupported browsers and no-JS.
+
+**Built on the home page:** hero image scroll drift/zoom; trust strip (hidden: no real stats); service bento (9 tiles); featured project with layered parallax; **pinned 4-stage stamped-concrete process story** (real stamping photos + sealed result, captioned honestly); 6-step project strip; Finish Library teaser (6 real swatches, family labels only, no invented names); dark industrial band; testimonials (hidden: none supplied); 8-question FAQ; final CTA.
+
+**Known gaps (by design):** links to `/services/*`, `/projects/*`, `/finishes`, `/quote` 404 until Phases 3-5; interior floors and sinks tiles use the texture placeholder; no layered/separable assets yet, so no layer-separation effect; the process story covers stamping only (no photos for survey, sub-base, pour).

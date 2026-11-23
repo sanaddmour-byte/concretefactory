@@ -1,0 +1,8 @@
+{
+  "specs": [
+    { "key": "flatness", "value": "{{CONFIRM: flatness class}}" },
+    { "key": "load", "value": "{{CONFIRM: load class}}" },
+    { "key": "abrasion", "value": "{{CONFIRM: abrasion class}}" },
+    { "key": "joints", "value": "{{CONFIRM: joint strategy}}" }
+  ]
+}

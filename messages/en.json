@@ -3,7 +3,14 @@
     "title": "The Concrete Factory | Decorative & architectural concrete in Amman, Jordan",
     "description": "Stamped concrete, terrazzo, exposed aggregate, industrial floors, countertops and fire-pit seating. Based in Amman, building across Jordan."
   },
-  "a11y": { "skip": "Skip to content", "menu": "Menu", "close": "Close", "primaryNav": "Primary", "language": "Language", "home": "The Concrete Factory, home" },
+  "a11y": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "primaryNav": "Primary",
+    "language": "Language",
+    "home": "The Concrete Factory, home"
+  },
   "nav": {
     "services": "Services",
     "projects": "Projects",
@@ -23,19 +30,53 @@
     "built-ins": "Built-ins",
     "finishes": "Finishes"
   },
-  "megaFinishes": { "blurb": "Browse samples by colour, texture and use, and build a sample list.", "cta": "Explore the library" },
-  "services": {
-    "industrial-floors": { "name": "Industrial floors", "line": "Flat, durable slabs for warehouses and factories." },
-    "interior-floors": { "name": "Interior concrete floors", "line": "Polished and microtopping finishes for living spaces." },
-    "stamped-concrete": { "name": "Stamped concrete", "line": "Stone, brick and slate patterns, poured in one piece." },
-    "exposed-aggregate": { "name": "Exposed aggregate", "line": "Natural stone revealed at the surface." },
-    "terrazzo": { "name": "Terrazzo", "line": "Cast in-situ and precast, with marble chips." },
-    "walls": { "name": "Architectural concrete walls", "line": "Fair-faced concrete with clean panel joints." },
-    "countertops": { "name": "Concrete countertops & islands", "line": "Made to fit your kitchen, edge to edge." },
-    "sinks": { "name": "Concrete sinks & basins", "line": "Solid, seamless basins for bathrooms and kitchens." },
-    "fire-pits-seating": { "name": "Fire pits & built-in seating", "line": "Recessed lounges for courtyards and gardens." }
+  "megaFinishes": {
+    "blurb": "Browse samples by colour, texture and use, and build a sample list.",
+    "cta": "Explore the library"
   },
-  "cta": { "quote": "Get my quote", "whatsapp": "Chat on WhatsApp", "call": "Call us" },
+  "services": {
+    "industrial-floors": {
+      "name": "Industrial floors",
+      "line": "Flat, durable slabs for warehouses and factories."
+    },
+    "interior-floors": {
+      "name": "Interior concrete floors",
+      "line": "Polished and microtopping finishes for living spaces."
+    },
+    "stamped-concrete": {
+      "name": "Stamped concrete",
+      "line": "Stone, brick and slate patterns, poured in one piece."
+    },
+    "exposed-aggregate": {
+      "name": "Exposed aggregate",
+      "line": "Natural stone revealed at the surface."
+    },
+    "terrazzo": {
+      "name": "Terrazzo",
+      "line": "Cast in-situ and precast, with marble chips."
+    },
+    "walls": {
+      "name": "Architectural concrete walls",
+      "line": "Fair-faced concrete with clean panel joints."
+    },
+    "countertops": {
+      "name": "Concrete countertops & islands",
+      "line": "Made to fit your kitchen, edge to edge."
+    },
+    "sinks": {
+      "name": "Concrete sinks & basins",
+      "line": "Solid, seamless basins for bathrooms and kitchens."
+    },
+    "fire-pits-seating": {
+      "name": "Fire pits & built-in seating",
+      "line": "Recessed lounges for courtyards and gardens."
+    }
+  },
+  "cta": {
+    "quote": "Get my quote",
+    "whatsapp": "Chat on WhatsApp",
+    "call": "Call us"
+  },
   "footer": {
     "company": "Company",
     "contact": "Contact",
@@ -55,7 +96,153 @@
     "title": "Concrete, crafted for how you live and work.",
     "sub": "Stamped floors, terrazzo, exposed aggregate, countertops, fire-pit seating and industrial slabs, built across Jordan.",
     "seeWork": "See our work",
-    "foundation": "Foundation build: header, footer, tokens and routing. Home sections arrive in Phase 2."
+    "trust": {
+      "years": "Years in business",
+      "area": "Built to date",
+      "projects": "Projects completed"
+    },
+    "bento": {
+      "title": "Everything concrete",
+      "sub": "Nine services across floors, walls and built-ins.",
+      "view": "View service"
+    },
+    "featured": {
+      "kicker": "Featured project",
+      "title": "Fan-pattern cobblestone driveway ramp",
+      "body": "A curved driveway ramp in fan-pattern stamped cobblestone, shown with a stamped compass-rose entrance medallion.",
+      "location": "Location",
+      "service": "Service",
+      "area": "Area",
+      "year": "Year",
+      "cta": "View project"
+    },
+    "story": {
+      "title": "Stamped concrete, step by step",
+      "sub": "Scroll to follow the stages of a stamped finish.",
+      "caption": "Photos show the stamping stages and a sealed result. They are not the same slab.",
+      "label": "Stamped concrete process",
+      "stages": [
+        {
+          "eyebrow": "Press",
+          "title": "Press the pattern into fresh concrete",
+          "body": "Stamp mats are laid on the fresh slab and pressed in, so the surface takes on stone, brick or slate texture."
+        },
+        {
+          "eyebrow": "Tamp",
+          "title": "Tamp to an even depth",
+          "body": "Release powder keeps the mats from sticking while the pattern is tamped in evenly across the surface."
+        },
+        {
+          "eyebrow": "Reveal",
+          "title": "Lift the mat to reveal the impression",
+          "body": "Lifting the mat shows the crisp joints and stone texture left in the surface."
+        },
+        {
+          "eyebrow": "Seal",
+          "title": "Seal the finished surface",
+          "body": "The finished surface is sealed. Here, a sealed grey herringbone."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How a project runs",
+      "items": [
+        {
+          "t": "Survey & design",
+          "d": "We visit, measure and agree the design and finish."
+        },
+        {
+          "t": "Sub-base & formwork",
+          "d": "The base is prepared and the edges are set out."
+        },
+        {
+          "t": "Pour",
+          "d": "The concrete is placed and levelled."
+        },
+        {
+          "t": "Finish",
+          "d": "Stamped, trowelled, ground or exposed, as chosen."
+        },
+        {
+          "t": "Seal & cure",
+          "d": "The surface is sealed and left to cure."
+        },
+        {
+          "t": "Handover & care",
+          "d": "We hand over with care and maintenance guidance."
+        }
+      ]
+    },
+    "finishes": {
+      "title": "Finish Library",
+      "sub": "Browse real samples by colour, texture and use.",
+      "cta": "Explore all finishes",
+      "sample": "sample"
+    },
+    "industrial": {
+      "kicker": "Industrial & commercial",
+      "title": "Floors for heavy daily use",
+      "body": "Warehouses, factories and logistics yards need flat, durable slabs. We pour, reinforce and finish them to your specification.",
+      "specs": {
+        "flatness": "Flatness class",
+        "load": "Load class",
+        "abrasion": "Abrasion class",
+        "joints": "Joint strategy"
+      },
+      "cta": "Request a floor specification"
+    },
+    "testimonials": {
+      "title": "What clients say"
+    },
+    "faq": {
+      "title": "Questions we hear most",
+      "items": [
+        {
+          "q": "How long does decorative concrete last?",
+          "a": "With a sound sub-base and the right sealer, decorative concrete is a long-lasting surface. Lifespan depends on use, climate and maintenance.",
+          "confirm": "typical lifespan / warranty"
+        },
+        {
+          "q": "How do I maintain it?",
+          "a": "Sweep regularly and wash with a mild cleaner. Avoid harsh acids on sealed surfaces."
+        },
+        {
+          "q": "When does it need resealing?",
+          "a": "Sealers wear with traffic and sun, so exposed outdoor areas are resealed more often than indoor floors.",
+          "confirm": "recommended reseal interval"
+        },
+        {
+          "q": "Will it crack?",
+          "a": "Any concrete can develop hairline cracks. Control joints guide where movement happens, and a stamped pattern can hide joints in its lines.",
+          "confirm": "your cracking policy"
+        },
+        {
+          "q": "What affects the price?",
+          "a": "Area, finish type, thickness and reinforcement, site access, base condition and sealer all affect the price. A site visit gives the most accurate quote."
+        },
+        {
+          "q": "How long will my project take?",
+          "a": "It depends on size, finish and curing time. We confirm the schedule in your quote.",
+          "confirm": "typical lead time"
+        },
+        {
+          "q": "Is it slippery outdoors?",
+          "a": "Slip resistance depends on the finish and sealer. Textured stamped finishes and anti-slip sealer additives are options for wet or sloped areas.",
+          "confirm": "slip-resistance ratings"
+        },
+        {
+          "q": "Can you pour in Jordan's summer heat?",
+          "a": "Hot weather affects setting and curing. Pours are planned for cooler hours and the surface is protected while it cures.",
+          "confirm": "your hot-weather practice"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Tell us about your project",
+      "body": "Share the space, the size and the finish you have in mind. We'll reply with the next steps."
+    }
   },
-  "dev": { "photoNeeded": "PHOTO NEEDED" }
+  "dev": {
+    "photoNeeded": "PHOTO NEEDED"
+  }
 }
