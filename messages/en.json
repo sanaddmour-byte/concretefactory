@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Concrete Factory | Decorative & architectural concrete in Amman, Jordan",
+    "title": "The Concrete Factory | Decorative & architectural concrete in Amman, Jordan",
     "description": "Stamped concrete, terrazzo, exposed aggregate, industrial floors, countertops and fire-pit seating. Based in Amman, building across Jordan."
   },
-  "a11y": { "skip": "Skip to content", "menu": "Menu", "close": "Close", "primaryNav": "Primary", "language": "Language", "home": "Concrete Factory, home" },
+  "a11y": { "skip": "Skip to content", "menu": "Menu", "close": "Close", "primaryNav": "Primary", "language": "Language", "home": "The Concrete Factory, home" },
   "nav": {
     "services": "Services",
     "projects": "Projects",
