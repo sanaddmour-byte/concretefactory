@@ -4,10 +4,10 @@ import { Ph } from "@/components/ui/Ph";
 export type FaqItem = { q: string; a: string; confirm?: string };
 
 /** Native <details>: works without JavaScript and with the keyboard. */
-export function FaqList({ items, title, id }: { items: FaqItem[]; title: string; id: string }) {
+export function FaqList({ items, title, id, tight }: { items: FaqItem[]; title: string; id: string; tight?: boolean }) {
   return (
-    <section className="container-page py-16 md:py-24" aria-labelledby={id}>
-      <h2 id={id} className="display reveal text-3xl md:text-5xl">{title}</h2>
+    <section className={tight ? "container-page py-8 md:py-10" : "container-page py-16 md:py-24"} aria-labelledby={id}>
+      <h2 id={id} className={tight ? "display text-2xl md:text-3xl" : "display reveal text-3xl md:text-5xl"}>{title}</h2>
       <div className="mt-10 max-w-3xl divide-y divide-n-200 border-y border-n-200">
         {items.map((it) => (
           <details key={it.q} name={id} className="group py-1">

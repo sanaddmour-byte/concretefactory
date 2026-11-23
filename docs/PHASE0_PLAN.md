@@ -250,3 +250,6 @@ Client supplied four night photos. `glow-aggregate-dark-01` (1526 px, sharp, met
 - **Instagram:** instagram.com/theconcretefactoryjo (tracking parameters removed), shown in the footer; also for the Contact page.
 - **Email:** info@theconcretefactoryjo.com.
 - **Contact page idea (Phase 6):** a scannable WhatsApp QR code generated from the QR link (not the supplied screenshot, which shows a personal contact name).
+
+## 20. Phase 6 delivered
+`/architects` (spec sheet table with request-by-email until PDFs exist, finish reference table of all 20 finishes, sample box request form emailing the team, technical support block; CAD/BIM hidden until confirmed), `/about` (homey-and-experienced story, four principles, timeline chapter hidden until 3+ milestones, quality/team/places hidden until data), `/contact` (phone, WhatsApp, email, Instagram, scannable WhatsApp QR generated at build from the client's link; address/hours/map hidden until supplied), `/faq` (general plus every service's FAQs), `/legal/privacy` (plain-language draft that must be reviewed by a legal adviser). Next: the scrollytelling conversion, see `docs/SCROLLY_V2_PLAN.md` (awaiting "go").

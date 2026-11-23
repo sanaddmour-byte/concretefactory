@@ -22,6 +22,8 @@ const schema = z.object({
     replySla: z.string(),
     closedDays: z.array(z.number().int().min(0).max(6)),
   }),
+  /** Company timeline (year, title, text). The story chapter appears only with 3 or more real milestones. */
+  milestones: z.array(z.object({ year: z.string(), title: bi, text: bi })),
   socials: z.array(z.object({ label: z.string(), url: z.url() })),
   stats: z
     .object({

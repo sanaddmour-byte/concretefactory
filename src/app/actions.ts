@@ -112,3 +112,27 @@ export async function submitVisit(fd: FormData): Promise<ActionResult> {
     ["Finishes to see", d.finishes.join(", ")], ["Note", d.note],
   ], "", []);
 }
+
+const sampleBoxSchema = z.object({
+  ...base,
+  finishes: z.array(z.string().max(12)).min(1).max(6),
+  project: z.string().trim().min(2).max(120),
+  firm: z.string().trim().min(2).max(120),
+  city: z.enum(CITIES.map((c) => c.value) as [string, ...string[]]),
+  email: z.string().refine((v) => v === "" || isEmail(v)),
+  note: z.string().max(600),
+});
+
+export async function submitSampleBox(fd: FormData): Promise<ActionResult> {
+  if (await limited()) return { ok: false, error: "rate" };
+  let raw: unknown;
+  try { raw = JSON.parse(String(fd.get("payload") ?? "")); } catch { return { ok: false, error: "invalid" }; }
+  const parsed = sampleBoxSchema.safeParse(raw);
+  if (!parsed.success) return { ok: false, error: "invalid", fields: [...new Set(parsed.error.issues.map((i) => String(i.path[0])))] };
+  const d = parsed.data;
+  const ref = makeRef("SB");
+  return deliver(ref, "Sample box request (architect/contractor)", [
+    ["Reference", ref], ["Language", d.locale], ["Project", d.project], ["Firm", d.firm], ["Delivery city", cityName(d.city)],
+    ["Finishes", d.finishes.join(", ")], ["Name", d.name], ["Mobile", normalizePhone(d.phone) ?? d.phone], ["Email", d.email], ["Note", d.note],
+  ], d.email, []);
+}

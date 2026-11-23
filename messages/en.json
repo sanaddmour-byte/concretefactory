@@ -534,5 +534,155 @@
       "finishes": "Finishes",
       "ref": "Reference"
     }
+  },
+  "architects": {
+    "title": "For architects and contractors",
+    "intro": "Everything you need to specify our work with confidence: spec sheets, finish references and a sample box for your next project. And if you want to talk it through at design stage, that's when we're most useful.",
+    "specTitle": "Spec sheets",
+    "specIntro": "One sheet per service. Until the PDFs are published, ask and we'll send the current version.",
+    "colService": "Service",
+    "colSheet": "Spec sheet",
+    "download": "Download PDF",
+    "requestSheet": "Request by email",
+    "requestSubject": "Spec sheet request: {name}",
+    "finishTitle": "Finish reference",
+    "finishIntro": "Every finish in our library, with its pattern, colour and material.",
+    "colSwatch": "Swatch",
+    "colPattern": "Pattern",
+    "colColour": "Colour or material",
+    "colType": "Type",
+    "colCode": "Code",
+    "cadTitle": "CAD and BIM details",
+    "cadText": "Details for specifiers are available on request.",
+    "sampleTitle": "Request a sample box",
+    "sampleIntro": "Choose up to six finishes and tell us where to send them.",
+    "supportTitle": "Technical support",
+    "supportText": "Talk to our team about reinforcement, joints, finishes and sequencing. The earlier, the better.",
+    "form": {
+      "project": "Project name",
+      "firm": "Firm",
+      "city": "Delivery city",
+      "name": "Your name",
+      "phone": "Mobile number",
+      "email": "Email",
+      "finishes": "Finishes",
+      "finishesNone": "No finishes chosen yet",
+      "note": "Anything else?",
+      "submit": "Request sample box",
+      "sending": "Sending…",
+      "pick": "Choose finishes",
+      "errors": {
+        "project": "Enter the project name.",
+        "firm": "Enter your firm.",
+        "city": "Choose a city.",
+        "name": "Enter your name.",
+        "phone": "Enter a valid mobile number.",
+        "email": "Enter a valid email address.",
+        "finishes": "Choose at least one finish.",
+        "send": "We couldn't send your request. You can send it on WhatsApp instead.",
+        "rate": "Too many requests. Please try again in a few minutes."
+      },
+      "success": {
+        "title": "Thank you, we'll prepare your sample box",
+        "ref": "Your reference"
+      },
+      "wa": {
+        "intro": "Hello, I'd like a sample box.",
+        "project": "Project",
+        "firm": "Firm",
+        "city": "City",
+        "finishes": "Finishes",
+        "ref": "Reference"
+      }
+    }
+  },
+  "about": {
+    "title": "About us",
+    "intro": "We're The Concrete Factory, based in Amman and working across Jordan. For more than 10 years we've helped people get concrete right, from a family courtyard to a factory floor.",
+    "storyTitle": "How we see it",
+    "storyP1": "After more than 10 years, we've learned that a good floor is mostly decided before any concrete is poured. The loads, the traffic, the joints, the reinforcement and the finish all work together, so we like to sit down with you early and get them right.",
+    "storyP2": "We work with every type of reinforcement and we help you choose the finish, whether that's stamped, polished, epoxy or polyurethane, and we partner with the best global suppliers for the materials we recommend. In the industrial floor market in Jordan, we're leaders, and we bring that experience to every home too.",
+    "storyP3": "Whether it's a courtyard, a kitchen island or a warehouse slab, you'll get honest advice, a clear plan and people who care how it turns out.",
+    "principlesTitle": "What you can expect",
+    "principles": [
+      {
+        "t": "Design first",
+        "d": "We help you decide the details before the pour, when it's easiest and cheapest to get them right."
+      },
+      {
+        "t": "Honest advice",
+        "d": "We'll tell you what you need and what you don't."
+      },
+      {
+        "t": "Experienced hands",
+        "d": "More than 10 years of work across floors, walls and built-ins."
+      },
+      {
+        "t": "The right partners",
+        "d": "We work with the best global suppliers for the materials we recommend."
+      }
+    ],
+    "milestonesTitle": "Our story over the years",
+    "qualityTitle": "How we keep quality high",
+    "teamTitle": "Our team",
+    "placesTitle": "Where to find us",
+    "cta": "Tell us about your project"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Talk to us however suits you. We're happy to help at any stage, and the earlier the better.",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "instagram": "Instagram",
+    "address": "Address",
+    "hours": "Hours",
+    "map": "Open in Maps",
+    "qrTitle": "Scan to chat on WhatsApp",
+    "qrAlt": "QR code that opens a WhatsApp chat with The Concrete Factory",
+    "serviceArea": "We work across all of Jordan.",
+    "quote": "Get a quote",
+    "visit": "Book a sample visit"
+  },
+  "faqPage": {
+    "title": "Frequently asked questions",
+    "intro": "Straight answers about decorative, architectural and industrial concrete.",
+    "general": "General",
+    "about": "About {name}"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "updated": "Last updated: {date}",
+    "draftNote": "This policy describes how the website works today. It should be reviewed by your legal adviser before launch.",
+    "sections": [
+      {
+        "h": "Who we are",
+        "p": "This website is operated by The Concrete Factory, based in Amman, Jordan. You can reach us at {email}."
+      },
+      {
+        "h": "What we collect",
+        "p": "When you send a quote request, book a sample visit or request a sample box, we receive what you type: your name, mobile number, email address (if you give it), project details, the finishes you chose and any photos or drawings you attach."
+      },
+      {
+        "h": "How we use it",
+        "p": "We use your details only to reply to your request, prepare a quote, arrange a visit or send samples. We do not sell your details."
+      },
+      {
+        "h": "Who handles it",
+        "p": "Requests are delivered to us by email through our email provider, Resend. The website is hosted by Vercel. If you continue a request on WhatsApp, WhatsApp's own privacy policy applies to that conversation."
+      },
+      {
+        "h": "Cookies and local storage",
+        "p": "We do not use advertising or tracking cookies. Your browser stores your sample list and an unfinished quote draft on your own device so you can come back to them. You can clear them at any time in your browser settings."
+      },
+      {
+        "h": "How long we keep it",
+        "p": "We keep requests for as long as we need them to deal with your project and our records."
+      },
+      {
+        "h": "Your choices",
+        "p": "You can ask us what we hold about you, ask us to correct it or ask us to delete it by emailing {email}."
+      }
+    ]
   }
 }
