@@ -317,3 +317,5 @@ summary::-webkit-details-marker { display: none; }
 .on-dark li.bg-olive-100 { background: var(--n-800); border-color: var(--n-700); }
 .on-dark .text-olive-700 { color: var(--olive-dark); }
 .on-dark a.text-maroon { color: var(--maroon-dark); }
+
+@keyframes pop { 0% { scale: 0.4; opacity: 0; } 70% { scale: 1.2; } 100% { scale: 1; opacity: 1; } }

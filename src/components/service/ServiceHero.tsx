@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { Photo } from "@/components/ui/Photo";
-import type { PhotoId } from "@/lib/photos";
+import { getPhoto, type PhotoId } from "@/lib/photos";
 import { isDev } from "@/lib/placeholder";
 import { whatsappUrl } from "@/lib/site";
 import { buttonClass } from "@/lib/ui";
@@ -12,6 +12,8 @@ import { Mdx } from "./Mdx";
 
 export async function ServiceHero({ slug, name, c, locale }: { slug: string; name: string; c: ServiceContent; locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "service" });
+  // Landscape photos get a landscape frame so nothing important is cropped away
+  const landscape = c.heroImage ? getPhoto(c.heroImage as PhotoId).orientation === "landscape" : false;
   return (
     <section id="hero" className="container-page pb-12 pt-6 md:pb-20">
       <nav aria-label={t("breadcrumb")} className="text-sm text-n-600">
@@ -35,7 +37,7 @@ export async function ServiceHero({ slug, name, c, locale }: { slug: string; nam
             </a>
           </div>
         </div>
-        <div className="relative mx-auto aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-card bg-n-200 md:aspect-[4/5]">
+        <div className={`relative mx-auto aspect-[4/3] w-full overflow-hidden rounded-card bg-n-200 ${landscape ? "max-w-[640px]" : "max-w-[560px] md:aspect-[4/5]"}`}>
           {c.heroImage ? (
             <Photo id={c.heroImage as PhotoId} locale={locale} fill priority focal={c.heroFocal} sizes="(min-width: 768px) 560px, 100vw" className="hero-drift" />
           ) : (

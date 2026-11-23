@@ -294,5 +294,83 @@
     },
     "photoNeeded": "Photos coming soon",
     "calloutsLabel": "What we offer"
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "A look at our work, from family courtyards to industrial floors.",
+    "filterLabel": "Filter projects",
+    "service": "Service",
+    "sector": "Sector",
+    "city": "City",
+    "all": "All",
+    "sectors": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial"
+    },
+    "count": "{n} projects",
+    "empty": "No projects match these filters.",
+    "clear": "Clear filters",
+    "view": "View project",
+    "breadcrumbAll": "Projects",
+    "facts": {
+      "location": "Location",
+      "year": "Year",
+      "area": "Area",
+      "services": "Services",
+      "sector": "Sector",
+      "duration": "Duration"
+    },
+    "challenge": "The challenge",
+    "approach": "Our approach",
+    "result": "The result",
+    "gallery": "Gallery",
+    "finishesUsed": "Finishes used",
+    "next": "Next project",
+    "backAll": "All projects"
+  },
+  "finishes": {
+    "title": "Finish Library",
+    "intro": "Browse our real samples the way you would in a showroom. Add up to six to your sample list.",
+    "filterLabel": "Filter finishes",
+    "type": "Type",
+    "colour": "Colour",
+    "all": "All",
+    "colours": {
+      "grey": "Grey",
+      "warm": "Warm",
+      "multicolour": "Multicolour"
+    },
+    "count": "{n} finishes",
+    "empty": "No finishes match these filters.",
+    "clear": "Clear filters",
+    "add": "Add to sample list",
+    "remove": "Remove from sample list",
+    "added": "Added to sample list",
+    "pattern": "Pattern",
+    "colourLabel": "Colour",
+    "material": "Material",
+    "typeLabel": "Type",
+    "code": "Code",
+    "method": "Method",
+    "maintenance": "Maintenance",
+    "installed": "Shown on an installed floor.",
+    "moreTitle": "More in this pattern",
+    "projectsTitle": "Projects using this finish",
+    "back": "All finishes",
+    "quote": "Get a quote with this sample",
+    "visit": "Book a sample visit",
+    "zoom": "Zoom"
+  },
+  "samples": {
+    "count": "{n} of 6 samples",
+    "visit": "Request samples",
+    "quote": "Get a quote",
+    "clear": "Clear list",
+    "added": "Added {name}",
+    "removed": "Removed {name}",
+    "undo": "Undo",
+    "full": "Your sample list is full (6 maximum).",
+    "tray": "Sample list"
   }
 }
