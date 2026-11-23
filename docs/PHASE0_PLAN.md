@@ -196,3 +196,14 @@ Four more samples (also approved): `stamped-flagstone-pebble-blue-01`, `stamped-
 - **Typography:** Oswald for all English text (display and body). Arabic stays Tajawal (Oswald has no Arabic glyphs).
 - **Photo privacy:** `countertop-island-cutout-01` is cropped to remove two people from the original frame.
 - 7 more photos added (42 total): plaza ×2, courtyard, two low-angle stamped shots, two countertops.
+
+## 13. New phase: Finish naming (Phase 4a, before the Finish Library is built)
+
+When we reach it, **stop and ask the client for each photo's pattern name and colour name** (EN + AR), plus their finish code if they have one. Nothing is named by us.
+
+- **Pack for the client:** `docs/finish-naming-pack.zip` (22 numbered photos + `names-sheet.csv` + README). Already prepared so the names can be collected before we get there.
+- **Open confirmations bundled in:** cyan aggregate type (coloured glass vs glow stones), the tan saw-cut finish type, and whether the green-grey concentric-circles tone is pigment or weathering.
+- **Until names arrive:** the Finish Library, finish detail pages and "Options" grids stay hidden in production; dev builds show `{{CONFIRM}}` badges. No generic names ("slate", "cobble") appear in copy.
+- **Output of the phase:** `content/finishes/{code}.json` files filled with the supplied EN/AR names, codes assigned (proposed by us, approved by client).
+
+Revised phase order: 0 Plan, 1 Foundation, 2 Home, 3 Service pages, **4a Finish naming**, 4b Projects + Finish Library, 5 Quote wizard + visit, 6 Architects/About/Contact/FAQ/legal, 7 Hardening.
