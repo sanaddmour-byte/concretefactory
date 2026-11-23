@@ -173,3 +173,18 @@ Next.js app scaffold, tokens, fonts, ar/en routing with RTL, layout, header + me
 | Currency/digits | Western digits; +962 default for mobile validation |
 
 Still open: address, hours, Maps link, sales/quote email and reply SLA, logo (or approval for a wordmark), social links.
+
+## 11. Additional photos supplied (11): placement
+
+Added to `assets/manifest.json` (EXIF/GPS stripped on import). Client approved their use as samples and offerings in the stamped-concrete and terrazzo sections.
+
+| Photo id | Use |
+|---|---|
+| stamped-concentric-circles-01, stamped-slate-grey-01, stamped-slate-terracotta-01, stamped-fan-cobble-red-sealed-01, stamped-fan-cobble-gold-01 | Finish Library swatches + stamped page "Options" (confirm pattern/colour names) |
+| stamped-ashlar-ochre-01 | Stamped page gallery (wide finished surface) |
+| stamped-square-tile-brown-01 | Small gallery use only: 720 px wide, person's shadow visible |
+| terrazzo-beige-black-red-01, terrazzo-grey-pink-large-chip-01 | Finish Library swatches + terrazzo page options |
+| terrazzo-polished-floor-joint-01 | Terrazzo gallery as an installed-floor shot, small only (720 px wide, glare, smear top-left) |
+| finish-tan-sawcut-01 | Tagged `interior-floors`; **finish type to be confirmed** before any use |
+
+The red sealed fan-cobble swatch is the strongest on-brand (maroon) image for the home Finish Library teaser.

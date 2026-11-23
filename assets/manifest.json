@@ -258,5 +258,148 @@
       "ar": "تيرازو رمادي برقائق رخام متعددة الألوان"
     },
     "notes": ""
+  },
+  {
+    "file": "assets/photos/stamped-concentric-circles-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/detail",
+    "width": 2208,
+    "height": 1519,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Stamped concrete in a concentric-circle pattern with a weathered green-grey tone",
+      "ar": "خرسانة مطبوعة بنمط الدوائر المتداخلة بدرجة رمادية مخضرّة متقادمة"
+    },
+    "notes": "CONFIRM: pattern name and whether the green-grey tone is the pigment or weathering. Uncropped swatch; works as a 3:2 card."
+  },
+  {
+    "file": "assets/photos/stamped-slate-grey-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/swatch",
+    "width": 1879,
+    "height": 1910,
+    "orientation": "square",
+    "alt": {
+      "en": "Stamped concrete in a grey slate cobble pattern with a sealed sheen",
+      "ar": "خرسانة مطبوعة بنمط حجارة الأردواز الرمادية مع لمعة الطلاء الواقي"
+    },
+    "notes": "Near-square; crop to 1:1 for a swatch. CONFIRM pattern and colour names."
+  },
+  {
+    "file": "assets/photos/stamped-slate-terracotta-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/swatch",
+    "width": 2208,
+    "height": 1811,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Stamped concrete with a rough terracotta rock texture",
+      "ar": "خرسانة مطبوعة بملمس صخري خشن بلون التيراكوتا"
+    },
+    "notes": "Warm colour; true colour must be kept (no filters). CONFIRM colour/texture name."
+  },
+  {
+    "file": "assets/photos/finish-tan-sawcut-01.jpg",
+    "service": "interior-floors",
+    "role": "texture/detail",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Tan mottled concrete surface with a fine saw-cut joint",
+      "ar": "سطح خرساني بيج مبقّع مع فاصل قصّ دقيق"
+    },
+    "notes": "CONFIRM: finish type (microtopping, stained or other) before use. Not placed in stamped/terrazzo sections; tagged interior-floors until confirmed."
+  },
+  {
+    "file": "assets/photos/terrazzo-beige-black-red-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 1986,
+    "height": 1986,
+    "orientation": "square",
+    "alt": {
+      "en": "Beige terrazzo with black, maroon and grey stone chips",
+      "ar": "تيرازو بيج برقائق حجرية سوداء وحمراء داكنة ورمادية"
+    },
+    "notes": "Square swatch. Maroon chips echo the brand accent."
+  },
+  {
+    "file": "assets/photos/terrazzo-polished-floor-joint-01.jpg",
+    "service": "terrazzo",
+    "role": "project",
+    "width": 720,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Polished terrazzo floor with a divider joint and multicolour stone chips",
+      "ar": "أرضية تيرازو مصقولة مع فاصل وشظايا حجرية متعددة الألوان"
+    },
+    "notes": "Installed floor, useful for the terrazzo page, but low resolution (720 px wide), glare at top and a colour smear at top-left. Use small (≤720 px) or crop below the glare; reshoot recommended."
+  },
+  {
+    "file": "assets/photos/terrazzo-grey-pink-large-chip-01.jpg",
+    "service": "terrazzo",
+    "role": "texture/swatch",
+    "width": 2350,
+    "height": 2350,
+    "orientation": "square",
+    "alt": {
+      "en": "Grey terrazzo with large black, pink and maroon stone chips",
+      "ar": "تيرازو رمادي برقائق حجرية كبيرة سوداء ووردية وحمراء"
+    },
+    "notes": "Square swatch, large-chip mix."
+  },
+  {
+    "file": "assets/photos/stamped-fan-cobble-red-sealed-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/swatch",
+    "width": 2315,
+    "height": 2315,
+    "orientation": "square",
+    "alt": {
+      "en": "Glossy sealed stamped fan-cobblestone concrete in deep maroon-red",
+      "ar": "خرسانة مطبوعة بنمط حجارة المروحة بلون أحمر داكن لامع مع طلاء واقي"
+    },
+    "notes": "Strong brand-colour swatch. Glare/reflections visible; keep true colour."
+  },
+  {
+    "file": "assets/photos/stamped-ashlar-ochre-01.jpg",
+    "service": "stamped-concrete",
+    "role": "project",
+    "width": 2576,
+    "height": 1932,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Ochre stamped ashlar slate paving in a random-size layout",
+      "ar": "رصف من الخرسانة المطبوعة بنمط حجر الأردواز العشوائي بلون أوكر"
+    },
+    "notes": "Wide perspective of a finished surface; good for the stamped page gallery."
+  },
+  {
+    "file": "assets/photos/stamped-fan-cobble-gold-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/detail",
+    "width": 1932,
+    "height": 2576,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Golden stamped fan-cobblestone concrete with overlapping arcs",
+      "ar": "خرسانة مطبوعة بنمط حجارة المروحة الذهبية بأقواس متداخلة"
+    },
+    "notes": "Portrait; strong pattern shot."
+  },
+  {
+    "file": "assets/photos/stamped-square-tile-brown-01.jpg",
+    "service": "stamped-concrete",
+    "role": "texture/detail",
+    "width": 720,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Brown stamped concrete in a square-tile pattern at low angle",
+      "ar": "خرسانة مطبوعة بنمط البلاط المربع بلون بني بزاوية منخفضة"
+    },
+    "notes": "Low resolution (720 px wide) and a person's shadow is visible. Small use only; reshoot recommended."
   }
 ]
