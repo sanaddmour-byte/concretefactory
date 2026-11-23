@@ -1,11 +1,26 @@
 {
-  "name": { "en": "The Concrete Factory", "ar": "كونكريت فاكتوري" },
+  "name": {
+    "en": "The Concrete Factory",
+    "ar": "كونكريت فاكتوري"
+  },
   "tagline": {
     "en": "Building better spaces with concrete",
     "ar": "نبني مساحات أفضل بالخرسانة"
   },
-  "location": { "city": { "en": "Amman", "ar": "عمّان" }, "country": { "en": "Jordan", "ar": "الأردن" } },
-  "serviceArea": { "en": "All of Jordan", "ar": "جميع أنحاء الأردن" },
+  "location": {
+    "city": {
+      "en": "Amman",
+      "ar": "عمّان"
+    },
+    "country": {
+      "en": "Jordan",
+      "ar": "الأردن"
+    }
+  },
+  "serviceArea": {
+    "en": "All of Jordan",
+    "ar": "جميع أنحاء الأردن"
+  },
   "contact": {
     "phone": "+962797179702",
     "phoneDisplay": "+962 79 717 9702",
@@ -17,5 +32,9 @@
     "mapsUrl": "{{PLACEHOLDER: Google Maps link}}"
   },
   "socials": [],
-  "stats": null
+  "stats": {
+    "years": "10+",
+    "area": null,
+    "projects": null
+  }
 }

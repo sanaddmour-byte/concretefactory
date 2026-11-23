@@ -94,16 +94,16 @@
   "home": {
     "kicker": "Decorative · Architectural · Industrial",
     "title": "Concrete, crafted for how you live and work.",
-    "sub": "Stamped floors, terrazzo, exposed aggregate, countertops, fire-pit seating and industrial slabs, built across Jordan.",
+    "sub": "From a family courtyard to a factory floor, we've spent more than 10 years getting concrete right. Let's talk about your space.",
     "seeWork": "See our work",
     "trust": {
-      "years": "Years in business",
+      "years": "Years of experience",
       "area": "Built to date",
       "projects": "Projects completed"
     },
     "bento": {
       "title": "Everything concrete",
-      "sub": "Nine services across floors, walls and built-ins.",
+      "sub": "Nine services across floors, walls and built-ins, all from one experienced team.",
       "view": "View service"
     },
     "featured": {
@@ -118,7 +118,7 @@
     },
     "story": {
       "title": "Stamped concrete, step by step",
-      "sub": "Scroll to follow the stages of a stamped finish.",
+      "sub": "Come along as we walk through how a stamped floor comes together, step by step.",
       "caption": "Photos show the stamping stages and a sealed result. They are not the same slab.",
       "label": "Stamped concrete process",
       "stages": [
@@ -145,31 +145,31 @@
       ]
     },
     "steps": {
-      "title": "How a project runs",
+      "title": "How we work with you",
       "items": [
         {
           "t": "Survey & design",
-          "d": "We visit, measure and agree the design and finish."
+          "d": "We visit, measure and talk it through with you until the design and finish feel right."
         },
         {
           "t": "Sub-base & formwork",
-          "d": "The base is prepared and the edges are set out."
+          "d": "We get the foundations right first. Everything else depends on them."
         },
         {
           "t": "Pour",
-          "d": "The concrete is placed and levelled."
+          "d": "The concrete goes in and is levelled with care."
         },
         {
           "t": "Finish",
-          "d": "Stamped, trowelled, ground or exposed, as chosen."
+          "d": "Stamped, trowelled, ground or exposed, just as you chose."
         },
         {
           "t": "Seal & cure",
-          "d": "The surface is sealed and left to cure."
+          "d": "We seal the surface and give it the time it needs."
         },
         {
           "t": "Handover & care",
-          "d": "We hand over with care and maintenance guidance."
+          "d": "We walk you through it and leave you with simple care advice."
         }
       ]
     },
@@ -182,7 +182,7 @@
     "industrial": {
       "kicker": "Industrial & commercial",
       "title": "Floors for heavy daily use",
-      "body": "Warehouses, factories and logistics yards need flat, durable slabs. We pour, reinforce and finish them to your specification.",
+      "body": "Warehouses, factories and logistics yards ask a lot of a floor. We start with you at the design stage, then pour, reinforce and finish it to your specification.",
       "specs": {
         "flatness": "Flatness class",
         "load": "Load class",
@@ -238,8 +238,8 @@
       ]
     },
     "cta": {
-      "title": "Tell us about your project",
-      "body": "Share the space, the size and the finish you have in mind. We'll reply with the next steps."
+      "title": "Let's talk about your project",
+      "body": "Tell us about the space, the size and the look you have in mind. We'll get back to you with honest advice and clear next steps."
     }
   },
   "dev": {
@@ -292,6 +292,7 @@
       "title": "Services",
       "intro": "Floors, walls and built-ins in decorative, architectural and industrial concrete."
     },
-    "photoNeeded": "Photos coming soon"
+    "photoNeeded": "Photos coming soon",
+    "calloutsLabel": "What we offer"
   }
 }

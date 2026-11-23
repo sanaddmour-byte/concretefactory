@@ -282,6 +282,14 @@ Cinematic, Apple/Porsche-style scroll sequences, used where they explain the pro
 
 ---
 
+### 9b. Voice: homey, with plenty of experience behind it
+The company story is told like a trusted neighbour who happens to be very good at concrete.
+- **Homey:** warm, plain words; "we", "you", "your space"; short sentences; invite rather than sell ("let's talk it through", "come along", "we'll walk you through it"). Work for a family courtyard and a factory floor gets the same care.
+- **Experienced:** let experience show through specifics and calm confidence, not hype. Use the supplied facts: **10+ years of experience**, leaders in the market, every type of reinforcement (steel fibres, polypropylene macro and micro fibres, traditional steel), help choosing finishes (polished, epoxy, polypropylene coatings), partnerships with the best global suppliers. Show what experience has taught us ("we've learned that a good floor is decided before the pour") and give honest advice, including what a client does not need.
+- **Design-first story:** the recurring narrative is that choosing right at the design stage saves cost and trouble later. It appears on the Industrial page and in the Process story, and anchors the About page.
+- **Never invent:** no family/heritage claims, client names, awards, numbers or certifications beyond what the client has stated. Superlatives ("leaders in the market") are the client's own claim and stay as worded.
+- **Both languages:** Arabic is written natively in the same warm, steady voice, not translated word for word.
+
 ## 10. CONTENT MODEL (editable without touching components)
 ```
 content/

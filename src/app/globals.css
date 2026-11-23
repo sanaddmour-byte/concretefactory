@@ -301,3 +301,13 @@ summary::-webkit-details-marker { display: none; }
     [dir="rtl"] .reveal-end { animation-name: slide-start; }
   }
 }
+
+/* Text, buttons and chips on dark surfaces (industrial page hero, bands, footer-like blocks) */
+.on-dark .text-n-600 { color: var(--n-400); }
+.on-dark .text-n-700 { color: var(--n-300); }
+.on-dark .text-n-800 { color: var(--n-200); }
+.on-dark .text-n-900 { color: var(--n-50); }
+.on-dark .btn.text-n-900 { border-color: var(--n-600); }
+.on-dark .btn.text-n-900:hover { background: var(--n-800); }
+.on-dark li.bg-n-50 { background: var(--n-900); border-color: var(--n-700); }
+.on-dark a.text-maroon { color: var(--maroon-dark); }

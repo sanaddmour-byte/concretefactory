@@ -16,6 +16,7 @@ import { Gallery, type GalleryItem } from "@/components/service/Gallery";
 import { SpecTable } from "@/components/service/SpecTable";
 import { Steps } from "@/components/service/Steps";
 import { Diptych } from "@/components/service/Diptych";
+import { Callouts } from "@/components/service/Callouts";
 
 // Photos excluded from public galleries (third-party brand visible, etc.)
 const EXCLUDE = new Set(["process-stamping-fan-cobble-01"]);
@@ -63,6 +64,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       {dark ? <div className="on-dark pb-4 pt-2">{hero}</div> : hero}
+      <Callouts items={c.callouts} label={t("calloutsLabel")} />
       <Options codes={c.options} locale={l} />
       {stages.length > 0 ? (
         <section className={dark ? "on-dark pt-16 md:pt-24" : "pt-16 md:pt-24"} aria-labelledby="proc-h">

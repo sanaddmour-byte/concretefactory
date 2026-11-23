@@ -518,5 +518,70 @@
       "ar": "جزيرة مطبخ خرسانية بفتحة للموقد على هيكل فولاذي أسود"
     },
     "notes": "CROPPED to remove two people (faces/mask) from the original. Pre-handover: open drawer carcass visible. Reshoot after handover recommended."
+  },
+  {
+    "file": "assets/photos/industrial-groundwork-membrane-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 1560,
+    "height": 800,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Industrial floor groundwork with black membrane, levelling rails and a prepared sub-base patch",
+      "ar": "تجهيز أساس أرضية صناعية بغشاء أسود وقضبان تسوية وجزء من الأساس المجهّز"
+    },
+    "notes": "CROPPED from the original to remove workers' faces and a third-party branded insulation board. Pre-pour groundwork inside a building."
+  },
+  {
+    "file": "assets/photos/industrial-power-trowel-crew-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 2016,
+    "height": 1512,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Crew power-trowelling a fresh industrial concrete slab with a mountain behind",
+      "ar": "فريق ينعّم بلاطة خرسانية صناعية طازجة بالهليكوبتر مع جبل في الخلفية"
+    },
+    "notes": "Workers' faces are visible: CONFIRM the crew has agreed to appear on the website. Safety gear and equipment visible; no company branding."
+  },
+  {
+    "file": "assets/photos/industrial-slab-night-trowel-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 2000,
+    "height": 1170,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Freshly trowelled industrial concrete slab finished at night",
+      "ar": "بلاطة خرسانية صناعية طازجة بعد التنعيم، أُنجزت ليلاً"
+    },
+    "notes": "CROPPED from the original to remove another contractor's branded truck and the workers. Wet fresh surface; works well as a texture/atmosphere shot."
+  },
+  {
+    "file": "assets/photos/industrial-polished-floor-reflection-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 1280,
+    "height": 800,
+    "orientation": "landscape",
+    "alt": {
+      "en": "Ground and polished concrete floor reflecting the interior of a large building",
+      "ar": "أرضية خرسانية مجلخة ومصقولة تعكس فضاء مبنى كبير"
+    },
+    "notes": "CROPPED to remove a camera-brand watermark. A worker's legs are in frame (no face). Building still under construction."
+  },
+  {
+    "file": "assets/photos/industrial-polished-floor-aggregate-01.jpg",
+    "service": "industrial-floors",
+    "role": "project",
+    "width": 720,
+    "height": 780,
+    "orientation": "portrait",
+    "alt": {
+      "en": "Close view of a polished concrete floor with fine aggregate flecks showing",
+      "ar": "منظر قريب لأرضية خرسانية مصقولة تظهر فيها حبيبات الركام الدقيقة"
+    },
+    "notes": "CROPPED to remove a worker. Low resolution (720 px wide): small use only. Reflection of a high-visibility vest is visible."
   }
 ]

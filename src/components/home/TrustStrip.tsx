@@ -14,7 +14,7 @@ export async function TrustStrip({ locale }: { locale: string }) {
       <dl className="container-page grid grid-cols-1 gap-6 py-8 sm:grid-cols-3">
         {items.map((k) => (
           <div key={k}>
-            <dd className="display text-4xl">{s[k]}</dd>
+            <dd className="display text-4xl"><bdi className="ltr-num">{s[k]}</bdi></dd>
             <dt className="text-n-600">{t(k)}</dt>
           </div>
         ))}

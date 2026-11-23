@@ -19,6 +19,7 @@ const schema = z.object({
   options: z.array(z.string()),
   specs: z.array(z.object({ key: z.string(), value: z.string() })),
   specSheet: z.string().nullable(),
+  callouts: z.array(z.object({ title: z.string(), text: z.string(), items: z.array(z.string()) })).default([]),
   processSteps: z.array(z.object({ title: z.string(), text: z.string() })),
   story: z.array(stage).default([]),
   storyCaption: z.string().optional(),
