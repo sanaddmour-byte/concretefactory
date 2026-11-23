@@ -159,3 +159,5 @@ Done when every chapter works in desktop-animated, mobile-animated and reduced-m
 **JS (gz):** Home 235 KB (limit 230), other routes ~190 KB (limit 170): still over; trims listed above.
 **Recordings:** `docs/recordings/home-desktop-en.webm`, `home-mobile-ar.webm`.
 **Not testable here:** VoiceOver, NVDA, Safari/iOS, a real Android phone.
+
+**Phase 4 done (service pages), pushed.** Pinned intro (about 70% of a viewport of scroll; photo 1.15x to 1x; H1 line reveal, block fade in Arabic), then a sticky-media scroller (What it is, Where it works, Patterns and colours, How we build it, Care and lifespan) built only from each page's real content; blocks without data are skipped, and sinks (no photos yet) keeps the plain layout. Stamped and industrial stories now use the new pinned engine. Spec table, gallery, FAQ and CTA stay static. Renamed "sample visit" to "Reserve your technical visit" (EN/AR, email subject, brief). Sample-selection guide added to /finishes and /visit with the client's sample-tile photos; a 756 px web-looking photo is held back.

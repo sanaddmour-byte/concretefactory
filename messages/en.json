@@ -294,7 +294,23 @@
       "intro": "Floors, walls and built-ins in decorative, architectural and industrial concrete."
     },
     "photoNeeded": "Photos coming soon",
-    "calloutsLabel": "What we offer"
+    "calloutsLabel": "What we offer",
+    "scroller": {
+      "intro": {
+        "label": "Overview"
+      },
+      "blocks": {
+        "what": "What it is",
+        "where": "Where it works",
+        "options": "Patterns and colours",
+        "how": "How we build it",
+        "care": "Care and lifespan"
+      },
+      "whereText": "{list}.",
+      "optionsText": "Browse our real samples in the Finish Library, such as {names}.",
+      "howText": "{steps}.",
+      "careLead": "Care and lifespan depend on use, so we confirm them for your project."
+    }
   },
   "projects": {
     "title": "Projects",

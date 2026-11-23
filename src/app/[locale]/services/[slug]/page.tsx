@@ -6,7 +6,11 @@ import { routing, type Locale } from "@/i18n/routing";
 import { services } from "@/lib/services";
 import { getService } from "@/lib/content";
 import { getPhoto, photosByService, type PhotoId } from "@/lib/photos";
-import { Story, type StoryStage } from "@/components/ui/Story";
+import { PinnedStage } from "@/components/story/PinnedStage";
+import { image } from "@/components/story/media";
+import type { StageStep } from "@/components/story/types";
+import { ServiceIntro } from "@/components/service/ServiceIntro";
+import { ServiceScroller } from "@/components/service/ServiceScroller";
 import { FaqList } from "@/components/ui/FaqList";
 import { FinalCta } from "@/components/home/FinalCta";
 import { ServiceHero } from "@/components/service/ServiceHero";
@@ -54,10 +58,11 @@ export default async function ServicePage({ params }: Props) {
     .filter((p) => !EXCLUDE.has(p.id))
     .map((p) => ({ id: p.id, src: p.src, width: p.width, height: p.height, alt: p.alt[l], blur: p.blur }));
 
-  const stages: StoryStage[] = c.story.map((s) => ({ ...s, photo: s.photo as PhotoId }));
+  const stages: StageStep[] = c.story.map((s, i) => ({ id: `s${i}`, title: s.title, caption: s.body, media: image(s.photo as PhotoId, l, { focal: s.focal, zoom: { from: 1.12, to: 1 } }) }));
   const hero = (
     <>
-      <ServiceHero slug={slug} name={name} c={c} locale={l} />
+      <ServiceIntro><ServiceHero slug={slug} name={name} c={c} locale={l} /></ServiceIntro>
+      <ServiceScroller slug={slug} c={c} locale={l} label={t("scroller.intro.label")} />
       <Applications items={c.applications} locale={l} />
     </>
   );
@@ -70,7 +75,7 @@ export default async function ServicePage({ params }: Props) {
       {stages.length > 0 ? (
         <section className={dark ? "on-dark pt-16 md:pt-24" : "pt-16 md:pt-24"} aria-labelledby="proc-h">
           <h2 id="proc-h" className="display container-page reveal text-3xl md:text-5xl">{t("processTitle")}</h2>
-          <Story stages={stages} locale={l} label={t("processTitle")} />
+          <PinnedStage steps={stages} label={t("processTitle")} pin={{ desktop: 80 * stages.length, mobile: 55 * stages.length }} />
           {c.storyCaption && <p className={`container-page pb-4 text-sm ${dark ? "text-n-400" : "text-n-600"}`}>{c.storyCaption}</p>}
         </section>
       ) : (
